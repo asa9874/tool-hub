@@ -24,7 +24,9 @@
     "health": "Health & Lifestyle",
     "life": "Life & Society",
     "productivity": "Productivity",
-    "dev": "Development & IT"
+    "dev": "Development & IT",
+    "fun": "Games & Fun",
+    "utility": "Utility"
   },
   "tools": {
     "loanCalculator": {
@@ -304,6 +306,61 @@
       "words": "Words",
       "count": "Count",
       "generate": "Generate"
+    },
+    "spinWheel": {
+      "title": "Spin the Wheel",
+      "fullTitle": "Spin the Wheel - Random Selection Game",
+      "description": "Enter items on the wheel and spin to randomly select one. Interactive game with animations."
+    },
+    "foodSlotMachine": {
+      "title": "Food Slot Machine",
+      "fullTitle": "Food Slot Machine - What to Eat Today?",
+      "description": "Pull the lever and let the slot machine decide your meal from various cuisines."
+    },
+    "scratchCard": {
+      "title": "Scratch Card",
+      "fullTitle": "Scratch Card Game - Reveal the Prize",
+      "description": "Scratch the screen to reveal hidden penalties or prizes!"
+    },
+    "teamGenerator": {
+      "title": "Team Generator",
+      "fullTitle": "Random Team Generator - Fair Group Assignment",
+      "description": "Enter participant names and create balanced teams fairly."
+    },
+    "magicConch": {
+      "title": "Magic Conch Shell",
+      "fullTitle": "Magic Conch Shell - Decision Maker",
+      "description": "Ask a question and the Magic Conch will give you a random answer."
+    },
+    "fortuneCookie": {
+      "title": "Fortune Cookie",
+      "fullTitle": "Today's Fortune Cookie - Daily Fortune",
+      "description": "Click the cookie to break it and reveal your daily fortune or wisdom."
+    },
+    "reactionTest": {
+      "title": "Reaction Time Test",
+      "fullTitle": "Reaction Time Test - Human Benchmark",
+      "description": "Click when the screen turns green to measure your reaction speed and rank."
+    },
+    "wordFrequency": {
+      "title": "Word Frequency Analyzer",
+      "fullTitle": "Word Frequency Analyzer - Text Analysis Tool",
+      "description": "Enter text to see which words are used most frequently, ranked by count."
+    },
+    "browserInfo": {
+      "title": "Browser Info",
+      "fullTitle": "Browser Information - My User Agent",
+      "description": "Check your current browser version, operating system, and system information."
+    },
+    "reserveCalculator": {
+      "title": "Reserve Forces Calculator",
+      "fullTitle": "Reserve Forces Calculator - Korean Military",
+      "description": "Enter your discharge year to check your reserve forces year and training type."
+    },
+    "sleepCalculator": {
+      "title": "Sleep Cycle Calculator",
+      "fullTitle": "Sleep Cycle Calculator - Optimal Wake Time",
+      "description": "Calculate the best time to wake up based on REM sleep cycles."
     }
   }
 }

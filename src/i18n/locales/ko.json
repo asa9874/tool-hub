@@ -24,7 +24,9 @@
     "health": "건강/라이프스타일",
     "life": "생활/사회",
     "productivity": "업무/생산성",
-    "dev": "개발/IT"
+    "dev": "개발/IT",
+    "fun": "게임/재미",
+    "utility": "유틸리티"
   },
   "tools": {
     "loanCalculator": {
@@ -304,6 +306,61 @@
       "words": "단어",
       "count": "개수",
       "generate": "생성"
+    },
+    "spinWheel": {
+      "title": "복불복 룰렛",
+      "fullTitle": "복불복 룰렛 돌리기 - 랜덤 선택 게임",
+      "description": "원판에 항목을 입력하고 회전시켜 랜덤하게 하나를 선정하는 인터랙티브 게임입니다."
+    },
+    "foodSlotMachine": {
+      "title": "음식 메뉴 슬롯머신",
+      "fullTitle": "음식 메뉴 슬롯머신 - 오늘 뭐먹지?",
+      "description": "슬롯 레버를 당기면 한식, 중식, 일식 등 음식 메뉴가 결정됩니다."
+    },
+    "scratchCard": {
+      "title": "벌칙 복권 긁기",
+      "fullTitle": "벌칙 복권 긁기 - 스크래치 카드 게임",
+      "description": "마우스로 화면을 긁어 숨겨진 벌칙이나 당첨 결과를 확인하세요!"
+    },
+    "teamGenerator": {
+      "title": "랜덤 조 나누기",
+      "fullTitle": "랜덤 조/팀 나누기 - 공정한 팀 배정",
+      "description": "참여자 명단을 넣고 팀 수를 정하면 공평하게 그룹을 생성합니다."
+    },
+    "magicConch": {
+      "title": "마법의 소라고동",
+      "fullTitle": "마법의 소라고동 결정기 - 고민 해결사",
+      "description": "고민을 입력하면 소라고동이 랜덤한 답변을 내려줍니다."
+    },
+    "fortuneCookie": {
+      "title": "오늘의 포춘쿠키",
+      "fullTitle": "오늘의 포춘 쿠키 - 매일 운세 확인",
+      "description": "매일 쿠키를 클릭해 깨뜨리면 오늘의 격언이나 운세를 확인할 수 있습니다."
+    },
+    "reactionTest": {
+      "title": "반응 속도 테스트",
+      "fullTitle": "반응 속도 테스트 - 인간 벤치마크",
+      "description": "화면 색상이 변할 때 클릭하여 반응 속도를 측정하고 등급을 확인합니다."
+    },
+    "wordFrequency": {
+      "title": "단어 빈도수 분석기",
+      "fullTitle": "단어 빈도수 분석기 - 텍스트 분석 도구",
+      "description": "긴 글을 입력하면 어떤 단어가 가장 많이 쓰였는지 순위별로 보여줍니다."
+    },
+    "browserInfo": {
+      "title": "브라우저 정보 확인",
+      "fullTitle": "웹 브라우저 정보 확인 - My User Agent",
+      "description": "현재 사용 중인 브라우저 버전, 운영체제, 시스템 정보를 한눈에 확인합니다."
+    },
+    "reserveCalculator": {
+      "title": "예비군 연차 계산기",
+      "fullTitle": "예비군/민방위 연차 계산기 - 훈련 유형 확인",
+      "description": "전역 연도를 입력하면 현재 예비군 연차와 교육 유형을 알려드립니다."
+    },
+    "sleepCalculator": {
+      "title": "수면 사이클 계산기",
+      "fullTitle": "수면 사이클 계산기 - 최적 기상 시간",
+      "description": "가장 개운하게 일어날 수 있는 기상 시간을 REM 수면 주기 기반으로 계산합니다."
     }
   }
 }

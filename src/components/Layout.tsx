@@ -18,6 +18,8 @@ const categoryI18nKey: Record<string, string> = {
   '생활/사회': 'categories.life',
   '업무/생산성': 'categories.productivity',
   '개발/IT': 'categories.dev',
+  '게임/재미': 'categories.fun',
+  '유틸리티': 'categories.utility',
 };
 
 // 도구 ID를 i18n 키로 매핑
@@ -42,6 +44,17 @@ const toolI18nKey: Record<string, string> = {
   'base64': 'tools.base64Tool.title',
   'url-encoder': 'tools.urlEncoder.title',
   'lorem-ipsum': 'tools.loremIpsum.title',
+  'spin-wheel': 'tools.spinWheel.title',
+  'food-slot-machine': 'tools.foodSlotMachine.title',
+  'scratch-card': 'tools.scratchCard.title',
+  'team-generator': 'tools.teamGenerator.title',
+  'magic-conch': 'tools.magicConch.title',
+  'fortune-cookie': 'tools.fortuneCookie.title',
+  'reaction-test': 'tools.reactionTest.title',
+  'word-frequency': 'tools.wordFrequency.title',
+  'browser-info': 'tools.browserInfo.title',
+  'reserve-calculator': 'tools.reserveCalculator.title',
+  'sleep-calculator': 'tools.sleepCalculator.title',
 };
 
 /**

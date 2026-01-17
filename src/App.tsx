@@ -38,6 +38,21 @@ import Base64Tool from './pages/tools/Base64Tool';
 import UrlEncoder from './pages/tools/UrlEncoder';
 import LoremIpsum from './pages/tools/LoremIpsum';
 
+// 도구 페이지들 - 게임/재미
+import SpinWheel from './pages/tools/SpinWheel';
+import FoodSlotMachine from './pages/tools/FoodSlotMachine';
+import ScratchCard from './pages/tools/ScratchCard';
+import TeamGenerator from './pages/tools/TeamGenerator';
+import MagicConch from './pages/tools/MagicConch';
+import FortuneCookie from './pages/tools/FortuneCookie';
+import ReactionTest from './pages/tools/ReactionTest';
+
+// 도구 페이지들 - 유틸리티
+import WordFrequency from './pages/tools/WordFrequency';
+import BrowserInfo from './pages/tools/BrowserInfo';
+import ReserveCalculator from './pages/tools/ReserveCalculator';
+import SleepCalculator from './pages/tools/SleepCalculator';
+
 /**
  * 메인 App 컴포넌트
  * - HelmetProvider: SEO 메타 태그 관리
@@ -89,6 +104,21 @@ function App() {
             <Route path="/tools/base64" element={<Base64Tool />} />
             <Route path="/tools/url-encoder" element={<UrlEncoder />} />
             <Route path="/tools/lorem-ipsum" element={<LoremIpsum />} />
+            
+            {/* 게임/재미 도구 */}
+            <Route path="/tools/spin-wheel" element={<SpinWheel />} />
+            <Route path="/tools/food-slot-machine" element={<FoodSlotMachine />} />
+            <Route path="/tools/scratch-card" element={<ScratchCard />} />
+            <Route path="/tools/team-generator" element={<TeamGenerator />} />
+            <Route path="/tools/magic-conch" element={<MagicConch />} />
+            <Route path="/tools/fortune-cookie" element={<FortuneCookie />} />
+            <Route path="/tools/reaction-test" element={<ReactionTest />} />
+            
+            {/* 유틸리티 도구 */}
+            <Route path="/tools/word-frequency" element={<WordFrequency />} />
+            <Route path="/tools/browser-info" element={<BrowserInfo />} />
+            <Route path="/tools/reserve-calculator" element={<ReserveCalculator />} />
+            <Route path="/tools/sleep-calculator" element={<SleepCalculator />} />
             
             {/* 정보 페이지들 */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
