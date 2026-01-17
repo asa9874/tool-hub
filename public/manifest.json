@@ -1,0 +1,21 @@
+{
+  "name": "ToolHub - 무료 온라인 도구 모음",
+  "short_name": "ToolHub",
+  "description": "만나이 계산기, 글자수 세기, 단위 변환기 등 다양한 무료 온라인 도구",
+  "start_url": "/tool-hub/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/tool-hub/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/tool-hub/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
