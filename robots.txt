@@ -1,0 +1,12 @@
+# ToolHub Robots.txt
+# https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+
+# 사이트맵 위치
+Sitemap: https://asa9874.github.io/tool-hub/sitemap.xml
+
+# 크롤링 제한 (필요시 추가)
+# Disallow: /admin/
+# Disallow: /private/
