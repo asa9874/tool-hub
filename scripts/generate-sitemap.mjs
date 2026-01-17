@@ -25,22 +25,80 @@ const pages = [
     changefreq: 'daily',
     priority: '1.0',
   },
+  // === 생활/사회 도구 ===
   {
     path: '/tools/age-calculator',
     changefreq: 'weekly',
     priority: '0.9',
   },
   {
+    path: '/tools/military-calculator',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/gpa-calculator',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/salary-calculator',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/zodiac-calculator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/d-day-calculator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  // === 업무/생산성 도구 ===
+  {
+    path: '/tools/character-counter',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/percent-calculator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/unit-converter',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  // === 개발/IT 도구 ===
+  {
+    path: '/tools/json-formatter',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/base64',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/url-encoder',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/lorem-ipsum',
+    changefreq: 'weekly',
+    priority: '0.7',
+  },
+  // === 정보 페이지 ===
+  {
     path: '/privacy-policy',
     changefreq: 'monthly',
     priority: '0.3',
   },
-  // 새 도구 페이지 추가 시 여기에 등록
-  // {
-  //   path: '/tools/character-counter',
-  //   changefreq: 'weekly',
-  //   priority: '0.9',
-  // },
 ];
 
 // ============================================

@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import AdBanner from '../../components/AdBanner';
 import { siteConfig } from '../../config/siteConfig';
@@ -350,6 +351,34 @@ export default function AgeCalculator() {
                 <strong>연나이</strong>: 올해 연도 - 출생 연도
               </li>
             </ul>
+          </div>
+        </section>
+
+        {/* 관련 도구 - 내부 링크로 SEO 강화 */}
+        <section className="bg-gray-50 rounded-xl p-6 md:p-8 mt-8">
+          <h2 className="text-xl font-bold text-gray-800 mb-4">🔗 같이 보면 좋은 도구</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Link
+              to="/tools/military-calculator"
+              className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="font-semibold text-blue-600">전역일 계산기</h3>
+              <p className="text-sm text-gray-600 mt-1">입대일 기준 전역일, 남은 복무일 계산</p>
+            </Link>
+            <Link
+              to="/tools/zodiac-calculator"
+              className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="font-semibold text-blue-600">띠 & 별자리 계산기</h3>
+              <p className="text-sm text-gray-600 mt-1">12간지 띠, 생일 별자리 확인</p>
+            </Link>
+            <Link
+              to="/tools/d-day-calculator"
+              className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="font-semibold text-blue-600">D-Day 계산기</h3>
+              <p className="text-sm text-gray-600 mt-1">특정 날짜까지 남은 일수 계산</p>
+            </Link>
           </div>
         </section>
       </div>

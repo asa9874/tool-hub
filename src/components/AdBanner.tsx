@@ -75,7 +75,7 @@ export default function AdBanner({
         className={`bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500 text-sm ${className}`}
         style={{ minHeight: '100px' }}
       >
-        <span>광고 영역 (AdSense 승인 후 활성화)</span>
+        <span>광고</span>
       </div>
     );
   }

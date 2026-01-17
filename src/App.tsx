@@ -5,9 +5,27 @@ import { AdSenseScript } from './components/AdBanner';
 
 // 페이지 컴포넌트
 import Home from './pages/Home';
-import AgeCalculator from './pages/tools/AgeCalculator';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import NotFound from './pages/NotFound';
+
+// 도구 페이지들 - 생활/사회
+import AgeCalculator from './pages/tools/AgeCalculator';
+import MilitaryCalculator from './pages/tools/MilitaryCalculator';
+import GpaCalculator from './pages/tools/GpaCalculator';
+import SalaryCalculator from './pages/tools/SalaryCalculator';
+import ZodiacCalculator from './pages/tools/ZodiacCalculator';
+import DdayCalculator from './pages/tools/DdayCalculator';
+
+// 도구 페이지들 - 업무/생산성
+import CharacterCounter from './pages/tools/CharacterCounter';
+import PercentCalculator from './pages/tools/PercentCalculator';
+import UnitConverter from './pages/tools/UnitConverter';
+
+// 도구 페이지들 - 개발/IT
+import JsonFormatter from './pages/tools/JsonFormatter';
+import Base64Tool from './pages/tools/Base64Tool';
+import UrlEncoder from './pages/tools/UrlEncoder';
+import LoremIpsum from './pages/tools/LoremIpsum';
 
 /**
  * 메인 App 컴포넌트
@@ -31,10 +49,24 @@ function App() {
             {/* 홈 페이지 */}
             <Route path="/" element={<Home />} />
             
-            {/* 도구 페이지들 */}
+            {/* 생활/사회 도구 */}
             <Route path="/tools/age-calculator" element={<AgeCalculator />} />
-            {/* 새 도구 추가 시 여기에 Route 추가 */}
-            {/* <Route path="/tools/character-counter" element={<CharacterCounter />} /> */}
+            <Route path="/tools/military-calculator" element={<MilitaryCalculator />} />
+            <Route path="/tools/gpa-calculator" element={<GpaCalculator />} />
+            <Route path="/tools/salary-calculator" element={<SalaryCalculator />} />
+            <Route path="/tools/zodiac-calculator" element={<ZodiacCalculator />} />
+            <Route path="/tools/d-day-calculator" element={<DdayCalculator />} />
+            
+            {/* 업무/생산성 도구 */}
+            <Route path="/tools/character-counter" element={<CharacterCounter />} />
+            <Route path="/tools/percent-calculator" element={<PercentCalculator />} />
+            <Route path="/tools/unit-converter" element={<UnitConverter />} />
+            
+            {/* 개발/IT 도구 */}
+            <Route path="/tools/json-formatter" element={<JsonFormatter />} />
+            <Route path="/tools/base64" element={<Base64Tool />} />
+            <Route path="/tools/url-encoder" element={<UrlEncoder />} />
+            <Route path="/tools/lorem-ipsum" element={<LoremIpsum />} />
             
             {/* 정보 페이지들 */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

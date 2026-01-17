@@ -216,19 +216,6 @@ export default function Layout({ children }: LayoutProps) {
                           개인정보처리방침
                         </Link>
                       </li>
-                      <li>
-                        <Link to="/terms" className="hover:text-white transition-colors">
-                          이용약관
-                        </Link>
-                      </li>
-                      <li>
-                        <a
-                          href="mailto:contact@example.com"
-                          className="hover:text-white transition-colors"
-                        >
-                          문의하기
-                        </a>
-                      </li>
                     </ul>
                   </div>
                 </div>

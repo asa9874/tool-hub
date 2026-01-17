@@ -1,5 +1,4 @@
 import SEO from '../components/SEO';
-import { siteConfig } from '../config/siteConfig';
 
 /**
  * 개인정보처리방침 페이지
@@ -267,12 +266,9 @@ export default function PrivacyPolicy() {
               <h2 className="text-xl font-semibold text-gray-800 mb-4">
                 10. 문의 및 연락처
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                개인정보처리방침에 관한 문의사항이 있으시면 아래 연락처로 문의해 주세요:
-              </p>
               <div className="bg-gray-50 rounded-lg p-4">
                 <p className="text-gray-700">
-                  <strong>이메일:</strong> privacy@example.com
+                  <strong>이메일:</strong> pjkpjk1129@gmail.com
                 </p>
                 <p className="text-gray-700 mt-2 text-sm">
                   (본 서비스는 서버를 운영하지 않는 정적 웹사이트이므로, 
