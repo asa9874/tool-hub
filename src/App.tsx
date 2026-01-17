@@ -53,6 +53,21 @@ import BrowserInfo from './pages/tools/BrowserInfo';
 import ReserveCalculator from './pages/tools/ReserveCalculator';
 import SleepCalculator from './pages/tools/SleepCalculator';
 
+// 새로 추가된 도구들
+import QrGenerator from './pages/tools/QrGenerator';
+import CaseConverter from './pages/tools/CaseConverter';
+import CoinFlip from './pages/tools/CoinFlip';
+import DiceRoller from './pages/tools/DiceRoller';
+import MandalartChart from './pages/tools/MandalartChart';
+import KoreanRomanizer from './pages/tools/KoreanRomanizer';
+import NumberBaseConverter from './pages/tools/NumberBaseConverter';
+import ListShuffler from './pages/tools/ListShuffler';
+import WebTimer from './pages/tools/WebTimer';
+import ColorConverter from './pages/tools/ColorConverter';
+import StickyNote from './pages/tools/StickyNote';
+import WebpConverter from './pages/tools/WebpConverter';
+import IpPortChecker from './pages/tools/IpPortChecker';
+
 /**
  * 메인 App 컴포넌트
  * - HelmetProvider: SEO 메타 태그 관리
@@ -119,6 +134,21 @@ function App() {
             <Route path="/tools/browser-info" element={<BrowserInfo />} />
             <Route path="/tools/reserve-calculator" element={<ReserveCalculator />} />
             <Route path="/tools/sleep-calculator" element={<SleepCalculator />} />
+            
+            {/* 새로 추가된 도구 */}
+            <Route path="/tools/qr-generator" element={<QrGenerator />} />
+            <Route path="/tools/case-converter" element={<CaseConverter />} />
+            <Route path="/tools/coin-flip" element={<CoinFlip />} />
+            <Route path="/tools/dice-roller" element={<DiceRoller />} />
+            <Route path="/tools/mandalart" element={<MandalartChart />} />
+            <Route path="/tools/korean-romanizer" element={<KoreanRomanizer />} />
+            <Route path="/tools/number-base-converter" element={<NumberBaseConverter />} />
+            <Route path="/tools/list-shuffler" element={<ListShuffler />} />
+            <Route path="/tools/timer" element={<WebTimer />} />
+            <Route path="/tools/color-converter" element={<ColorConverter />} />
+            <Route path="/tools/sticky-note" element={<StickyNote />} />
+            <Route path="/tools/webp-converter" element={<WebpConverter />} />
+            <Route path="/tools/ip-port-checker" element={<IpPortChecker />} />
             
             {/* 정보 페이지들 */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

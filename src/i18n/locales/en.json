@@ -361,6 +361,71 @@
       "title": "Sleep Cycle Calculator",
       "fullTitle": "Sleep Cycle Calculator - Optimal Wake Time",
       "description": "Calculate the best time to wake up based on REM sleep cycles."
+    },
+    "qrGenerator": {
+      "title": "QR Code Generator",
+      "fullTitle": "QR Code Generator - Create QR Codes for Text & URLs",
+      "description": "Convert text, URLs, contacts to QR codes. Download as PNG/SVG with color customization."
+    },
+    "caseConverter": {
+      "title": "Case Converter",
+      "fullTitle": "Text Case Converter - UPPER/lower/camelCase",
+      "description": "Convert text to uppercase, lowercase, title case, camelCase, PascalCase, snake_case and more."
+    },
+    "coinFlip": {
+      "title": "Coin Flip",
+      "fullTitle": "Coin Flip - Heads or Tails Random Decision",
+      "description": "Flip a coin with 3D animation to decide heads or tails. Includes result statistics."
+    },
+    "diceRoller": {
+      "title": "Dice Roller",
+      "fullTitle": "Digital Dice Roller - D6, D20 and More",
+      "description": "Roll 1-6 dice at once. Supports D4, D6, D8, D10, D12, D20, D100 for TRPG games."
+    },
+    "mandalart": {
+      "title": "Mandal-Art Chart",
+      "fullTitle": "Mandal-Art Goal Setting - Ohtani Style 9x9 Chart",
+      "description": "Set your core goal and 8 sub-goals using the Mandal-Art planning method."
+    },
+    "koreanRomanizer": {
+      "title": "Korean Romanizer",
+      "fullTitle": "Korean to Roman Letters - Name Romanization",
+      "description": "Convert Korean names to standard romanization. Useful for passport English names."
+    },
+    "numberBaseConverter": {
+      "title": "Number Base Converter",
+      "fullTitle": "Number Base Converter - Binary/Octal/Decimal/Hex",
+      "description": "Convert between binary, octal, decimal, and hexadecimal. Includes bit operations."
+    },
+    "listShuffler": {
+      "title": "List Shuffler",
+      "fullTitle": "List Shuffler - Randomize List Order",
+      "description": "Randomly shuffle items in a list. Great for presentation order, draws, and random sorting."
+    },
+    "timer": {
+      "title": "Web Timer",
+      "fullTitle": "Web Timer & Stopwatch - Pomodoro Timer",
+      "description": "Timer, stopwatch, and Pomodoro timer. Optimized for focus and time management."
+    },
+    "colorConverter": {
+      "title": "Color Converter",
+      "fullTitle": "Color Code Converter - HEX/RGB/HSL",
+      "description": "Convert between HEX, RGB, and HSL color codes. Includes complementary and analogous colors."
+    },
+    "stickyNote": {
+      "title": "Sticky Note",
+      "fullTitle": "Online Notepad - Quick Text Storage",
+      "description": "Quickly write and save notes in your browser. Auto-save with dark mode support."
+    },
+    "webpConverter": {
+      "title": "WebP Converter",
+      "fullTitle": "Image to WebP Converter - PNG/JPG to WebP",
+      "description": "Convert PNG/JPG images to WebP format to reduce file size. Quality control available."
+    },
+    "ipPortChecker": {
+      "title": "IP & Port Checker",
+      "fullTitle": "Public IP Checker & Port Tester",
+      "description": "Check your public IP address and location. Test if ports are open."
     }
   }
 }

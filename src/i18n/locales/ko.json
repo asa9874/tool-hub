@@ -361,6 +361,71 @@
       "title": "수면 사이클 계산기",
       "fullTitle": "수면 사이클 계산기 - 최적 기상 시간",
       "description": "가장 개운하게 일어날 수 있는 기상 시간을 REM 수면 주기 기반으로 계산합니다."
+    },
+    "qrGenerator": {
+      "title": "QR 코드 생성기",
+      "fullTitle": "QR 코드 생성기 - 텍스트, URL QR 코드 만들기",
+      "description": "텍스트, URL, 연락처 등을 QR 코드로 변환합니다. PNG, SVG 다운로드 및 색상 커스터마이징 지원."
+    },
+    "caseConverter": {
+      "title": "대소문자 변환기",
+      "fullTitle": "텍스트 대소문자 변환기 - UPPER/lower/camelCase",
+      "description": "텍스트를 대문자, 소문자, 첫글자 대문자, camelCase, PascalCase, snake_case 등으로 변환합니다."
+    },
+    "coinFlip": {
+      "title": "동전 던지기",
+      "fullTitle": "동전 던지기 - 앞면 뒷면 랜덤 결정",
+      "description": "3D 애니메이션과 함께 동전을 던져 앞면/뒷면을 결정합니다. 결과 통계도 제공."
+    },
+    "diceRoller": {
+      "title": "주사위 굴리기",
+      "fullTitle": "디지털 주사위 굴리기 - D6, D20 등 다양한 주사위",
+      "description": "1~6개의 주사위를 굴립니다. D4, D6, D8, D10, D12, D20, D100 등 TRPG 주사위 지원."
+    },
+    "mandalart": {
+      "title": "만다라트 계획표",
+      "fullTitle": "만다라트 계획표 - 오타니식 9x9 목표 설정",
+      "description": "핵심 목표를 중심으로 8가지 세부 목표를 설정하는 만다라트 계획표입니다."
+    },
+    "koreanRomanizer": {
+      "title": "한글 로마자 변환",
+      "fullTitle": "한글 로마자 변환기 - 영문 이름 표기",
+      "description": "한글 이름을 국제 표준 로마자 표기법으로 변환합니다. 여권용 영문 이름 확인에 유용."
+    },
+    "numberBaseConverter": {
+      "title": "진수 변환기",
+      "fullTitle": "진수 변환기 - 2진수/8진수/10진수/16진수",
+      "description": "이진수, 팔진수, 십진수, 16진수 간 변환합니다. 비트 연산 기능도 제공."
+    },
+    "listShuffler": {
+      "title": "리스트 셔플러",
+      "fullTitle": "리스트 셔플러 - 목록 순서 무작위 섞기",
+      "description": "여러 줄의 항목을 무작위로 섞습니다. 발표 순서, 추첨, 랜덤 정렬에 활용하세요."
+    },
+    "timer": {
+      "title": "웹 타이머",
+      "fullTitle": "웹 타이머 & 스톱워치 - 뽀모도로 타이머",
+      "description": "타이머, 스톱워치, 뽀모도로 타이머를 제공합니다. 집중 시간 관리에 최적화."
+    },
+    "colorConverter": {
+      "title": "색상 코드 변환기",
+      "fullTitle": "색상 코드 변환기 - HEX/RGB/HSL 변환",
+      "description": "HEX, RGB, HSL 색상 코드를 상호 변환합니다. 보색, 유사색, 삼원색 하모니도 제공."
+    },
+    "stickyNote": {
+      "title": "온라인 메모장",
+      "fullTitle": "온라인 메모장 - 임시 텍스트 저장",
+      "description": "브라우저에서 빠르게 메모를 작성하고 저장합니다. 자동 저장, 다크모드 지원."
+    },
+    "webpConverter": {
+      "title": "WebP 변환기",
+      "fullTitle": "이미지 WebP 변환기 - PNG/JPG to WebP",
+      "description": "PNG, JPG 이미지를 WebP 포맷으로 변환하여 파일 크기를 줄입니다."
+    },
+    "ipPortChecker": {
+      "title": "IP & 포트 체커",
+      "fullTitle": "공인 IP 확인 & 포트 체커 - 내 IP 주소",
+      "description": "현재 공인 IP 주소와 위치 정보를 확인합니다. 포트 열림 여부 테스트 기능 제공."
     }
   }
 }

@@ -55,6 +55,20 @@ const toolI18nKey: Record<string, string> = {
   'browser-info': 'tools.browserInfo.title',
   'reserve-calculator': 'tools.reserveCalculator.title',
   'sleep-calculator': 'tools.sleepCalculator.title',
+  // 새로 추가된 도구들
+  'qr-generator': 'tools.qrGenerator.title',
+  'case-converter': 'tools.caseConverter.title',
+  'coin-flip': 'tools.coinFlip.title',
+  'dice-roller': 'tools.diceRoller.title',
+  'mandalart': 'tools.mandalart.title',
+  'korean-romanizer': 'tools.koreanRomanizer.title',
+  'number-base-converter': 'tools.numberBaseConverter.title',
+  'list-shuffler': 'tools.listShuffler.title',
+  'timer': 'tools.timer.title',
+  'color-converter': 'tools.colorConverter.title',
+  'sticky-note': 'tools.stickyNote.title',
+  'webp-converter': 'tools.webpConverter.title',
+  'ip-port-checker': 'tools.ipPortChecker.title',
 };
 
 /**
