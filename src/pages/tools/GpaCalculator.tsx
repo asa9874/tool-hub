@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import AdBanner from '../../components/AdBanner';
 import { siteConfig } from '../../config/siteConfig';
+import useLocalizedContent from '../../hooks/useLocalizedContent';
 
 // 학점 점수 매핑
 const GRADE_POINTS: Record<string, number> = {
@@ -56,6 +57,38 @@ const i18n = {
       ],
     },
   },
+  en: {
+    title: 'GPA Calculator',
+    description: 'Easily calculate your university GPA. Enter credits and grades for each course.',
+    courseName: 'Course Name',
+    credit: 'Credits',
+    grade: 'Grade',
+    addCourse: '+ Add Course',
+    calculate: 'Calculate',
+    reset: 'Reset',
+    result: 'Calculation Result',
+    averageGPA: 'Average GPA',
+    totalCredits: 'Total Credits',
+    totalCourses: 'Number of Courses',
+    maxGPA: 'Based on 4.5 scale',
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          question: 'How is GPA calculated?',
+          answer: 'GPA is calculated by dividing the sum of (credits × grade points) by total credits. Example: (3 credits × 4.5 + 2 credits × 4.0) ÷ 5 credits = 4.3',
+        },
+        {
+          question: 'How are P/F (Pass/Fail) courses handled?',
+          answer: 'P (Pass) courses count toward credits earned but are excluded from GPA calculation. F (Fail) is calculated as 0 points.',
+        },
+        {
+          question: 'What is the difference between 4.3 and 4.5 scale?',
+          answer: 'Different universities use different scales. On a 4.5 scale, A+ equals 4.5 points. On a 4.3 scale, A+ equals 4.3 points. This calculator uses the 4.5 scale.',
+        },
+      ],
+    },
+  },
 };
 
 export default function GpaCalculator() {
@@ -65,8 +98,7 @@ export default function GpaCalculator() {
     { id: 3, name: '', credit: 3, grade: 'B+' },
   ]);
   const [result, setResult] = useState<{ gpa: number; totalCredits: number } | null>(null);
-  const lang = 'ko';
-  const t = i18n[lang];
+  const { t } = useLocalizedContent(i18n);
 
   const toolInfo = siteConfig.tools.find((tool) => tool.id === 'gpa-calculator');
 

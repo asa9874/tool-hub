@@ -3,11 +3,51 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import AdBanner from '../../components/AdBanner';
 import { siteConfig } from '../../config/siteConfig';
+import useLocalizedContent from '../../hooks/useLocalizedContent';
 
 const i18n = {
   ko: {
     title: '퍼센트 계산기',
     description: '퍼센트(%) 계산을 쉽게! 비율 계산, 할인율, 증감률을 한 번에 계산합니다.',
+    modes: {
+      basic: { label: '기본 계산', desc: 'A의 B%는?' },
+      change: { label: '증감률', desc: 'A→B 변화율' },
+      discount: { label: '할인 계산', desc: '할인가 계산' },
+      reverse: { label: '비율 계산', desc: 'A는 B의 몇%?' },
+    },
+    basicCalc: {
+      title: 'A의 B%는 얼마인가요?',
+      placeholder1: '숫자 입력',
+      placeholder2: '퍼센트',
+      connector1: '의',
+      connector2: '%는?',
+      result: '결과',
+    },
+    reverseCalc: {
+      title: 'A는 B의 몇 퍼센트인가요?',
+      placeholder1: '부분값',
+      placeholder2: '전체값',
+      connector1: '은',
+      connector2: '의 몇 %?',
+      result: '결과',
+    },
+    changeCalc: {
+      title: '증감률 계산',
+      placeholder1: '이전 값',
+      placeholder2: '이후 값',
+      increase: '증가율',
+      decrease: '감소율',
+    },
+    discountCalc: {
+      title: '할인 금액 계산',
+      placeholder1: '원래 가격',
+      placeholder2: '할인율',
+      connector1: '원의',
+      connector2: '% 할인',
+      discountedPrice: '할인된 가격',
+      savedAmount: '절약 금액',
+      currency: '원',
+    },
     faq: {
       title: '자주 묻는 질문',
       items: [
@@ -26,14 +66,73 @@ const i18n = {
       ],
     },
   },
+  en: {
+    title: 'Percent Calculator',
+    description: 'Easy percentage calculations! Calculate ratios, discounts, and percentage changes all in one place.',
+    modes: {
+      basic: { label: 'Basic', desc: 'What is B% of A?' },
+      change: { label: 'Change', desc: 'A→B change rate' },
+      discount: { label: 'Discount', desc: 'Calculate discount' },
+      reverse: { label: 'Ratio', desc: 'A is what % of B?' },
+    },
+    basicCalc: {
+      title: 'What is B% of A?',
+      placeholder1: 'Enter number',
+      placeholder2: 'Percent',
+      connector1: '',
+      connector2: '% of',
+      result: 'Result',
+    },
+    reverseCalc: {
+      title: 'A is what percent of B?',
+      placeholder1: 'Part value',
+      placeholder2: 'Total value',
+      connector1: 'is',
+      connector2: '% of what?',
+      result: 'Result',
+    },
+    changeCalc: {
+      title: 'Percentage Change',
+      placeholder1: 'Original value',
+      placeholder2: 'New value',
+      increase: 'Increase',
+      decrease: 'Decrease',
+    },
+    discountCalc: {
+      title: 'Discount Calculator',
+      placeholder1: 'Original price',
+      placeholder2: 'Discount %',
+      connector1: 'at',
+      connector2: '% off',
+      discountedPrice: 'Discounted Price',
+      savedAmount: 'You Save',
+      currency: '',
+    },
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          question: 'How do you calculate percentages?',
+          answer: 'A percentage represents a ratio out of 100. For example, 25 out of 50 people is (25÷50)×100 = 50%.',
+        },
+        {
+          question: 'What is the difference between increase and decrease rate?',
+          answer: 'Both are calculated as ((new value - original value) ÷ original value) × 100. A positive result indicates an increase, while a negative result indicates a decrease.',
+        },
+        {
+          question: 'How do you calculate a discount rate?',
+          answer: 'Discount rate = ((original price - sale price) ÷ original price) × 100. For example, if an item goes from $100 to $80, the discount rate is 20%.',
+        },
+      ],
+    },
+  },
 };
 
 type CalculatorMode = 'basic' | 'change' | 'discount' | 'reverse';
 
 export default function PercentCalculator() {
   const [mode, setMode] = useState<CalculatorMode>('basic');
-  const lang = 'ko';
-  const t = i18n[lang];
+  const { t } = useLocalizedContent(i18n);
 
   // 기본 퍼센트 계산: A의 B%는?
   const [basicValue, setBasicValue] = useState('');
@@ -95,10 +194,10 @@ export default function PercentCalculator() {
     : null;
 
   const modes = [
-    { id: 'basic', label: '기본 계산', desc: 'A의 B%는?' },
-    { id: 'change', label: '증감률', desc: 'A→B 변화율' },
-    { id: 'discount', label: '할인 계산', desc: '할인가 계산' },
-    { id: 'reverse', label: '비율 계산', desc: 'A는 B의 몇%?' },
+    { id: 'basic', label: t.modes.basic.label, desc: t.modes.basic.desc },
+    { id: 'change', label: t.modes.change.label, desc: t.modes.change.desc },
+    { id: 'discount', label: t.modes.discount.label, desc: t.modes.discount.desc },
+    { id: 'reverse', label: t.modes.reverse.label, desc: t.modes.reverse.desc },
   ] as const;
 
   return (
@@ -140,28 +239,28 @@ export default function PercentCalculator() {
           {/* 기본 계산: A의 B%는? */}
           {mode === 'basic' && (
             <div className="space-y-6">
-              <h2 className="text-xl font-bold text-gray-800">A의 B%는 얼마인가요?</h2>
+              <h2 className="text-xl font-bold text-gray-800">{t.basicCalc.title}</h2>
               <div className="flex flex-wrap items-center gap-3">
                 <input
                   type="number"
                   value={basicValue}
                   onChange={(e) => setBasicValue(e.target.value)}
-                  placeholder="숫자 입력"
+                  placeholder={t.basicCalc.placeholder1}
                   className="w-36 px-4 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500"
                 />
-                <span className="text-lg text-gray-600">의</span>
+                <span className="text-lg text-gray-600">{t.basicCalc.connector1}</span>
                 <input
                   type="number"
                   value={basicPercent}
                   onChange={(e) => setBasicPercent(e.target.value)}
-                  placeholder="퍼센트"
+                  placeholder={t.basicCalc.placeholder2}
                   className="w-28 px-4 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500"
                 />
-                <span className="text-lg text-gray-600">%는?</span>
+                <span className="text-lg text-gray-600">{t.basicCalc.connector2}</span>
               </div>
               {basicResult && (
                 <div className="bg-blue-50 p-6 rounded-xl text-center">
-                  <div className="text-sm text-blue-600 mb-1">결과</div>
+                  <div className="text-sm text-blue-600 mb-1">{t.basicCalc.result}</div>
                   <div className="text-4xl font-bold text-blue-700">{basicResult}</div>
                   <div className="text-sm text-gray-600 mt-2">
                     {basicValue} × {basicPercent}% = {basicResult}
@@ -174,28 +273,28 @@ export default function PercentCalculator() {
           {/* 비율 계산: A는 B의 몇%? */}
           {mode === 'reverse' && (
             <div className="space-y-6">
-              <h2 className="text-xl font-bold text-gray-800">A는 B의 몇 퍼센트인가요?</h2>
+              <h2 className="text-xl font-bold text-gray-800">{t.reverseCalc.title}</h2>
               <div className="flex flex-wrap items-center gap-3">
                 <input
                   type="number"
                   value={partValue}
                   onChange={(e) => setPartValue(e.target.value)}
-                  placeholder="부분값"
+                  placeholder={t.reverseCalc.placeholder1}
                   className="w-36 px-4 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500"
                 />
-                <span className="text-lg text-gray-600">은</span>
+                <span className="text-lg text-gray-600">{t.reverseCalc.connector1}</span>
                 <input
                   type="number"
                   value={totalValue}
                   onChange={(e) => setTotalValue(e.target.value)}
-                  placeholder="전체값"
+                  placeholder={t.reverseCalc.placeholder2}
                   className="w-36 px-4 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500"
                 />
-                <span className="text-lg text-gray-600">의 몇 %?</span>
+                <span className="text-lg text-gray-600">{t.reverseCalc.connector2}</span>
               </div>
               {ratioResult && (
                 <div className="bg-purple-50 p-6 rounded-xl text-center">
-                  <div className="text-sm text-purple-600 mb-1">결과</div>
+                  <div className="text-sm text-purple-600 mb-1">{t.reverseCalc.result}</div>
                   <div className="text-4xl font-bold text-purple-700">{ratioResult}%</div>
                   <div className="text-sm text-gray-600 mt-2">
                     {partValue} ÷ {totalValue} × 100 = {ratioResult}%
@@ -208,13 +307,13 @@ export default function PercentCalculator() {
           {/* 증감률 계산 */}
           {mode === 'change' && (
             <div className="space-y-6">
-              <h2 className="text-xl font-bold text-gray-800">증감률 계산</h2>
+              <h2 className="text-xl font-bold text-gray-800">{t.changeCalc.title}</h2>
               <div className="flex flex-wrap items-center gap-3">
                 <input
                   type="number"
                   value={originalValue}
                   onChange={(e) => setOriginalValue(e.target.value)}
-                  placeholder="이전 값"
+                  placeholder={t.changeCalc.placeholder1}
                   className="w-36 px-4 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500"
                 />
                 <span className="text-lg text-gray-600">→</span>
@@ -222,14 +321,14 @@ export default function PercentCalculator() {
                   type="number"
                   value={newValue}
                   onChange={(e) => setNewValue(e.target.value)}
-                  placeholder="이후 값"
+                  placeholder={t.changeCalc.placeholder2}
                   className="w-36 px-4 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500"
                 />
               </div>
               {changeResult && (
                 <div className={`p-6 rounded-xl text-center ${parseFloat(changeResult) >= 0 ? 'bg-green-50' : 'bg-red-50'}`}>
                   <div className={`text-sm mb-1 ${parseFloat(changeResult) >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                    {parseFloat(changeResult) >= 0 ? '증가율' : '감소율'}
+                    {parseFloat(changeResult) >= 0 ? t.changeCalc.increase : t.changeCalc.decrease}
                   </div>
                   <div className={`text-4xl font-bold ${parseFloat(changeResult) >= 0 ? 'text-green-700' : 'text-red-700'}`}>
                     {parseFloat(changeResult) >= 0 ? '+' : ''}{changeResult}%
@@ -245,34 +344,34 @@ export default function PercentCalculator() {
           {/* 할인 계산 */}
           {mode === 'discount' && (
             <div className="space-y-6">
-              <h2 className="text-xl font-bold text-gray-800">할인 금액 계산</h2>
+              <h2 className="text-xl font-bold text-gray-800">{t.discountCalc.title}</h2>
               <div className="flex flex-wrap items-center gap-3">
                 <input
                   type="number"
                   value={originalPrice}
                   onChange={(e) => setOriginalPrice(e.target.value)}
-                  placeholder="원래 가격"
+                  placeholder={t.discountCalc.placeholder1}
                   className="w-40 px-4 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500"
                 />
-                <span className="text-lg text-gray-600">원의</span>
+                <span className="text-lg text-gray-600">{t.discountCalc.connector1}</span>
                 <input
                   type="number"
                   value={discountPercent}
                   onChange={(e) => setDiscountPercent(e.target.value)}
-                  placeholder="할인율"
+                  placeholder={t.discountCalc.placeholder2}
                   className="w-28 px-4 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500"
                 />
-                <span className="text-lg text-gray-600">% 할인</span>
+                <span className="text-lg text-gray-600">{t.discountCalc.connector2}</span>
               </div>
               {discountResult && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-green-50 p-6 rounded-xl text-center">
-                    <div className="text-sm text-green-600 mb-1">할인된 가격</div>
-                    <div className="text-4xl font-bold text-green-700">{discountResult.discounted}원</div>
+                    <div className="text-sm text-green-600 mb-1">{t.discountCalc.discountedPrice}</div>
+                    <div className="text-4xl font-bold text-green-700">{discountResult.discounted}{t.discountCalc.currency}</div>
                   </div>
                   <div className="bg-orange-50 p-6 rounded-xl text-center">
-                    <div className="text-sm text-orange-600 mb-1">절약 금액</div>
-                    <div className="text-4xl font-bold text-orange-700">{discountResult.saved}원</div>
+                    <div className="text-sm text-orange-600 mb-1">{t.discountCalc.savedAmount}</div>
+                    <div className="text-4xl font-bold text-orange-700">{discountResult.saved}{t.discountCalc.currency}</div>
                   </div>
                 </div>
               )}

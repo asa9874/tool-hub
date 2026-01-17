@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import AdBanner from '../../components/AdBanner';
 import { siteConfig } from '../../config/siteConfig';
+import useLocalizedContent from '../../hooks/useLocalizedContent';
 
 const i18n = {
   ko: {
@@ -19,6 +20,21 @@ const i18n = {
     valid: '✓ 유효한 JSON입니다',
     invalid: '✗ JSON 오류',
     placeholder: '{"name": "홍길동", "age": 25}',
+    outputPlaceholder: '결과가 여기에 표시됩니다',
+    howToUse: 'JSON 포맷터 사용법',
+    howToUseDescription: '이 <strong>JSON 포맷터</strong>는 개발자들이 JSON 데이터를 쉽게 읽고 검증할 수 있도록 도와주는 도구입니다. 한 줄로 된 JSON을 예쁘게 들여쓰기(Pretty Print)하거나, 반대로 압축(Minify)할 수 있습니다.',
+    keyFeatures: '주요 기능',
+    feature1: '<strong>포맷팅:</strong> JSON을 2칸 들여쓰기로 예쁘게 정렬',
+    feature2: '<strong>압축:</strong> 공백과 줄바꿈을 제거하여 한 줄로 압축',
+    feature3: '<strong>검증:</strong> JSON 문법 오류 검사 및 오류 위치 표시',
+    feature4: '<strong>복사:</strong> 결과를 클립보드에 복사',
+    relatedTools: '🔗 관련 도구',
+    base64Tool: 'Base64 인코더/디코더',
+    base64Desc: '텍스트/이미지 Base64 변환',
+    urlEncoderTool: 'URL 인코더/디코더',
+    urlEncoderDesc: 'URL 특수문자 변환',
+    loremIpsumTool: 'Lorem Ipsum 생성기',
+    loremIpsumDesc: '테스트용 더미 텍스트',
     faq: {
       title: '자주 묻는 질문',
       items: [
@@ -37,6 +53,53 @@ const i18n = {
       ],
     },
   },
+  en: {
+    title: 'JSON Formatter & Validator',
+    description: 'Format JSON code beautifully and check for syntax errors. Essential tool for developers.',
+    inputLabel: 'JSON Input',
+    outputLabel: 'Result',
+    formatButton: 'Format',
+    minifyButton: 'Minify',
+    validateButton: 'Validate',
+    copyButton: 'Copy',
+    clearButton: 'Clear',
+    copied: 'Copied!',
+    valid: '✓ Valid JSON',
+    invalid: '✗ JSON Error',
+    placeholder: '{"name": "John Doe", "age": 25}',
+    outputPlaceholder: 'Result will appear here',
+    howToUse: 'How to Use JSON Formatter',
+    howToUseDescription: 'This <strong>JSON Formatter</strong> helps developers easily read and validate JSON data. You can pretty print a single-line JSON with indentation, or conversely minify it.',
+    keyFeatures: 'Key Features',
+    feature1: '<strong>Format:</strong> Pretty print JSON with 2-space indentation',
+    feature2: '<strong>Minify:</strong> Remove whitespace and line breaks to compress into one line',
+    feature3: '<strong>Validate:</strong> Check JSON syntax errors and show error location',
+    feature4: '<strong>Copy:</strong> Copy result to clipboard',
+    relatedTools: '🔗 Related Tools',
+    base64Tool: 'Base64 Encoder/Decoder',
+    base64Desc: 'Text/Image Base64 conversion',
+    urlEncoderTool: 'URL Encoder/Decoder',
+    urlEncoderDesc: 'URL special character conversion',
+    loremIpsumTool: 'Lorem Ipsum Generator',
+    loremIpsumDesc: 'Dummy text for testing',
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          question: 'What is JSON?',
+          answer: 'JSON (JavaScript Object Notation) is a lightweight data format used to store and transmit data. It has a structure that is easy for humans to read and easy for machines to parse.',
+        },
+        {
+          question: 'Why is JSON formatting necessary?',
+          answer: 'Single-line JSON is hard to read. Formatting (indentation) allows you to see the data structure at a glance, making debugging and code review easier.',
+        },
+        {
+          question: 'When should I use JSON Minify?',
+          answer: 'Use it to reduce file size during API communication or storage. By removing line breaks and spaces, you can reduce the amount of data transmitted.',
+        },
+      ],
+    },
+  },
 };
 
 export default function JsonFormatter() {
@@ -45,8 +108,7 @@ export default function JsonFormatter() {
   const [status, setStatus] = useState<'idle' | 'valid' | 'invalid'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [copied, setCopied] = useState(false);
-  const lang = 'ko';
-  const t = i18n[lang];
+  const { t } = useLocalizedContent(i18n);
 
   const toolInfo = siteConfig.tools.find((tool) => tool.id === 'json-formatter');
 

@@ -1,23 +1,68 @@
 import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { siteConfig } from '../config/siteConfig';
+import { languageInfo, supportedLanguages } from '../i18n';
+import type { SupportedLanguage } from '../i18n';
 import AdBanner from './AdBanner';
 
 interface LayoutProps {
   children: ReactNode;
 }
 
+// 카테고리 키를 i18n 키로 매핑
+const categoryI18nKey: Record<string, string> = {
+  '금융/부동산': 'categories.finance',
+  '건강/라이프스타일': 'categories.health',
+  '생활/사회': 'categories.life',
+  '업무/생산성': 'categories.productivity',
+  '개발/IT': 'categories.dev',
+};
+
+// 도구 ID를 i18n 키로 매핑
+const toolI18nKey: Record<string, string> = {
+  'loan-calculator': 'tools.loanCalculator.title',
+  'savings-calculator': 'tools.savingsCalculator.title',
+  'brokerage-fee-calculator': 'tools.brokerageFeeCalculator.title',
+  'severance-calculator': 'tools.severanceCalculator.title',
+  'bmi-calculator': 'tools.bmiCalculator.title',
+  'bmr-calculator': 'tools.bmrCalculator.title',
+  'calorie-burn-calculator': 'tools.calorieBurnCalculator.title',
+  'age-calculator': 'tools.ageCalculator.title',
+  'military-calculator': 'tools.militaryCalculator.title',
+  'gpa-calculator': 'tools.gpaCalculator.title',
+  'salary-calculator': 'tools.salaryCalculator.title',
+  'zodiac-calculator': 'tools.zodiacCalculator.title',
+  'd-day-calculator': 'tools.ddayCalculator.title',
+  'character-counter': 'tools.characterCounter.title',
+  'percent-calculator': 'tools.percentCalculator.title',
+  'unit-converter': 'tools.unitConverter.title',
+  'json-formatter': 'tools.jsonFormatter.title',
+  'base64': 'tools.base64Tool.title',
+  'url-encoder': 'tools.urlEncoder.title',
+  'lorem-ipsum': 'tools.loremIpsum.title',
+};
+
 /**
  * 공통 레이아웃 컴포넌트
  * - 좌측 사이드바 네비게이션
  * - 카테고리별 도구 목록
  * - 반응형 디자인 적용
+ * - 다국어 지원
  */
 export default function Layout({ children }: LayoutProps) {
+  const { t, i18n } = useTranslation();
   const location = useLocation();
   const currentYear = new Date().getFullYear();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+
+  // 언어 변경 함수
+  const changeLanguage = (lng: SupportedLanguage) => {
+    i18n.changeLanguage(lng);
+    setIsLangMenuOpen(false);
+  };
 
   // 카테고리별로 도구 그룹화
   const toolsByCategory = siteConfig.tools.reduce((acc, tool) => {
@@ -36,15 +81,43 @@ export default function Layout({ children }: LayoutProps) {
           <Link to="/" className="text-xl font-bold text-blue-600">
             🛠️ ToolHub
           </Link>
-          <button
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="p-2 text-gray-600 hover:text-blue-600 transition-colors"
-            aria-label="메뉴 열기"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+          <div className="flex items-center space-x-2">
+            {/* 언어 선택 버튼 (모바일) */}
+            <div className="relative">
+              <button
+                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                className="p-2 text-gray-600 hover:text-blue-600 transition-colors flex items-center"
+                aria-label="언어 선택"
+              >
+                <span className="text-lg">{languageInfo[i18n.language as SupportedLanguage]?.flag || '🌐'}</span>
+              </button>
+              {isLangMenuOpen && (
+                <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
+                  {supportedLanguages.map((lng) => (
+                    <button
+                      key={lng}
+                      onClick={() => changeLanguage(lng)}
+                      className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-100 flex items-center space-x-2 ${
+                        i18n.language === lng ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
+                      }`}
+                    >
+                      <span>{languageInfo[lng].flag}</span>
+                      <span>{languageInfo[lng].name}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            <button
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              className="p-2 text-gray-600 hover:text-blue-600 transition-colors"
+              aria-label="메뉴 열기"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
         </div>
       </header>
 
@@ -62,14 +135,43 @@ export default function Layout({ children }: LayoutProps) {
         >
           {/* 사이드바 헤더 */}
           <div className="sticky top-0 bg-white border-b border-gray-200 p-4 z-10">
-            <Link
-              to="/"
-              className="flex items-center space-x-2 text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
-              onClick={() => setIsSidebarOpen(false)}
-            >
-              <span className="text-2xl">🛠️</span>
-              <span>ToolHub</span>
-            </Link>
+            <div className="flex items-center justify-between">
+              <Link
+                to="/"
+                className="flex items-center space-x-2 text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
+                onClick={() => setIsSidebarOpen(false)}
+              >
+                <span className="text-2xl">🛠️</span>
+                <span>ToolHub</span>
+              </Link>
+              {/* 언어 선택 버튼 (데스크탑) */}
+              <div className="relative hidden lg:block">
+                <button
+                  onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                  className="p-1.5 text-gray-600 hover:text-blue-600 transition-colors flex items-center space-x-1 text-sm border border-gray-200 rounded-lg hover:border-blue-300"
+                  aria-label="언어 선택"
+                >
+                  <span>{languageInfo[i18n.language as SupportedLanguage]?.flag || '🌐'}</span>
+                  <span className="text-xs">{languageInfo[i18n.language as SupportedLanguage]?.name || 'Language'}</span>
+                </button>
+                {isLangMenuOpen && (
+                  <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
+                    {supportedLanguages.map((lng) => (
+                      <button
+                        key={lng}
+                        onClick={() => changeLanguage(lng)}
+                        className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-100 flex items-center space-x-2 ${
+                          i18n.language === lng ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
+                        }`}
+                      >
+                        <span>{languageInfo[lng].flag}</span>
+                        <span>{languageInfo[lng].name}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* 네비게이션 메뉴 */}
@@ -89,14 +191,14 @@ export default function Layout({ children }: LayoutProps) {
               <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
-              홈
+              {t('common.home')}
             </Link>
 
             {/* 카테고리별 도구 목록 */}
             {Object.entries(toolsByCategory).map(([category, tools]) => (
               <div key={category} className="mb-6">
                 <h3 className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                  {category}
+                  {t(categoryI18nKey[category] || category)}
                 </h3>
                 <ul className="space-y-1">
                   {tools.map((tool) => (
@@ -114,7 +216,7 @@ export default function Layout({ children }: LayoutProps) {
                       >
                         <span className="mr-3 mt-0.5">•</span>
                         <span className="flex-1 text-sm leading-tight">
-                          {tool.title.split(' - ')[0]}
+                          {t(toolI18nKey[tool.id] || tool.title.split(' - ')[0])}
                         </span>
                       </Link>
                     </li>
@@ -139,7 +241,7 @@ export default function Layout({ children }: LayoutProps) {
                   }
                 `}
               >
-                개인정보처리방침
+                {t('common.privacyPolicy')}
               </Link>
             </div>
           </nav>
@@ -185,14 +287,13 @@ export default function Layout({ children }: LayoutProps) {
                   <div>
                     <h3 className="text-white font-semibold text-lg mb-4">ToolHub</h3>
                     <p className="text-sm">
-                      다양한 무료 온라인 도구를 제공합니다.
-                      만나이 계산기, 글자수 세기 등 일상에서 유용한 도구들을 만나보세요.
+                      {t('common.footer.description')}
                     </p>
                   </div>
 
                   {/* 빠른 링크 */}
                   <div>
-                    <h3 className="text-white font-semibold text-lg mb-4">도구 목록</h3>
+                    <h3 className="text-white font-semibold text-lg mb-4">{t('common.toolList')}</h3>
                     <ul className="space-y-2 text-sm">
                       {siteConfig.tools.slice(0, 8).map((tool) => (
                         <li key={tool.id}>
@@ -200,7 +301,7 @@ export default function Layout({ children }: LayoutProps) {
                             to={tool.path}
                             className="hover:text-white transition-colors"
                           >
-                            {tool.title.split(' - ')[0]}
+                            {t(toolI18nKey[tool.id] || tool.title.split(' - ')[0])}
                           </Link>
                         </li>
                       ))}
@@ -209,11 +310,11 @@ export default function Layout({ children }: LayoutProps) {
 
                   {/* 법적 정보 */}
                   <div>
-                    <h3 className="text-white font-semibold text-lg mb-4">정보</h3>
+                    <h3 className="text-white font-semibold text-lg mb-4">{t('common.info')}</h3>
                     <ul className="space-y-2 text-sm">
                       <li>
                         <Link to="/privacy-policy" className="hover:text-white transition-colors">
-                          개인정보처리방침
+                          {t('common.privacyPolicy')}
                         </Link>
                       </li>
                     </ul>
@@ -222,7 +323,7 @@ export default function Layout({ children }: LayoutProps) {
 
                 {/* 저작권 */}
                 <div className="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
-                  <p>© {currentYear} ToolHub. All rights reserved.</p>
+                  <p>{t('common.footer.copyright', { year: currentYear })}</p>
                 </div>
               </div>
             </div>

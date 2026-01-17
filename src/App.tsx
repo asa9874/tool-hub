@@ -8,6 +8,17 @@ import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import NotFound from './pages/NotFound';
 
+// 도구 페이지들 - 금융/부동산
+import LoanCalculator from './pages/tools/LoanCalculator';
+import SavingsCalculator from './pages/tools/SavingsCalculator';
+import BrokerageFeeCalculator from './pages/tools/BrokerageFeeCalculator';
+import SeveranceCalculator from './pages/tools/SeveranceCalculator';
+
+// 도구 페이지들 - 건강/라이프스타일
+import BmiCalculator from './pages/tools/BmiCalculator';
+import BmrCalculator from './pages/tools/BmrCalculator';
+import CalorieBurnCalculator from './pages/tools/CalorieBurnCalculator';
+
 // 도구 페이지들 - 생활/사회
 import AgeCalculator from './pages/tools/AgeCalculator';
 import MilitaryCalculator from './pages/tools/MilitaryCalculator';
@@ -48,6 +59,17 @@ function App() {
           <Routes>
             {/* 홈 페이지 */}
             <Route path="/" element={<Home />} />
+            
+            {/* 금융/부동산 도구 */}
+            <Route path="/tools/loan-calculator" element={<LoanCalculator />} />
+            <Route path="/tools/savings-calculator" element={<SavingsCalculator />} />
+            <Route path="/tools/brokerage-fee-calculator" element={<BrokerageFeeCalculator />} />
+            <Route path="/tools/severance-calculator" element={<SeveranceCalculator />} />
+            
+            {/* 건강/라이프스타일 도구 */}
+            <Route path="/tools/bmi-calculator" element={<BmiCalculator />} />
+            <Route path="/tools/bmr-calculator" element={<BmrCalculator />} />
+            <Route path="/tools/calorie-burn-calculator" element={<CalorieBurnCalculator />} />
             
             {/* 생활/사회 도구 */}
             <Route path="/tools/age-calculator" element={<AgeCalculator />} />

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import AdBanner from '../../components/AdBanner';
 import { siteConfig } from '../../config/siteConfig';
+import useLocalizedContent from '../../hooks/useLocalizedContent';
 
 const i18n = {
   ko: {
@@ -19,6 +20,21 @@ const i18n = {
     copied: '복사됨!',
     encodePlaceholder: '인코딩할 URL 또는 텍스트를 입력하세요\n예: https://example.com/검색?q=한글',
     decodePlaceholder: '디코딩할 URL을 입력하세요\n예: https://example.com/%EA%B2%80%EC%83%89',
+    encodeUriButton: 'URL 인코딩 (encodeURI)',
+    encodeComponentButton: '컴포넌트 인코딩',
+    example: '📝 인코딩 예시',
+    originalUrl: '원본 URL',
+    encodedResult: '인코딩 결과',
+    explanationTitle: 'URL 인코딩 설명',
+    explanationDesc: '<strong>URL 인코딩</strong>(퍼센트 인코딩)은 URL에서 사용할 수 없는 문자를 %XX 형식으로 변환하는 것입니다. 웹 브라우저 주소창에 한글을 입력하면 자동으로 인코딩되어 전송됩니다.',
+    twoEncodingMethods: '두 가지 인코딩 방식',
+    encodeUriDesc: '<strong>encodeURI:</strong> 전체 URL 인코딩. :, /, ?, & 등은 유지',
+    encodeComponentDesc: '<strong>encodeURIComponent:</strong> URL 파라미터 인코딩. 모든 특수문자 변환',
+    relatedTools: '🔗 관련 도구',
+    base64Tool: 'Base64 인코더/디코더',
+    base64Desc: '텍스트 Base64 변환',
+    jsonFormatterTool: 'JSON 포맷터',
+    jsonFormatterDesc: 'JSON 정렬 및 검증',
     faq: {
       title: '자주 묻는 질문',
       items: [
@@ -37,6 +53,53 @@ const i18n = {
       ],
     },
   },
+  en: {
+    title: 'URL Encoder/Decoder',
+    description: 'Safely encode or decode Korean characters and special characters in URLs.',
+    encodeTab: 'Encode',
+    decodeTab: 'Decode',
+    inputLabel: 'Input',
+    outputLabel: 'Result',
+    encodeButton: 'URL Encode',
+    decodeButton: 'URL Decode',
+    copyButton: 'Copy',
+    clearButton: 'Clear',
+    copied: 'Copied!',
+    encodePlaceholder: 'Enter URL or text to encode\nExample: https://example.com/search?q=hello world',
+    decodePlaceholder: 'Enter URL to decode\nExample: https://example.com/%E2%9C%93',
+    encodeUriButton: 'URL Encode (encodeURI)',
+    encodeComponentButton: 'Component Encode',
+    example: '📝 Encoding Example',
+    originalUrl: 'Original URL',
+    encodedResult: 'Encoded Result',
+    explanationTitle: 'URL Encoding Explained',
+    explanationDesc: '<strong>URL encoding</strong> (percent encoding) converts characters that cannot be used in URLs to %XX format. When you enter non-ASCII characters in the browser address bar, they are automatically encoded before being sent.',
+    twoEncodingMethods: 'Two Encoding Methods',
+    encodeUriDesc: '<strong>encodeURI:</strong> Encodes full URL. Preserves :, /, ?, & etc.',
+    encodeComponentDesc: '<strong>encodeURIComponent:</strong> Encodes URL parameters. Converts all special characters',
+    relatedTools: '🔗 Related Tools',
+    base64Tool: 'Base64 Encoder/Decoder',
+    base64Desc: 'Text Base64 conversion',
+    jsonFormatterTool: 'JSON Formatter',
+    jsonFormatterDesc: 'JSON formatting and validation',
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          question: 'Why is URL encoding necessary?',
+          answer: 'URLs can only use alphanumeric characters and some special characters. Non-ASCII characters and spaces must be encoded in %XX format for web browsers and servers to process correctly.',
+        },
+        {
+          question: 'What is the difference between %20 and +?',
+          answer: 'Both %20 and + represent spaces. It is common to use %20 in URL paths and + in query strings.',
+        },
+        {
+          question: 'What is the difference between encodeURI and encodeURIComponent?',
+          answer: 'encodeURI encodes complete URLs and preserves :, /, ?, etc. encodeURIComponent encodes parts of URLs (parameter values) and converts all special characters.',
+        },
+      ],
+    },
+  },
 };
 
 type Mode = 'encode' | 'decode';
@@ -46,8 +109,7 @@ export default function UrlEncoder() {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
   const [copied, setCopied] = useState(false);
-  const lang = 'ko';
-  const t = i18n[lang];
+  const { t } = useLocalizedContent(i18n);
 
   const toolInfo = siteConfig.tools.find((tool) => tool.id === 'url-encoder');
 

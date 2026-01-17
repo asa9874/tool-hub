@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import AdBanner from '../../components/AdBanner';
 import { siteConfig } from '../../config/siteConfig';
+import useLocalizedContent from '../../hooks/useLocalizedContent';
 
 // 복무 유형 정보
 const serviceTypes = [
@@ -46,6 +47,38 @@ const i18n = {
       ],
     },
   },
+  en: {
+    title: 'Military Discharge Calculator',
+    description: 'Enter your enlistment date to calculate discharge date, days served, and remaining days.',
+    enlistDateLabel: 'Enlistment Date',
+    serviceTypeLabel: 'Service Type',
+    calculateButton: 'Calculate',
+    resetButton: 'Reset',
+    resultTitle: 'Calculation Result',
+    dischargeDate: 'Discharge Date',
+    totalDays: 'Total Service Days',
+    servedDays: 'Days Served',
+    remainingDays: 'Days Remaining',
+    progressLabel: 'Service Progress',
+    days: ' days',
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          question: 'How is the service period calculated?',
+          answer: 'Service period is calculated including the enlistment date as day 1. Army/Marines serve 18 months (548 days), Navy serves 20 months (609 days), and Air Force serves 21 months (639 days).',
+        },
+        {
+          question: 'What happens if discharge date falls on a holiday?',
+          answer: 'If the discharge date falls on Saturday, Sunday, or a public holiday, discharge occurs the day before. This calculator shows the basic discharge date; holiday adjustments should be checked separately.',
+        },
+        {
+          question: 'What happens if service period changes?',
+          answer: 'Service periods may change according to government policy. Current standards are based on 2024 guidelines, and the calculator will be updated accordingly.',
+        },
+      ],
+    },
+  },
 };
 
 interface DischargeResult {
@@ -60,8 +93,7 @@ export default function MilitaryCalculator() {
   const [enlistDate, setEnlistDate] = useState('');
   const [serviceType, setServiceType] = useState('army');
   const [result, setResult] = useState<DischargeResult | null>(null);
-  const lang = 'ko';
-  const t = i18n[lang];
+  const { t } = useLocalizedContent(i18n);
 
   const toolInfo = siteConfig.tools.find((tool) => tool.id === 'military-calculator');
 

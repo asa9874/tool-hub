@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import AdBanner from '../../components/AdBanner';
 import { siteConfig } from '../../config/siteConfig';
+import useLocalizedContent from '../../hooks/useLocalizedContent';
 
 const i18n = {
   ko: {
@@ -20,6 +21,21 @@ const i18n = {
     encodePlaceholder: '인코딩할 텍스트를 입력하세요',
     decodePlaceholder: 'Base64 문자열을 입력하세요',
     error: '변환 오류: 유효하지 않은 입력입니다',
+    example: '📝 예시',
+    originalText: '원본 텍스트',
+    base64Encoded: 'Base64 인코딩',
+    explanationTitle: 'Base64 인코딩 설명',
+    explanationDesc: '<strong>Base64</strong>는 바이너리 데이터를 64개의 ASCII 문자(A-Z, a-z, 0-9, +, /)로 변환하는 인코딩 방식입니다. 이 도구는 UTF-8을 지원하여 한글도 정확하게 인코딩/디코딩할 수 있습니다.',
+    useCases: '활용 분야',
+    useCase1: '<strong>Data URI:</strong> HTML/CSS에 이미지 직접 삽입',
+    useCase2: '<strong>API 인증:</strong> HTTP Basic Authentication',
+    useCase3: '<strong>이메일:</strong> 첨부 파일 인코딩',
+    useCase4: '<strong>JWT:</strong> JSON Web Token 페이로드',
+    relatedTools: '🔗 관련 도구',
+    urlEncoderTool: 'URL 인코더/디코더',
+    urlEncoderDesc: 'URL 특수문자 변환',
+    jsonFormatterTool: 'JSON 포맷터',
+    jsonFormatterDesc: 'JSON 정렬 및 검증',
     faq: {
       title: '자주 묻는 질문',
       items: [
@@ -38,6 +54,54 @@ const i18n = {
       ],
     },
   },
+  en: {
+    title: 'Base64 Encoder/Decoder',
+    description: 'Encode text to Base64 or decode Base64 to original text.',
+    encodeTab: 'Encode',
+    decodeTab: 'Decode',
+    inputLabel: 'Input',
+    outputLabel: 'Result',
+    encodeButton: 'Encode to Base64',
+    decodeButton: 'Decode to Text',
+    copyButton: 'Copy',
+    clearButton: 'Clear',
+    copied: 'Copied!',
+    encodePlaceholder: 'Enter text to encode',
+    decodePlaceholder: 'Enter Base64 string',
+    error: 'Conversion error: Invalid input',
+    example: '📝 Example',
+    originalText: 'Original Text',
+    base64Encoded: 'Base64 Encoded',
+    explanationTitle: 'Base64 Encoding Explained',
+    explanationDesc: '<strong>Base64</strong> is an encoding method that converts binary data into 64 ASCII characters (A-Z, a-z, 0-9, +, /). This tool supports UTF-8, allowing accurate encoding/decoding of various characters including Korean.',
+    useCases: 'Use Cases',
+    useCase1: '<strong>Data URI:</strong> Embed images directly in HTML/CSS',
+    useCase2: '<strong>API Authentication:</strong> HTTP Basic Authentication',
+    useCase3: '<strong>Email:</strong> Attachment encoding',
+    useCase4: '<strong>JWT:</strong> JSON Web Token payload',
+    relatedTools: '🔗 Related Tools',
+    urlEncoderTool: 'URL Encoder/Decoder',
+    urlEncoderDesc: 'URL special character conversion',
+    jsonFormatterTool: 'JSON Formatter',
+    jsonFormatterDesc: 'JSON formatting and validation',
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          question: 'What is Base64?',
+          answer: 'Base64 is an encoding method that converts binary data to ASCII strings. It is widely used in email attachments, image data URIs, API authentication, and more.',
+        },
+        {
+          question: 'Why use Base64?',
+          answer: 'It is used to safely include binary data (images, files, etc.) in text-based formats like HTML, JSON, and XML.',
+        },
+        {
+          question: 'Does Base64 encoding increase the size?',
+          answer: 'Yes, Base64 encoding increases the size by about 33% compared to the original. This is because 3 bytes are converted to 4 ASCII characters.',
+        },
+      ],
+    },
+  },
 };
 
 type Mode = 'encode' | 'decode';
@@ -48,8 +112,7 @@ export default function Base64Tool() {
   const [output, setOutput] = useState('');
   const [error, setError] = useState('');
   const [copied, setCopied] = useState(false);
-  const lang = 'ko';
-  const t = i18n[lang];
+  const { t } = useLocalizedContent(i18n);
 
   const toolInfo = siteConfig.tools.find((tool) => tool.id === 'base64');
 

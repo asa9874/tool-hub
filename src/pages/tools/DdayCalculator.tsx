@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import AdBanner from '../../components/AdBanner';
 import { siteConfig } from '../../config/siteConfig';
+import useLocalizedContent from '../../hooks/useLocalizedContent';
 
 const i18n = {
   ko: {
@@ -32,13 +33,39 @@ const i18n = {
       ],
     },
   },
+  en: {
+    title: 'D-Day Calculator',
+    description: 'Calculate days remaining until a specific date. Track important dates like anniversaries, exams, or trips.',
+    targetDate: 'Target Date',
+    eventName: 'Event Name (Optional)',
+    today: 'Today',
+    result: 'Calculation Result',
+    daysLeft: 'Days Remaining',
+    daysPassed: 'Days Passed',
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          question: 'How is D-Day calculated?',
+          answer: 'D-Day is the number of days from today to the target date. D-0 is the target day, D-1 is one day before, and D+1 is one day after.',
+        },
+        {
+          question: 'How is the 100th day calculated?',
+          answer: 'If counting the start date as day 1, the 100th day is 99 days after the start. Example: Starting January 1 → April 10 is the 100th day.',
+        },
+        {
+          question: 'Does D-Day calculation include the start date?',
+          answer: 'Generally, D-Day calculation does not include the start date. Example: If today is January 1 and the target is January 2, it shows D-1.',
+        },
+      ],
+    },
+  },
 };
 
 export default function DdayCalculator() {
   const [targetDate, setTargetDate] = useState('');
   const [eventName, setEventName] = useState('');
-  const lang = 'ko';
-  const t = i18n[lang];
+  const { t } = useLocalizedContent(i18n);
 
   const toolInfo = siteConfig.tools.find((tool) => tool.id === 'd-day-calculator');
 

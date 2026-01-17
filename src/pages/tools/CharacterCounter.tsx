@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import AdBanner from '../../components/AdBanner';
 import { siteConfig } from '../../config/siteConfig';
+import useLocalizedContent from '../../hooks/useLocalizedContent';
 
 const i18n = {
   ko: {
@@ -37,6 +38,38 @@ const i18n = {
       ],
     },
   },
+  en: {
+    title: 'Character Counter',
+    description: 'Count characters, words, and bytes in real-time. Useful for writing resumes, cover letters, and social media posts.',
+    placeholder: 'Enter your text here...',
+    totalChars: 'Total Characters',
+    charsNoSpace: 'Without Spaces',
+    words: 'Words',
+    bytes: 'Bytes',
+    lines: 'Lines',
+    paragraphs: 'Paragraphs',
+    sentences: 'Sentences',
+    copyButton: 'Copy',
+    clearButton: 'Clear',
+    copied: 'Copied!',
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          question: 'What is the difference between character count with and without spaces?',
+          answer: 'Character count with spaces includes all characters such as spaces and line breaks. Character count without spaces only counts the actual letters. Most applications and forms use the count with spaces.',
+        },
+        {
+          question: 'How are bytes calculated?',
+          answer: 'In UTF-8 encoding, Korean characters use 3 bytes per character, while English letters, numbers, and spaces use 1 byte each. This is useful when there are byte limits in SMS or certain systems.',
+        },
+        {
+          question: 'What are common character limits?',
+          answer: 'Common limits include 500, 1000, 1500, and 2000 characters. Twitter has a 280 character limit, while LinkedIn summaries allow up to 2,000 characters.',
+        },
+      ],
+    },
+  },
 };
 
 interface TextStats {
@@ -52,8 +85,7 @@ interface TextStats {
 export default function CharacterCounter() {
   const [text, setText] = useState('');
   const [copied, setCopied] = useState(false);
-  const lang = 'ko';
-  const t = i18n[lang];
+  const { t } = useLocalizedContent(i18n);
 
   const toolInfo = siteConfig.tools.find((tool) => tool.id === 'character-counter');
 

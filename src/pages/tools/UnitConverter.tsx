@@ -3,66 +3,72 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import AdBanner from '../../components/AdBanner';
 import { siteConfig } from '../../config/siteConfig';
+import useLocalizedContent from '../../hooks/useLocalizedContent';
 
 // 단위 카테고리와 변환 정보
-const categories = {
+const categoriesData = {
   length: {
-    name: '길이',
+    nameKo: '길이',
+    nameEn: 'Length',
     units: [
-      { id: 'mm', name: '밀리미터 (mm)', ratio: 1 },
-      { id: 'cm', name: '센티미터 (cm)', ratio: 10 },
-      { id: 'm', name: '미터 (m)', ratio: 1000 },
-      { id: 'km', name: '킬로미터 (km)', ratio: 1000000 },
-      { id: 'in', name: '인치 (in)', ratio: 25.4 },
-      { id: 'ft', name: '피트 (ft)', ratio: 304.8 },
-      { id: 'yd', name: '야드 (yd)', ratio: 914.4 },
-      { id: 'mi', name: '마일 (mi)', ratio: 1609344 },
+      { id: 'mm', nameKo: '밀리미터 (mm)', nameEn: 'Millimeter (mm)', ratio: 1 },
+      { id: 'cm', nameKo: '센티미터 (cm)', nameEn: 'Centimeter (cm)', ratio: 10 },
+      { id: 'm', nameKo: '미터 (m)', nameEn: 'Meter (m)', ratio: 1000 },
+      { id: 'km', nameKo: '킬로미터 (km)', nameEn: 'Kilometer (km)', ratio: 1000000 },
+      { id: 'in', nameKo: '인치 (in)', nameEn: 'Inch (in)', ratio: 25.4 },
+      { id: 'ft', nameKo: '피트 (ft)', nameEn: 'Foot (ft)', ratio: 304.8 },
+      { id: 'yd', nameKo: '야드 (yd)', nameEn: 'Yard (yd)', ratio: 914.4 },
+      { id: 'mi', nameKo: '마일 (mi)', nameEn: 'Mile (mi)', ratio: 1609344 },
     ],
   },
   area: {
-    name: '면적',
+    nameKo: '면적',
+    nameEn: 'Area',
     units: [
-      { id: 'sqm', name: '제곱미터 (m²)', ratio: 1 },
-      { id: 'sqkm', name: '제곱킬로미터 (km²)', ratio: 1000000 },
-      { id: 'sqft', name: '제곱피트 (ft²)', ratio: 0.092903 },
-      { id: 'pyeong', name: '평', ratio: 3.305785 },
-      { id: 'acre', name: '에이커', ratio: 4046.86 },
-      { id: 'ha', name: '헥타르 (ha)', ratio: 10000 },
+      { id: 'sqm', nameKo: '제곱미터 (m²)', nameEn: 'Square Meter (m²)', ratio: 1 },
+      { id: 'sqkm', nameKo: '제곱킬로미터 (km²)', nameEn: 'Square Kilometer (km²)', ratio: 1000000 },
+      { id: 'sqft', nameKo: '제곱피트 (ft²)', nameEn: 'Square Foot (ft²)', ratio: 0.092903 },
+      { id: 'pyeong', nameKo: '평', nameEn: 'Pyeong (Korean unit)', ratio: 3.305785 },
+      { id: 'acre', nameKo: '에이커', nameEn: 'Acre', ratio: 4046.86 },
+      { id: 'ha', nameKo: '헥타르 (ha)', nameEn: 'Hectare (ha)', ratio: 10000 },
     ],
   },
   weight: {
-    name: '무게',
+    nameKo: '무게',
+    nameEn: 'Weight',
     units: [
-      { id: 'mg', name: '밀리그램 (mg)', ratio: 1 },
-      { id: 'g', name: '그램 (g)', ratio: 1000 },
-      { id: 'kg', name: '킬로그램 (kg)', ratio: 1000000 },
-      { id: 't', name: '톤 (t)', ratio: 1000000000 },
-      { id: 'oz', name: '온스 (oz)', ratio: 28349.5 },
-      { id: 'lb', name: '파운드 (lb)', ratio: 453592 },
-      { id: 'geun', name: '근', ratio: 600000 },
+      { id: 'mg', nameKo: '밀리그램 (mg)', nameEn: 'Milligram (mg)', ratio: 1 },
+      { id: 'g', nameKo: '그램 (g)', nameEn: 'Gram (g)', ratio: 1000 },
+      { id: 'kg', nameKo: '킬로그램 (kg)', nameEn: 'Kilogram (kg)', ratio: 1000000 },
+      { id: 't', nameKo: '톤 (t)', nameEn: 'Ton (t)', ratio: 1000000000 },
+      { id: 'oz', nameKo: '온스 (oz)', nameEn: 'Ounce (oz)', ratio: 28349.5 },
+      { id: 'lb', nameKo: '파운드 (lb)', nameEn: 'Pound (lb)', ratio: 453592 },
+      { id: 'geun', nameKo: '근', nameEn: 'Geun (Korean unit)', ratio: 600000 },
     ],
   },
   temperature: {
-    name: '온도',
+    nameKo: '온도',
+    nameEn: 'Temperature',
     units: [
-      { id: 'c', name: '섭씨 (°C)', ratio: 1 },
-      { id: 'f', name: '화씨 (°F)', ratio: 1 },
-      { id: 'k', name: '켈빈 (K)', ratio: 1 },
+      { id: 'c', nameKo: '섭씨 (°C)', nameEn: 'Celsius (°C)', ratio: 1 },
+      { id: 'f', nameKo: '화씨 (°F)', nameEn: 'Fahrenheit (°F)', ratio: 1 },
+      { id: 'k', nameKo: '켈빈 (K)', nameEn: 'Kelvin (K)', ratio: 1 },
     ],
   },
   data: {
-    name: '데이터',
+    nameKo: '데이터',
+    nameEn: 'Data',
     units: [
-      { id: 'b', name: '바이트 (B)', ratio: 1 },
-      { id: 'kb', name: '킬로바이트 (KB)', ratio: 1024 },
-      { id: 'mb', name: '메가바이트 (MB)', ratio: 1048576 },
-      { id: 'gb', name: '기가바이트 (GB)', ratio: 1073741824 },
-      { id: 'tb', name: '테라바이트 (TB)', ratio: 1099511627776 },
+      { id: 'b', nameKo: '바이트 (B)', nameEn: 'Byte (B)', ratio: 1 },
+      { id: 'kb', nameKo: '킬로바이트 (KB)', nameEn: 'Kilobyte (KB)', ratio: 1024 },
+      { id: 'mb', nameKo: '메가바이트 (MB)', nameEn: 'Megabyte (MB)', ratio: 1048576 },
+      { id: 'gb', nameKo: '기가바이트 (GB)', nameEn: 'Gigabyte (GB)', ratio: 1073741824 },
+      { id: 'tb', nameKo: '테라바이트 (TB)', nameEn: 'Terabyte (TB)', ratio: 1099511627776 },
     ],
   },
 };
 
-type CategoryKey = keyof typeof categories;
+type CategoryKey = keyof typeof categoriesData;
 
 const i18n = {
   ko: {
@@ -71,6 +77,8 @@ const i18n = {
     from: '변환할 값',
     to: '변환 결과',
     swap: '↔️ 단위 바꾸기',
+    placeholder: '숫자 입력',
+    quickConversions: '📋 자주 쓰는 변환',
     faq: {
       title: '자주 묻는 질문',
       items: [
@@ -89,6 +97,32 @@ const i18n = {
       ],
     },
   },
+  en: {
+    title: 'Unit Converter',
+    description: 'Easily convert length, area, weight, temperature, and data units.',
+    from: 'Value to Convert',
+    to: 'Conversion Result',
+    swap: '↔️ Swap Units',
+    placeholder: 'Enter number',
+    quickConversions: '📋 Common Conversions',
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          question: 'How do you convert pyeong to square meters?',
+          answer: '1 pyeong ≈ 3.305785 m². For example, a 30 pyeong apartment is approximately 99.17m².',
+        },
+        {
+          question: 'What is the formula to convert inches to centimeters?',
+          answer: '1 inch = 2.54 cm. Multiply the inch value by 2.54 to get centimeters.',
+        },
+        {
+          question: 'What is the relationship between pounds and kilograms?',
+          answer: '1 pound (lb) ≈ 0.4536 kg. 1 kg ≈ 2.205 pounds.',
+        },
+      ],
+    },
+  },
 };
 
 export default function UnitConverter() {
@@ -96,8 +130,24 @@ export default function UnitConverter() {
   const [fromUnit, setFromUnit] = useState('cm');
   const [toUnit, setToUnit] = useState('in');
   const [value, setValue] = useState('');
-  const lang = 'ko';
-  const t = i18n[lang];
+  const { t, isKorean } = useLocalizedContent(i18n);
+
+  // Get localized categories
+  const categories = useMemo(() => {
+    const result: Record<CategoryKey, { name: string; units: { id: string; name: string; ratio: number }[] }> = {} as any;
+    (Object.keys(categoriesData) as CategoryKey[]).forEach((key) => {
+      const cat = categoriesData[key];
+      result[key] = {
+        name: isKorean ? cat.nameKo : cat.nameEn,
+        units: cat.units.map((u) => ({
+          id: u.id,
+          name: isKorean ? u.nameKo : u.nameEn,
+          ratio: u.ratio,
+        })),
+      };
+    });
+    return result;
+  }, [isKorean]);
 
   const toolInfo = siteConfig.tools.find((tool) => tool.id === 'unit-converter');
 
@@ -127,7 +177,7 @@ export default function UnitConverter() {
   // 카테고리 변경 시 기본 단위 설정
   const handleCategoryChange = (newCategory: CategoryKey) => {
     setCategory(newCategory);
-    const units = categories[newCategory].units;
+    const units = categoriesData[newCategory].units;
     setFromUnit(units[0].id);
     setToUnit(units[1].id);
     setValue('');
@@ -215,7 +265,7 @@ export default function UnitConverter() {
                 type="number"
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
-                placeholder="숫자 입력"
+                placeholder={t.placeholder}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 mb-3"
               />
               <select
@@ -262,7 +312,7 @@ export default function UnitConverter() {
 
         {/* 빠른 변환 예시 */}
         <section className="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl p-6 md:p-8 mb-8">
-          <h2 className="text-xl font-bold text-gray-800 mb-4">📋 자주 쓰는 변환</h2>
+          <h2 className="text-xl font-bold text-gray-800 mb-4">{t.quickConversions}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
             {category === 'length' && (
               <>

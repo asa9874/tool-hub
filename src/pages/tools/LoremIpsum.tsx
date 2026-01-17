@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import AdBanner from '../../components/AdBanner';
 import { siteConfig } from '../../config/siteConfig';
+import useLocalizedContent from '../../hooks/useLocalizedContent';
 
 // Lorem Ipsum 기본 텍스트
 const LOREM_WORDS = [
@@ -30,6 +31,22 @@ const i18n = {
     copied: '복사됨!',
     startWithLorem: '"Lorem ipsum..."으로 시작',
     amount: '개수',
+    generateUnit: '생성 단위',
+    generatedText: '생성된 텍스트',
+    charCount: '글자 수',
+    wordCount: '단어 수',
+    howToUse: 'Lorem Ipsum 사용법',
+    howToUseDescription: '<strong>Lorem Ipsum</strong> 생성기는 웹사이트, 앱, 인쇄물 등의 디자인 작업 시 실제 콘텐츠가 준비되기 전에 레이아웃을 미리보기 위한 더미 텍스트를 생성합니다.',
+    useCases: '활용 분야',
+    useCase1: '<strong>웹 디자인:</strong> 웹페이지 레이아웃 목업 제작',
+    useCase2: '<strong>앱 디자인:</strong> UI/UX 프로토타입 테스트',
+    useCase3: '<strong>인쇄물:</strong> 브로셔, 포스터 레이아웃',
+    useCase4: '<strong>프레젠테이션:</strong> 슬라이드 템플릿 미리보기',
+    relatedTools: '🔗 관련 도구',
+    characterCounterTool: '글자수 세기',
+    characterCounterDesc: '텍스트 글자 수 계산',
+    jsonFormatterTool: 'JSON 포맷터',
+    jsonFormatterDesc: 'JSON 정렬 및 검증',
     faq: {
       title: '자주 묻는 질문',
       items: [
@@ -48,6 +65,51 @@ const i18n = {
       ],
     },
   },
+  en: {
+    title: 'Lorem Ipsum Generator',
+    description: 'Generate dummy text (Lorem Ipsum) for website, app, and document design.',
+    paragraphs: 'Paragraphs',
+    sentences: 'Sentences',
+    words: 'Words',
+    generate: 'Generate',
+    copyButton: 'Copy',
+    copied: 'Copied!',
+    startWithLorem: 'Start with "Lorem ipsum..."',
+    amount: 'Amount',
+    generateUnit: 'Generation Unit',
+    generatedText: 'Generated Text',
+    charCount: 'Characters',
+    wordCount: 'Words',
+    howToUse: 'How to Use Lorem Ipsum',
+    howToUseDescription: 'The <strong>Lorem Ipsum</strong> generator creates dummy text for previewing layouts before actual content is ready for design work on websites, apps, print materials, etc.',
+    useCases: 'Use Cases',
+    useCase1: '<strong>Web Design:</strong> Creating webpage layout mockups',
+    useCase2: '<strong>App Design:</strong> UI/UX prototype testing',
+    useCase3: '<strong>Print Materials:</strong> Brochure, poster layouts',
+    useCase4: '<strong>Presentations:</strong> Slide template preview',
+    relatedTools: '🔗 Related Tools',
+    characterCounterTool: 'Character Counter',
+    characterCounterDesc: 'Count text characters',
+    jsonFormatterTool: 'JSON Formatter',
+    jsonFormatterDesc: 'JSON formatting and validation',
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          question: 'What is Lorem Ipsum?',
+          answer: 'Lorem Ipsum is standard dummy text used in the publishing and design industry. It has been used since the 1500s to preview layouts and fonts instead of actual text.',
+        },
+        {
+          question: 'Why use meaningless text?',
+          answer: 'When using readable text, people focus on the content making design evaluation difficult. Lorem Ipsum looks like real text but has no meaning, allowing focus on the design.',
+        },
+        {
+          question: 'Where does Lorem Ipsum come from?',
+          answer: 'It originated from "de Finibus Bonorum et Malorum" (On the Ends of Good and Evil) written by Cicero in 45 BC. It was created by modifying Latin words from the original text.',
+        },
+      ],
+    },
+  },
 };
 
 type GenerateType = 'paragraphs' | 'sentences' | 'words';
@@ -58,8 +120,7 @@ export default function LoremIpsum() {
   const [startWithLorem, setStartWithLorem] = useState(true);
   const [output, setOutput] = useState('');
   const [copied, setCopied] = useState(false);
-  const lang = 'ko';
-  const t = i18n[lang];
+  const { t } = useLocalizedContent(i18n);
 
   const toolInfo = siteConfig.tools.find((tool) => tool.id === 'lorem-ipsum');
 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import AdBanner from '../../components/AdBanner';
 import { siteConfig } from '../../config/siteConfig';
+import useLocalizedContent from '../../hooks/useLocalizedContent';
 
 // 띠 정보 (12간지)
 const ZODIAC_ANIMALS = [
@@ -67,12 +68,40 @@ const i18n = {
       ],
     },
   },
+  en: {
+    title: 'Zodiac & Horoscope Calculator',
+    description: 'Find your Chinese zodiac animal and Western zodiac sign by birth date. Also shows days until your next birthday.',
+    birthDate: 'Date of Birth',
+    calculate: 'Calculate',
+    result: 'Calculation Result',
+    zodiacAnimal: 'Chinese Zodiac',
+    zodiacSign: 'Zodiac Sign',
+    nextBirthday: 'Days until next birthday',
+    age: 'Age',
+    days: ' days',
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          question: 'How is the Chinese zodiac determined?',
+          answer: 'The Chinese zodiac follows a 12-year cycle based on birth year. The animals are: Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig.',
+        },
+        {
+          question: 'How is the Western zodiac sign determined?',
+          answer: 'Western zodiac signs are determined by birth month and day, based on the position of the sun in the 12 constellations of the ecliptic at the time of birth.',
+        },
+        {
+          question: 'Can I calculate using lunar calendar dates?',
+          answer: 'This calculator currently only supports solar (Gregorian) calendar dates. Please convert lunar dates to solar dates before entering.',
+        },
+      ],
+    },
+  },
 };
 
 export default function ZodiacCalculator() {
   const [birthDate, setBirthDate] = useState('');
-  const lang = 'ko';
-  const t = i18n[lang];
+  const { t } = useLocalizedContent(i18n);
 
   const toolInfo = siteConfig.tools.find((tool) => tool.id === 'zodiac-calculator');
 

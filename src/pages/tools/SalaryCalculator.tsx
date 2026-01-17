@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import AdBanner from '../../components/AdBanner';
 import { siteConfig } from '../../config/siteConfig';
+import useLocalizedContent from '../../hooks/useLocalizedContent';
 
 // 2024년 기준 세율 정보 (간이 계산용)
 const TAX_RATES = {
@@ -59,6 +60,40 @@ const i18n = {
       ],
     },
   },
+  en: {
+    title: 'Net Salary Calculator',
+    description: 'Calculate your actual take-home pay after deducting social insurance and income tax. Based on 2024 rates.',
+    annualSalary: 'Annual Salary (Pre-tax)',
+    calculateButton: 'Calculate',
+    resultTitle: 'Estimated Net Salary',
+    monthly: 'Monthly Net Salary',
+    yearly: 'Annual Net Salary',
+    deductions: 'Deduction Details',
+    nationalPension: 'National Pension',
+    healthInsurance: 'Health Insurance',
+    longTermCare: 'Long-term Care Insurance',
+    employmentInsurance: 'Employment Insurance',
+    incomeTax: 'Income Tax',
+    localIncomeTax: 'Local Income Tax',
+    totalDeduction: 'Total Monthly Deductions',
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          question: 'How is social insurance calculated?',
+          answer: 'National Pension (4.5%), Health Insurance (3.545%), Long-term Care (12.81% of Health Insurance), and Employment Insurance (0.9%) are combined. Industrial accident insurance is fully covered by the employer.',
+        },
+        {
+          question: 'How is income tax calculated?',
+          answer: 'Progressive tax rates from 6% to 45% are applied based on annual taxable income. Local income tax is 10% of income tax.',
+        },
+        {
+          question: 'Why might actual salary differ?',
+          answer: 'This is a simplified calculation. Actual amounts may vary based on number of dependents, tax-exempt items (meal allowance, vehicle maintenance, etc.), and year-end tax adjustment.',
+        },
+      ],
+    },
+  },
 };
 
 interface SalaryResult {
@@ -77,8 +112,7 @@ interface SalaryResult {
 export default function SalaryCalculator() {
   const [annualSalary, setAnnualSalary] = useState('');
   const [result, setResult] = useState<SalaryResult | null>(null);
-  const lang = 'ko';
-  const t = i18n[lang];
+  const { t } = useLocalizedContent(i18n);
 
   const toolInfo = siteConfig.tools.find((tool) => tool.id === 'salary-calculator');
 

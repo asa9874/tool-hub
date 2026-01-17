@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import AdBanner from '../../components/AdBanner';
 import { siteConfig } from '../../config/siteConfig';
+import useLocalizedContent from '../../hooks/useLocalizedContent';
 
 // 다국어 지원을 위한 텍스트 객체 (i18n 확장 고려)
 const i18n = {
@@ -43,6 +44,43 @@ const i18n = {
       ],
     },
   },
+  en: {
+    title: 'Age Calculator',
+    subtitle: 'Accurate Age Calculation',
+    description: 'Enter your birth date to calculate your international age, Korean age, and year age accurately.',
+    birthDateLabel: 'Date of Birth',
+    calculateButton: 'Calculate',
+    resetButton: 'Reset',
+    resultTitle: 'Calculation Result',
+    koreanAge: 'Korean Age (Counting Age)',
+    internationalAge: 'International Age (Standard)',
+    yearAge: 'Year Age',
+    nextBirthday: 'Days until next birthday',
+    days: ' days',
+    years: ' years old',
+    explanation: {
+      korean: 'Starts at 1 year old at birth and increases by 1 every January 1st',
+      international: 'Calculated from birth date, increases by 1 on each birthday (Korean Age Unification Law 2023)',
+      year: 'Current year minus birth year',
+    },
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          question: 'What is the Korean Age Unification Law?',
+          answer: 'Effective from June 28, 2023, this law standardizes age calculation to international age for legal and social purposes in Korea. Most official documents now use international age.',
+        },
+        {
+          question: 'What is the difference between international age and Korean age?',
+          answer: 'International age starts at 0 at birth and increases by 1 on each birthday. Korean age (counting age) starts at 1 at birth and increases by 1 every January 1st.',
+        },
+        {
+          question: 'How is year age calculated?',
+          answer: 'Year age is calculated by subtracting the birth year from the current year. People born in the same year have the same year age regardless of whether their birthday has passed.',
+        },
+      ],
+    },
+  },
 };
 
 interface AgeResult {
@@ -62,8 +100,7 @@ interface AgeResult {
 export default function AgeCalculator() {
   const [birthDate, setBirthDate] = useState('');
   const [result, setResult] = useState<AgeResult | null>(null);
-  const lang = 'ko'; // 추후 i18n 라이브러리 연동 시 동적으로 변경
-  const t = i18n[lang];
+  const { t } = useLocalizedContent(i18n);
 
   // 도구 정보 가져오기
   const toolInfo = siteConfig.tools.find((tool) => tool.id === 'age-calculator');

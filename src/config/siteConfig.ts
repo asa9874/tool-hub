@@ -3,7 +3,7 @@ export const siteConfig = {
   // GitHub Pages 배포 시 사용할 기본 URL (예: https://username.github.io/tool-hub)
   siteUrl: 'https://asa9874.github.io/tool-hub',
   siteName: 'ToolHub - 무료 온라인 도구 모음',
-  siteDescription: '만나이 계산기, 전역일 계산기, 글자수 세기, JSON 포맷터 등 다양한 무료 온라인 도구를 제공합니다.',
+  siteDescription: '만나이 계산기, 전역일 계산기, 글자수 세기, JSON 포맷터, 대출 이자 계산기, BMI 계산기 등 다양한 무료 온라인 도구를 제공합니다.',
   defaultLanguage: 'ko',
   
   // AdSense 설정 (승인 후 실제 값으로 변경)
@@ -20,6 +20,66 @@ export const siteConfig = {
 
   // 도구 목록 - 새 도구 추가 시 여기에 등록
   tools: [
+    // === 금융/부동산 분야 (광고 단가 높음) ===
+    {
+      id: 'loan-calculator',
+      path: '/tools/loan-calculator',
+      title: '대출 이자 계산기 - 원리금균등/원금균등 상환 계산 (2026년)',
+      description: '주택담보대출, 전세자금대출 등 대출 원금과 금리를 입력하면 월 상환금, 총 이자를 계산합니다. 원리금균등, 원금균등, 만기일시 상환 방식 지원.',
+      keywords: ['대출 이자 계산기', '원리금균등상환', '원금균등상환', '주택담보대출', '대출 이자', '월 상환금 계산'],
+      category: '금융/부동산',
+    },
+    {
+      id: 'savings-calculator',
+      path: '/tools/savings-calculator',
+      title: '예적금 이자 계산기 - 세전/세후 이자 계산 (비과세 포함)',
+      description: '예금, 적금의 원금과 금리를 입력하면 세금을 제외한 실제 수령 이자와 만기 수령액을 계산합니다. 일반과세, 세금우대, 비과세 지원.',
+      keywords: ['예적금 이자 계산기', '적금 이자', '예금 이자', '비과세 이자', '세후 이자', '만기 수령액'],
+      category: '금융/부동산',
+    },
+    {
+      id: 'brokerage-fee-calculator',
+      path: '/tools/brokerage-fee-calculator',
+      title: '부동산 중개수수료 계산기 - 복비 계산 (2024년 요율표)',
+      description: '아파트, 오피스텔 매매/전세/월세 거래 시 부동산 중개수수료(복비)를 계산합니다. 2024년 최신 요율표 적용.',
+      keywords: ['부동산 중개수수료', '복비 계산기', '중개보수', '매매 수수료', '전세 수수료', '부동산 복비'],
+      category: '금융/부동산',
+    },
+    {
+      id: 'severance-calculator',
+      path: '/tools/severance-calculator',
+      title: '퇴직금 계산기 - 근속연수별 퇴직금 계산 (세금 포함)',
+      description: '입사일, 퇴사일, 월 평균임금을 입력하면 퇴직금과 퇴직소득세를 계산합니다. 퇴직금 지급 기준 확인.',
+      keywords: ['퇴직금 계산기', '퇴직금 계산', '퇴직소득세', '근속연수', '평균임금', '퇴직금 세금'],
+      category: '금융/부동산',
+    },
+    
+    // === 건강/라이프스타일 분야 ===
+    {
+      id: 'bmi-calculator',
+      path: '/tools/bmi-calculator',
+      title: 'BMI 계산기 - 체질량지수 비만도 측정 (아시아 기준)',
+      description: '키와 몸무게를 입력하면 BMI(체질량지수)와 비만도를 확인합니다. WHO 아시아-태평양 기준 적용.',
+      keywords: ['BMI 계산기', '체질량지수', '비만도 계산', '비만 측정', '적정 체중', '다이어트'],
+      category: '건강/라이프스타일',
+    },
+    {
+      id: 'bmr-calculator',
+      path: '/tools/bmr-calculator',
+      title: '기초대사량(BMR) 계산기 - 하루 칼로리 소모량 계산',
+      description: '나이, 성별, 키, 몸무게로 기초대사량(BMR)과 활동대사량(TDEE)을 계산합니다. 다이어트 칼로리 목표 설정.',
+      keywords: ['기초대사량 계산기', 'BMR 계산', 'TDEE', '칼로리 소모량', '다이어트 칼로리', '하루 권장 칼로리'],
+      category: '건강/라이프스타일',
+    },
+    {
+      id: 'calorie-burn-calculator',
+      path: '/tools/calorie-burn-calculator',
+      title: '운동 칼로리 소모 계산기 - 활동별 소모 칼로리',
+      description: '운동 종류와 시간을 입력하면 소모 칼로리를 계산합니다. 걷기, 달리기, 수영, 등산 등 50가지 이상 활동 지원.',
+      keywords: ['운동 칼로리', '칼로리 소모', '운동 칼로리 계산기', '등산 칼로리', '달리기 칼로리', 'MET'],
+      category: '건강/라이프스타일',
+    },
+
     // === 생활/사회 분야 ===
     {
       id: 'age-calculator',

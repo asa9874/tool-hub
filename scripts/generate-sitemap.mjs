@@ -25,6 +25,43 @@ const pages = [
     changefreq: 'daily',
     priority: '1.0',
   },
+  // === 금융/부동산 도구 (광고 단가 높음) ===
+  {
+    path: '/tools/loan-calculator',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/savings-calculator',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/brokerage-fee-calculator',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/severance-calculator',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  // === 건강/라이프스타일 도구 ===
+  {
+    path: '/tools/bmi-calculator',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/bmr-calculator',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/calorie-burn-calculator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
   // === 생활/사회 도구 ===
   {
     path: '/tools/age-calculator',
