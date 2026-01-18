@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { siteConfig } from '../config/siteConfig';
+import { getToolIcon } from '../config/toolIcons';
 import { languageInfo, supportedLanguages } from '../i18n';
 import type { SupportedLanguage } from '../i18n';
 import AdBanner from './AdBanner';
@@ -21,6 +22,22 @@ const categoryI18nKey: Record<string, string> = {
   '게임/재미': 'categories.fun',
   '유틸리티': 'categories.utility',
 };
+
+// 카테고리별 색상 매핑 (사이드바용)
+const categoryColors: Record<string, { bg: string; text: string; hover: string; border: string; title: string; titleBg: string }> = {
+  '금융/부동산': { bg: 'bg-emerald-50', text: 'text-emerald-700', hover: 'hover:bg-emerald-100', border: 'border-emerald-200', title: 'text-emerald-800', titleBg: 'bg-emerald-100' },
+  '건강/라이프스타일': { bg: 'bg-rose-50', text: 'text-rose-700', hover: 'hover:bg-rose-100', border: 'border-rose-200', title: 'text-rose-800', titleBg: 'bg-rose-100' },
+  '생활/사회': { bg: 'bg-amber-50', text: 'text-amber-700', hover: 'hover:bg-amber-100', border: 'border-amber-200', title: 'text-amber-800', titleBg: 'bg-amber-100' },
+  '업무/생산성': { bg: 'bg-blue-50', text: 'text-blue-700', hover: 'hover:bg-blue-100', border: 'border-blue-200', title: 'text-blue-800', titleBg: 'bg-blue-100' },
+  '개발/IT': { bg: 'bg-violet-50', text: 'text-violet-700', hover: 'hover:bg-violet-100', border: 'border-violet-200', title: 'text-violet-800', titleBg: 'bg-violet-100' },
+  '게임/재미': { bg: 'bg-pink-50', text: 'text-pink-700', hover: 'hover:bg-pink-100', border: 'border-pink-200', title: 'text-pink-800', titleBg: 'bg-pink-100' },
+  '유틸리티': { bg: 'bg-cyan-50', text: 'text-cyan-700', hover: 'hover:bg-cyan-100', border: 'border-cyan-200', title: 'text-cyan-800', titleBg: 'bg-cyan-100' },
+  '쇼핑/실생활': { bg: 'bg-orange-50', text: 'text-orange-700', hover: 'hover:bg-orange-100', border: 'border-orange-200', title: 'text-orange-800', titleBg: 'bg-orange-100' },
+  '음악/창작': { bg: 'bg-indigo-50', text: 'text-indigo-700', hover: 'hover:bg-indigo-100', border: 'border-indigo-200', title: 'text-indigo-800', titleBg: 'bg-indigo-100' },
+  '디자인': { bg: 'bg-fuchsia-50', text: 'text-fuchsia-700', hover: 'hover:bg-fuchsia-100', border: 'border-fuchsia-200', title: 'text-fuchsia-800', titleBg: 'bg-fuchsia-100' },
+};
+
+const defaultColor = { bg: 'bg-gray-50', text: 'text-gray-700', hover: 'hover:bg-gray-100', border: 'border-gray-200', title: 'text-gray-800', titleBg: 'bg-gray-100' };
 
 // 도구 ID를 i18n 키로 매핑
 const toolI18nKey: Record<string, string> = {
@@ -154,14 +171,14 @@ export default function Layout({ children }: LayoutProps) {
         <aside
           className={`
             fixed lg:sticky top-0 left-0 h-screen
-            w-64 bg-white shadow-lg
+            w-64 bg-gray-100 shadow-lg
             transition-transform duration-300 ease-in-out
             overflow-y-auto z-40
             ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
           `}
         >
           {/* 사이드바 헤더 */}
-          <div className="sticky top-0 bg-white border-b border-gray-200 p-4 z-10">
+          <div className="sticky top-0 bg-gray-100 border-b border-gray-200 p-4 z-10">
             <div className="flex items-center justify-between">
               <Link
                 to="/"
@@ -202,16 +219,16 @@ export default function Layout({ children }: LayoutProps) {
           </div>
 
           {/* 네비게이션 메뉴 */}
-          <nav className="p-4">
+          <nav className="p-2">
             {/* 홈 링크 */}
             <Link
               to="/"
               onClick={() => setIsSidebarOpen(false)}
               className={`
-                flex items-center px-4 py-2.5 rounded-lg mb-2 transition-all
+                flex items-center px-4 py-2.5 rounded-lg mb-1 transition-all
                 ${location.pathname === '/'
-                  ? 'bg-blue-50 text-blue-700 font-semibold'
-                  : 'text-gray-700 hover:bg-gray-100'
+                  ? 'bg-blue-100 text-blue-700 font-semibold'
+                  : 'text-gray-700 hover:bg-gray-200'
                 }
               `}
             >
@@ -222,26 +239,28 @@ export default function Layout({ children }: LayoutProps) {
             </Link>
 
             {/* 카테고리별 도구 목록 */}
-            {Object.entries(toolsByCategory).map(([category, tools]) => (
-              <div key={category} className="mb-6">
-                <h3 className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            {Object.entries(toolsByCategory).map(([category, tools]) => {
+              const colors = categoryColors[category] || defaultColor;
+              return (
+              <div key={category} className={`mb-1 rounded-xl ${colors.bg} p-1.5`}>
+                <h3 className={`px-3 py-1.5 text-xs font-bold ${colors.title} ${colors.titleBg} uppercase tracking-wider rounded-lg mb-0.5`}>
                   {t(categoryI18nKey[category] || category)}
                 </h3>
-                <ul className="space-y-1">
+                <ul className="space-y-0.5">
                   {tools.map((tool) => (
                     <li key={tool.id}>
                       <Link
                         to={tool.path}
                         onClick={() => setIsSidebarOpen(false)}
                         className={`
-                          flex items-start px-4 py-2.5 rounded-lg transition-all
+                          flex items-start px-3 py-2 rounded-lg transition-all
                           ${location.pathname === tool.path
-                            ? 'bg-blue-50 text-blue-700 font-semibold'
-                            : 'text-gray-700 hover:bg-gray-100'
+                            ? `bg-white shadow-sm ${colors.text} font-semibold`
+                            : `${colors.text} ${colors.hover}`
                           }
                         `}
                       >
-                        <span className="mr-3 mt-0.5">•</span>
+                        <span className="mr-2.5 mt-0.5 flex-shrink-0">{getToolIcon(tool.id)}</span>
                         <span className="flex-1 text-sm leading-tight">
                           {t(toolI18nKey[tool.id] || tool.title.split(' - ')[0])}
                         </span>
@@ -250,10 +269,11 @@ export default function Layout({ children }: LayoutProps) {
                   ))}
                 </ul>
               </div>
-            ))}
+            );
+            })}
 
             {/* 구분선 */}
-            <div className="border-t border-gray-200 my-4"></div>
+            <div className="border-t border-gray-300 my-2"></div>
 
             {/* 기타 링크 */}
             <div className="space-y-1">

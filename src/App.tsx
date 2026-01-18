@@ -68,6 +68,38 @@ import StickyNote from './pages/tools/StickyNote';
 import WebpConverter from './pages/tools/WebpConverter';
 import IpPortChecker from './pages/tools/IpPortChecker';
 
+// 쇼핑/실생활 도구
+import UnitPriceCalculator from './pages/tools/UnitPriceCalculator';
+import DiscountCalculator from './pages/tools/DiscountCalculator';
+import SizeConverter from './pages/tools/SizeConverter';
+import WaterIntakeCalculator from './pages/tools/WaterIntakeCalculator';
+
+// 유틸리티/개발 도구 추가
+import HtmlStripper from './pages/tools/HtmlStripper';
+import MorseCode from './pages/tools/MorseCode';
+
+// 음악/창작 도구
+import Metronome from './pages/tools/Metronome';
+import ChordTransposer from './pages/tools/ChordTransposer';
+
+// 디자인 도구
+import PaletteGenerator from './pages/tools/PaletteGenerator';
+import GradientGenerator from './pages/tools/GradientGenerator';
+import BoxShadowGenerator from './pages/tools/BoxShadowGenerator';
+import GlassmorphismGenerator from './pages/tools/GlassmorphismGenerator';
+import NeumorphismGenerator from './pages/tools/NeumorphismGenerator';
+import CssGridGenerator from './pages/tools/CssGridGenerator';
+
+// 건강/생활 도구 추가
+import CaffeineCalculator from './pages/tools/CaffeineCalculator';
+import LunarCalendar from './pages/tools/LunarCalendar';
+
+// 개발/IT 도구 추가
+import DiffChecker from './pages/tools/DiffChecker';
+import FaviconGenerator from './pages/tools/FaviconGenerator';
+import ExifRemover from './pages/tools/ExifRemover';
+import ExifViewer from './pages/tools/ExifViewer';
+
 /**
  * 메인 App 컴포넌트
  * - HelmetProvider: SEO 메타 태그 관리
@@ -149,6 +181,38 @@ function App() {
             <Route path="/tools/sticky-note" element={<StickyNote />} />
             <Route path="/tools/webp-converter" element={<WebpConverter />} />
             <Route path="/tools/ip-port-checker" element={<IpPortChecker />} />
+            
+            {/* 쇼핑/실생활 도구 */}
+            <Route path="/tools/unit-price-calculator" element={<UnitPriceCalculator />} />
+            <Route path="/tools/discount-calculator" element={<DiscountCalculator />} />
+            <Route path="/tools/size-converter" element={<SizeConverter />} />
+            <Route path="/tools/water-intake-calculator" element={<WaterIntakeCalculator />} />
+            
+            {/* 유틸리티/개발 도구 추가 */}
+            <Route path="/tools/html-stripper" element={<HtmlStripper />} />
+            <Route path="/tools/morse-code" element={<MorseCode />} />
+            
+            {/* 음악/창작 도구 */}
+            <Route path="/tools/metronome" element={<Metronome />} />
+            <Route path="/tools/chord-transposer" element={<ChordTransposer />} />
+            
+            {/* 디자인 도구 */}
+            <Route path="/tools/palette-generator" element={<PaletteGenerator />} />
+            <Route path="/tools/gradient-generator" element={<GradientGenerator />} />
+            <Route path="/tools/box-shadow-generator" element={<BoxShadowGenerator />} />
+            <Route path="/tools/glassmorphism-generator" element={<GlassmorphismGenerator />} />
+            <Route path="/tools/neumorphism-generator" element={<NeumorphismGenerator />} />
+            <Route path="/tools/css-grid-generator" element={<CssGridGenerator />} />
+            
+            {/* 건강/생활 도구 추가 */}
+            <Route path="/tools/caffeine-calculator" element={<CaffeineCalculator />} />
+            <Route path="/tools/lunar-calendar" element={<LunarCalendar />} />
+            
+            {/* 개발/IT 도구 추가 */}
+            <Route path="/tools/diff-checker" element={<DiffChecker />} />
+            <Route path="/tools/favicon-generator" element={<FaviconGenerator />} />
+            <Route path="/tools/exif-remover" element={<ExifRemover />} />
+            <Route path="/tools/exif-viewer" element={<ExifViewer />} />
             
             {/* 정보 페이지들 */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

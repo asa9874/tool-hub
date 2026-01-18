@@ -1,50 +1,44 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO';
 import { siteConfig } from '../config/siteConfig';
+import { getToolIcon } from '../config/toolIcons';
 
-// 카테고리 키를 i18n 키로 매핑
-const categoryI18nKey: Record<string, string> = {
-  '금융/부동산': 'categories.finance',
-  '건강/라이프스타일': 'categories.health',
-  '생활/사회': 'categories.life',
-  '업무/생산성': 'categories.productivity',
-  '개발/IT': 'categories.dev',
+// 카테고리별 색상 매핑
+const categoryColors: Record<string, { bg: string; text: string; hover: string; border: string }> = {
+  '금융/부동산': { bg: 'bg-emerald-50', text: 'text-emerald-700', hover: 'hover:bg-emerald-100', border: 'border-emerald-200' },
+  '건강/라이프스타일': { bg: 'bg-rose-50', text: 'text-rose-700', hover: 'hover:bg-rose-100', border: 'border-rose-200' },
+  '생활/사회': { bg: 'bg-amber-50', text: 'text-amber-700', hover: 'hover:bg-amber-100', border: 'border-amber-200' },
+  '업무/생산성': { bg: 'bg-blue-50', text: 'text-blue-700', hover: 'hover:bg-blue-100', border: 'border-blue-200' },
+  '개발/IT': { bg: 'bg-violet-50', text: 'text-violet-700', hover: 'hover:bg-violet-100', border: 'border-violet-200' },
+  '게임/재미': { bg: 'bg-pink-50', text: 'text-pink-700', hover: 'hover:bg-pink-100', border: 'border-pink-200' },
+  '유틸리티': { bg: 'bg-cyan-50', text: 'text-cyan-700', hover: 'hover:bg-cyan-100', border: 'border-cyan-200' },
+  '쇼핑/실생활': { bg: 'bg-orange-50', text: 'text-orange-700', hover: 'hover:bg-orange-100', border: 'border-orange-200' },
+  '음악/창작': { bg: 'bg-indigo-50', text: 'text-indigo-700', hover: 'hover:bg-indigo-100', border: 'border-indigo-200' },
+  '디자인': { bg: 'bg-fuchsia-50', text: 'text-fuchsia-700', hover: 'hover:bg-fuchsia-100', border: 'border-fuchsia-200' },
 };
 
-// 도구 ID를 i18n 키로 매핑
-const toolI18nKey: Record<string, string> = {
-  'loan-calculator': 'tools.loanCalculator',
-  'savings-calculator': 'tools.savingsCalculator',
-  'brokerage-fee-calculator': 'tools.brokerageFeeCalculator',
-  'severance-calculator': 'tools.severanceCalculator',
-  'bmi-calculator': 'tools.bmiCalculator',
-  'bmr-calculator': 'tools.bmrCalculator',
-  'calorie-burn-calculator': 'tools.calorieBurnCalculator',
-  'age-calculator': 'tools.ageCalculator',
-  'military-calculator': 'tools.militaryCalculator',
-  'gpa-calculator': 'tools.gpaCalculator',
-  'salary-calculator': 'tools.salaryCalculator',
-  'zodiac-calculator': 'tools.zodiacCalculator',
-  'd-day-calculator': 'tools.ddayCalculator',
-  'character-counter': 'tools.characterCounter',
-  'percent-calculator': 'tools.percentCalculator',
-  'unit-converter': 'tools.unitConverter',
-  'json-formatter': 'tools.jsonFormatter',
-  'base64': 'tools.base64Tool',
-  'url-encoder': 'tools.urlEncoder',
-  'lorem-ipsum': 'tools.loremIpsum',
+const defaultColor = { bg: 'bg-gray-50', text: 'text-gray-700', hover: 'hover:bg-gray-100', border: 'border-gray-200' };
+
+// 카테고리 아이콘
+const categoryIcons: Record<string, string> = {
+  '금융/부동산': '💰',
+  '건강/라이프스타일': '💪',
+  '생활/사회': '🏠',
+  '업무/생산성': '📊',
+  '개발/IT': '💻',
+  '게임/재미': '🎮',
+  '유틸리티': '🔧',
+  '쇼핑/실생활': '🛒',
+  '음악/창작': '🎵',
+  '디자인': '🎨',
 };
 
-/**
- * 홈페이지 컴포넌트
- * - 모든 도구 목록을 카드 형태로 표시
- * - SEO 최적화된 구조
- * - 다국어 지원
- */
 export default function Home() {
   const { t, i18n } = useTranslation();
   const isKorean = i18n.language === 'ko';
+  const [searchQuery, setSearchQuery] = useState('');
 
   // 홈페이지용 구조화된 데이터
   const structuredData = {
@@ -56,15 +50,6 @@ export default function Home() {
     publisher: {
       '@type': 'Organization',
       name: 'ToolHub',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${siteConfig.siteUrl}/logo.png`,
-      },
-    },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${siteConfig.siteUrl}/search?q={search_term_string}`,
-      'query-input': 'required name=search_term_string',
     },
   };
 
@@ -76,6 +61,31 @@ export default function Home() {
     acc[tool.category].push(tool);
     return acc;
   }, {} as Record<string, typeof siteConfig.tools>);
+
+  // 검색 필터링
+  const filteredToolsByCategory = Object.entries(toolsByCategory).reduce((acc, [category, tools]) => {
+    if (!searchQuery) {
+      acc[category] = tools;
+      return acc;
+    }
+    
+    const filtered = tools.filter(tool => 
+      tool.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      tool.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      tool.keywords.some(k => k.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
+    
+    if (filtered.length > 0) {
+      acc[category] = filtered;
+    }
+    return acc;
+  }, {} as Record<string, typeof siteConfig.tools>);
+
+  // 도구 제목에서 짧은 이름 추출
+  const getShortTitle = (title: string): string => {
+    const mainTitle = title.split(' - ')[0];
+    return mainTitle.replace(/\d{4}년\s*/g, '').trim();
+  };
 
   return (
     <>
@@ -90,111 +100,84 @@ export default function Home() {
         structuredData={structuredData}
       />
 
-      {/* 히어로 섹션 */}
-      <section className="text-center py-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl text-white mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          ToolHub
-        </h1>
-        <p className="text-xl md:text-2xl opacity-90 mb-2">
+      {/* 히어로 섹션 - 컴팩트하게 */}
+      <section className="text-center py-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl text-white mb-8">
+        <h1 className="text-3xl md:text-4xl font-bold mb-2">🛠️ ToolHub</h1>
+        <p className="text-lg opacity-90">
           {isKorean ? '무료 온라인 도구 모음' : 'Free Online Tools'}
-        </p>
-        <p className="text-lg opacity-80 max-w-2xl mx-auto px-4">
-          {isKorean 
-            ? '만나이 계산기, 글자수 세기 등 일상에서 필요한 다양한 도구들을 무료로 이용하세요.'
-            : 'Use various everyday tools for free, including age calculator, character counter, and more.'
-          }
         </p>
       </section>
 
-      {/* 도구 목록 */}
-      {Object.entries(toolsByCategory).map(([category, tools]) => (
-        <section key={category} className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm mr-3">
-              {t(categoryI18nKey[category] || category)}
-            </span>
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {tools.map((tool) => {
-              const i18nKey = toolI18nKey[tool.id];
-              return (
+      {/* 검색창 */}
+      <section className="mb-6">
+        <div className="relative max-w-xl mx-auto">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder={isKorean ? '🔍 도구 검색 (예: 계산기, 변환기, BMI...)' : '🔍 Search tools...'}
+            className="w-full px-4 py-3 pl-5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+            >
+              ✕
+            </button>
+          )}
+        </div>
+      </section>
+
+      {/* 도구 목록 - 그리드 형태 */}
+      {Object.entries(filteredToolsByCategory).map(([category, tools]) => {
+        const colors = categoryColors[category] || defaultColor;
+        const icon = categoryIcons[category] || '📦';
+        
+        return (
+          <section key={category} className="mb-8">
+            <h2 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+              <span>{icon}</span>
+              <span>{category}</span>
+              <span className="text-sm font-normal text-gray-400">({tools.length})</span>
+            </h2>
+            
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+              {tools.map((tool) => (
                 <Link
                   key={tool.id}
                   to={tool.path}
-                  className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+                  className={`group flex flex-col items-center p-4 rounded-xl border ${colors.border} ${colors.bg} ${colors.hover} transition-all duration-200 hover:shadow-md hover:-translate-y-0.5`}
                 >
-                  <article className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors mb-3">
-                      {i18nKey ? t(`${i18nKey}.title`) : tool.title.split(' - ')[0]}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      {i18nKey ? t(`${i18nKey}.description`) : tool.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {tool.keywords.slice(0, 3).map((keyword) => (
-                        <span 
-                          key={keyword}
-                          className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs"
-                        >
-                          {keyword}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="mt-4 text-blue-600 text-sm font-medium flex items-center">
-                      {isKorean ? '사용하기' : 'Use Tool'}
-                      <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </article>
+                  <div className={`${colors.text} mb-2 group-hover:scale-110 transition-transform`}>
+                    <span className="[&>svg]:w-6 [&>svg]:h-6">{getToolIcon(tool.id)}</span>
+                  </div>
+                  <span className={`text-xs md:text-sm font-medium ${colors.text} text-center leading-tight line-clamp-2`}>
+                    {getShortTitle(tool.title)}
+                  </span>
                 </Link>
-              );
-            })}
-          </div>
-        </section>
-      ))}
+              ))}
+            </div>
+          </section>
+        );
+      })}
 
-      {/* SEO를 위한 추가 콘텐츠 섹션 */}
-      <section className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          {isKorean ? 'ToolHub 소개' : 'About ToolHub'}
-        </h2>
-        <div className="prose prose-gray max-w-none">
-          {isKorean ? (
-            <>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                ToolHub는 일상생활에서 자주 필요한 다양한 온라인 도구들을 무료로 제공하는 서비스입니다. 
-                복잡한 계산이나 변환 작업을 간단하고 빠르게 처리할 수 있습니다.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                <strong>만나이 계산기</strong>를 사용하면 2023년 시행된 만나이 통일법에 따라 
-                정확한 만나이를 계산할 수 있습니다. 생년월일만 입력하면 만나이, 한국식 나이, 
-                연나이를 한 번에 확인할 수 있습니다.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                모든 도구는 회원가입 없이 무료로 사용할 수 있으며, 
-                개인정보를 수집하거나 저장하지 않습니다.
-              </p>
-            </>
-          ) : (
-            <>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                ToolHub provides various free online tools that are frequently needed in everyday life. 
-                You can easily and quickly handle complex calculations and conversions.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Use the <strong>Age Calculator</strong> to accurately calculate your age. 
-                Simply enter your birthdate to see your international age, Korean age, 
-                and year age all at once.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                All tools are free to use without registration, 
-                and we do not collect or store personal information.
-              </p>
-            </>
-          )}
+      {/* 검색 결과 없음 */}
+      {searchQuery && Object.keys(filteredToolsByCategory).length === 0 && (
+        <div className="text-center py-12 text-gray-500">
+          <p className="text-xl mb-2">😅</p>
+          <p>{isKorean ? `"${searchQuery}"에 대한 검색 결과가 없습니다.` : `No results for "${searchQuery}"`}</p>
         </div>
+      )}
+
+      {/* 통계 */}
+      <section className="mt-8 text-center text-sm text-gray-500">
+        <p>
+          {isKorean 
+            ? `총 ${siteConfig.tools.length}개의 무료 도구 제공 중`
+            : `${siteConfig.tools.length} free tools available`
+          }
+        </p>
       </section>
     </>
   );

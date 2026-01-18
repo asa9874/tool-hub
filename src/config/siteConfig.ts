@@ -387,6 +387,178 @@ export const siteConfig = {
       keywords: ['내 IP', '공인 IP', '포트 체커', 'IP 확인', 'port checker'],
       category: '개발/IT',
     },
+
+    // === 쇼핑/실생활 분야 ===
+    {
+      id: 'unit-price-calculator',
+      path: '/tools/unit-price-calculator',
+      title: '마트 단위당 가격 비교기 - 가성비 계산 (100g/100ml당)',
+      description: '용량과 가격이 다른 상품의 100ml/100g당 가격을 계산하여 어떤 것이 더 저렴한지 비교합니다. 마트 장보기 필수 도구.',
+      keywords: ['단위당 가격', '가성비 계산기', '마트 가격 비교', '100ml당 가격', '100g당 가격', '장보기 도구'],
+      category: '쇼핑/실생활',
+    },
+    {
+      id: 'discount-calculator',
+      path: '/tools/discount-calculator',
+      title: '할인율 계산기 - 세일 가격, 최종 결제 금액 계산',
+      description: '정가와 할인율을 입력하면 할인 금액과 최종 결제 금액을 즉시 계산합니다. 쇼핑 세일 시즌 필수 도구.',
+      keywords: ['할인율 계산기', '세일 가격', '할인 금액', '퍼센트 할인', '최종 가격 계산'],
+      category: '쇼핑/실생활',
+    },
+    {
+      id: 'size-converter',
+      path: '/tools/size-converter',
+      title: '해외 사이즈 변환기 - US/EU/UK 신발 의류 사이즈',
+      description: '미국(US), 유럽(EU), 영국(UK) 신발 및 의류 사이즈를 한국 사이즈로 변환합니다. 해외직구 필수 도구.',
+      keywords: ['사이즈 변환', '해외 사이즈', 'US 사이즈', 'EU 사이즈', '신발 사이즈', '의류 사이즈', '해외직구'],
+      category: '쇼핑/실생활',
+    },
+    {
+      id: 'water-intake-calculator',
+      path: '/tools/water-intake-calculator',
+      title: '하루 권장 음수량 계산기 - 물 섭취량 계산',
+      description: '체중과 활동량을 바탕으로 하루에 마셔야 할 적정 물 섭취량을 컵 단위로 계산합니다. 건강 관리 필수 도구.',
+      keywords: ['물 섭취량', '권장 음수량', '하루 물', '수분 섭취', '물 마시기', '건강 관리'],
+      category: '건강/라이프스타일',
+    },
+
+    // === 유틸리티/개발 추가 분야 ===
+    {
+      id: 'html-stripper',
+      path: '/tools/html-stripper',
+      title: 'HTML 태그 제거기 - 순수 텍스트 추출 도구',
+      description: 'HTML 코드에서 모든 태그를 제거하고 순수 텍스트만 추출합니다. 웹 콘텐츠 복사, 데이터 정리 시 유용.',
+      keywords: ['HTML 태그 제거', '태그 삭제', '텍스트 추출', 'strip tags', 'HTML to text'],
+      category: '개발/IT',
+    },
+    {
+      id: 'morse-code',
+      path: '/tools/morse-code',
+      title: '모스 부호 변환기 - 텍스트 ↔ 모스 코드',
+      description: '텍스트를 모스 부호로, 모스 부호를 텍스트로 양방향 변환합니다. 소리 재생 기능 지원.',
+      keywords: ['모스 부호', '모스 코드', 'Morse code', '부호 변환', 'SOS'],
+      category: '유틸리티',
+    },
+
+    // === 음악/창작 분야 ===
+    {
+      id: 'metronome',
+      path: '/tools/metronome',
+      title: '온라인 메트로놈 - BPM 박자기, TAP 템포',
+      description: '웹 기반 메트로놈. BPM 조절, TAP 템포 감지, 다양한 박자 설정으로 음악 연습을 도와드립니다.',
+      keywords: ['메트로놈', 'BPM', '박자기', 'TAP 템포', '음악 연습', '온라인 메트로놈'],
+      category: '음악/창작',
+    },
+    {
+      id: 'chord-transposer',
+      path: '/tools/chord-transposer',
+      title: '코드 조바꿈 도구 - 악보 키 변경, 카포 계산',
+      description: '기타/피아노 코드를 원하는 키로 조바꿈합니다. 카포 위치 추천, 일반 코드 진행 프리셋 제공.',
+      keywords: ['조바꿈', '코드 변환', '키 변경', '카포 계산', '기타 코드', '악보 변환'],
+      category: '음악/창작',
+    },
+
+    // === 디자인 분야 ===
+    {
+      id: 'palette-generator',
+      path: '/tools/palette-generator',
+      title: '랜덤 색상 조합 생성기 - 컬러 팔레트 메이커',
+      description: '어울리는 5가지 색상 조합을 랜덤으로 생성합니다. 유사색, 보색, 파스텔 등 다양한 팔레트 유형 지원.',
+      keywords: ['색상 조합', '컬러 팔레트', 'color palette', '색상 생성기', '디자인 색상', 'HEX 코드'],
+      category: '디자인',
+    },
+    {
+      id: 'gradient-generator',
+      path: '/tools/gradient-generator',
+      title: 'CSS 그래디언트 생성기 - 선형/원형 그라데이션 메이커',
+      description: 'CSS linear-gradient, radial-gradient 코드를 시각적으로 생성합니다. 멀티 컬러 스톱, 각도 조절, 프리셋 지원.',
+      keywords: ['CSS 그래디언트', 'gradient generator', 'linear-gradient', 'radial-gradient', '그라데이션', '배경색'],
+      category: '디자인',
+    },
+    {
+      id: 'box-shadow-generator',
+      path: '/tools/box-shadow-generator',
+      title: '박스 쉐도우 생성기 - CSS 그림자 디자인 툴',
+      description: 'CSS box-shadow를 시각적으로 디자인합니다. 다중 레이어 그림자, inset, 색상/블러 조절 지원.',
+      keywords: ['box-shadow', 'CSS 그림자', '박스 쉐도우', 'shadow generator', '그림자 효과', 'CSS 디자인'],
+      category: '디자인',
+    },
+    {
+      id: 'glassmorphism-generator',
+      path: '/tools/glassmorphism-generator',
+      title: '글래스모피즘 UI 생성기 - 반투명 유리 효과',
+      description: '모던한 글래스모피즘(유리 효과) CSS를 생성합니다. backdrop-filter, 투명도, 블러 조절 지원.',
+      keywords: ['glassmorphism', '글래스모피즘', '유리 효과', 'backdrop-filter', 'UI 디자인', 'blur 효과'],
+      category: '디자인',
+    },
+    {
+      id: 'neumorphism-generator',
+      path: '/tools/neumorphism-generator',
+      title: '뉴모피즘 디자인 생성기 - Soft UI 버튼/카드',
+      description: '부드러운 3D 느낌의 뉴모피즘 CSS를 생성합니다. flat, concave, convex, pressed 스타일 지원.',
+      keywords: ['neumorphism', '뉴모피즘', 'soft UI', '소프트 UI', '3D 버튼', 'CSS 디자인'],
+      category: '디자인',
+    },
+    {
+      id: 'css-grid-generator',
+      path: '/tools/css-grid-generator',
+      title: 'CSS 그리드 레이아웃 생성기 - 드래그로 영역 설정',
+      description: 'CSS Grid 레이아웃을 시각적으로 설계합니다. 드래그로 영역 병합, grid-template-areas 코드 생성.',
+      keywords: ['CSS Grid', '그리드 레이아웃', 'grid generator', 'grid-template-areas', '웹 레이아웃', 'CSS 레이아웃'],
+      category: '디자인',
+    },
+
+    // === 건강/생활 추가 분야 ===
+    {
+      id: 'caffeine-calculator',
+      path: '/tools/caffeine-calculator',
+      title: '일일 카페인 섭취량 계산기 - 커피 권장량 체크',
+      description: '커피, 에너지 드링크 등 음료별 카페인 함량을 계산하여 하루 권장량(400mg) 대비 섭취 수준을 확인합니다.',
+      keywords: ['카페인 계산기', '커피 카페인', '일일 카페인', '카페인 권장량', '에너지 드링크 카페인'],
+      category: '건강/라이프스타일',
+    },
+    {
+      id: 'lunar-calendar',
+      path: '/tools/lunar-calendar',
+      title: '음력 양력 변환기 & 손 없는 날 - 이사 길일',
+      description: '양력을 음력으로 변환하고, 이사나 개업에 좋은 손 없는 날을 달력에서 확인합니다.',
+      keywords: ['음력 양력 변환', '손 없는 날', '이사 날짜', '음력 달력', '개업 길일', '손없는날'],
+      category: '생활/사회',
+    },
+
+    // === 개발/IT 추가 분야 ===
+    {
+      id: 'diff-checker',
+      path: '/tools/diff-checker',
+      title: '텍스트 차이 비교기 (Diff Checker) - 코드 비교 도구',
+      description: '두 텍스트의 차이점을 줄 단위로 비교하여 변경된 부분을 하이라이트로 표시합니다. 코드 리뷰, 문서 수정에 유용.',
+      keywords: ['Diff Checker', '텍스트 비교', '코드 비교', '차이점 비교', 'diff tool', '문서 비교'],
+      category: '개발/IT',
+    },
+    {
+      id: 'favicon-generator',
+      path: '/tools/favicon-generator',
+      title: '파비콘 생성기 - 웹사이트 아이콘 만들기 (모든 크기)',
+      description: '이미지를 업로드하면 웹사이트에 필요한 모든 크기의 파비콘(16x16~512x512)을 자동 생성합니다.',
+      keywords: ['파비콘 생성기', 'favicon', '웹사이트 아이콘', 'apple touch icon', '파비콘 만들기'],
+      category: '개발/IT',
+    },
+    {
+      id: 'exif-remover',
+      path: '/tools/exif-remover',
+      title: '이미지 EXIF 메타데이터 삭제기 - 위치 정보 제거',
+      description: '사진 파일의 GPS 위치, 카메라 정보, 촬영 날짜 등 EXIF 메타데이터를 안전하게 삭제합니다.',
+      keywords: ['EXIF 삭제', '메타데이터 제거', '위치 정보 삭제', '사진 개인정보', 'EXIF remover'],
+      category: '개발/IT',
+    },
+    {
+      id: 'exif-viewer',
+      path: '/tools/exif-viewer',
+      title: '이미지 EXIF 메타데이터 확인기 - 사진 정보 조회',
+      description: '사진 파일에 포함된 GPS 위치, 카메라 정보, 촬영 설정 등 EXIF 메타데이터를 조회합니다.',
+      keywords: ['EXIF 확인', '메타데이터 조회', '사진 정보', 'EXIF viewer', '촬영 정보'],
+      category: '개발/IT',
+    },
   ],
 };
 

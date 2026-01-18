@@ -130,6 +130,112 @@ const pages = [
     changefreq: 'weekly',
     priority: '0.7',
   },
+  // === 쇼핑/실생활 도구 ===
+  {
+    path: '/tools/unit-price-calculator',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/discount-calculator',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/size-converter',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/water-intake-calculator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  // === 유틸리티/개발 추가 도구 ===
+  {
+    path: '/tools/html-stripper',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/morse-code',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  // === 음악/창작 도구 ===
+  {
+    path: '/tools/metronome',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/chord-transposer',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  // === 디자인 도구 ===
+  {
+    path: '/tools/palette-generator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/gradient-generator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/box-shadow-generator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/glassmorphism-generator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/neumorphism-generator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/css-grid-generator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  // === 건강/생활 추가 도구 ===
+  {
+    path: '/tools/caffeine-calculator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/lunar-calendar',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  // === 개발/IT 추가 도구 ===
+  {
+    path: '/tools/diff-checker',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/favicon-generator',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/exif-remover',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/exif-viewer',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
   // === 정보 페이지 ===
   {
     path: '/privacy-policy',
