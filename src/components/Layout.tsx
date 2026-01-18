@@ -86,6 +86,18 @@ const toolI18nKey: Record<string, string> = {
   'sticky-note': 'tools.stickyNote.title',
   'webp-converter': 'tools.webpConverter.title',
   'ip-port-checker': 'tools.ipPortChecker.title',
+  // 디자인 도구 추가
+  'placeholder-image': 'tools.placeholderImage.title',
+  'svg-blob-generator': 'tools.svgBlobGenerator.title',
+  'social-media-size-guide': 'tools.socialMediaSizeGuide.title',
+  'css-filter-lab': 'tools.cssFilterLab.title',
+  'css-pattern-generator': 'tools.cssPatternGenerator.title',
+  // UI/UX 및 편의 도구 추가
+  'logo-safe-area': 'tools.logoSafeArea.title',
+  'favicon-preview': 'tools.faviconPreview.title',
+  'button-generator': 'tools.buttonGenerator.title',
+  'color-blindness-simulator': 'tools.colorBlindnessSimulator.title',
+  'screen-resolution': 'tools.screenResolution.title',
 };
 
 /**

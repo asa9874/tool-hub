@@ -426,6 +426,56 @@
       "title": "IP & Port Checker",
       "fullTitle": "Public IP Checker & Port Tester",
       "description": "Check your public IP address and location. Test if ports are open."
+    },
+    "placeholderImage": {
+      "title": "Placeholder Image",
+      "fullTitle": "Placeholder Image Generator - Dummy Image URL",
+      "description": "Generate placeholder images with custom size and color as URLs."
+    },
+    "svgBlobGenerator": {
+      "title": "SVG Blob Generator",
+      "fullTitle": "SVG Blob Generator - Organic Curved Shapes",
+      "description": "Generate smooth, organic SVG blob shapes for web design backgrounds."
+    },
+    "socialMediaSizeGuide": {
+      "title": "Social Media Size Guide",
+      "fullTitle": "Social Media Image Size Guide (2026)",
+      "description": "Recommended image sizes for Instagram, YouTube, TikTok and more."
+    },
+    "cssFilterLab": {
+      "title": "CSS Filter Lab",
+      "fullTitle": "CSS Filter Lab - Image Filter Effects",
+      "description": "Apply CSS filters like Blur, Brightness, Sepia to images and copy the code."
+    },
+    "cssPatternGenerator": {
+      "title": "CSS Pattern Generator",
+      "fullTitle": "CSS Background Pattern Generator - Dots, Checks, Stripes",
+      "description": "Generate repeating patterns like dots, checks, stripes using pure CSS."
+    },
+    "logoSafeArea": {
+      "title": "Logo Safe Area Generator",
+      "fullTitle": "Logo Safe Area Generator - Brand Guideline Grid",
+      "description": "Add safety margins and grids to logo files for brand guideline compliance."
+    },
+    "faviconPreview": {
+      "title": "Favicon Preview",
+      "fullTitle": "Favicon Preview - Browser Tab & Mobile Simulation",
+      "description": "Preview how your favicon looks in browser tabs, bookmarks, and mobile screens."
+    },
+    "buttonGenerator": {
+      "title": "Button Design Factory",
+      "fullTitle": "Button Design Factory - Tailwind CSS Button Generator",
+      "description": "Create stylish buttons with rounded corners, shadows, hover effects and export as Tailwind CSS."
+    },
+    "colorBlindnessSimulator": {
+      "title": "Color Blindness Simulator",
+      "fullTitle": "Color Blindness Simulator - Web Accessibility Test",
+      "description": "See how your design looks to users with color vision deficiency."
+    },
+    "screenResolution": {
+      "title": "Screen Resolution Checker",
+      "fullTitle": "Screen Resolution Checker - Monitor Resolution & PPI",
+      "description": "Check your device's logical/physical resolution, pixel density, and PPI."
     }
   }
 }

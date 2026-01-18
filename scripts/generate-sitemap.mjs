@@ -236,6 +236,58 @@ const pages = [
     changefreq: 'weekly',
     priority: '0.8',
   },
+  // === 디자인 도구 추가 ===
+  {
+    path: '/tools/placeholder-image',
+    changefreq: 'weekly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/svg-blob-generator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/social-media-size-guide',
+    changefreq: 'monthly',
+    priority: '0.9',
+  },
+  {
+    path: '/tools/css-filter-lab',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/css-pattern-generator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  // === UI/UX 및 편의 도구 ===
+  {
+    path: '/tools/logo-safe-area',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/favicon-preview',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/button-generator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/color-blindness-simulator',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
+  {
+    path: '/tools/screen-resolution',
+    changefreq: 'weekly',
+    priority: '0.8',
+  },
   // === 정보 페이지 ===
   {
     path: '/privacy-policy',

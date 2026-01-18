@@ -100,6 +100,20 @@ import FaviconGenerator from './pages/tools/FaviconGenerator';
 import ExifRemover from './pages/tools/ExifRemover';
 import ExifViewer from './pages/tools/ExifViewer';
 
+// 디자인 도구 추가
+import PlaceholderImage from './pages/tools/PlaceholderImage';
+import SvgBlobGenerator from './pages/tools/SvgBlobGenerator';
+import SocialMediaSizeGuide from './pages/tools/SocialMediaSizeGuide';
+import CssFilterLab from './pages/tools/CssFilterLab';
+import CssPatternGenerator from './pages/tools/CssPatternGenerator';
+
+// UI/UX 및 편의 도구 추가
+import LogoSafeArea from './pages/tools/LogoSafeArea';
+import FaviconPreview from './pages/tools/FaviconPreview';
+import ButtonGenerator from './pages/tools/ButtonGenerator';
+import ColorBlindnessSimulator from './pages/tools/ColorBlindnessSimulator';
+import ScreenResolution from './pages/tools/ScreenResolution';
+
 /**
  * 메인 App 컴포넌트
  * - HelmetProvider: SEO 메타 태그 관리
@@ -213,6 +227,20 @@ function App() {
             <Route path="/tools/favicon-generator" element={<FaviconGenerator />} />
             <Route path="/tools/exif-remover" element={<ExifRemover />} />
             <Route path="/tools/exif-viewer" element={<ExifViewer />} />
+            
+            {/* 디자인 도구 추가 */}
+            <Route path="/tools/placeholder-image" element={<PlaceholderImage />} />
+            <Route path="/tools/svg-blob-generator" element={<SvgBlobGenerator />} />
+            <Route path="/tools/social-media-size-guide" element={<SocialMediaSizeGuide />} />
+            <Route path="/tools/css-filter-lab" element={<CssFilterLab />} />
+            <Route path="/tools/css-pattern-generator" element={<CssPatternGenerator />} />
+            
+            {/* UI/UX 및 편의 도구 추가 */}
+            <Route path="/tools/logo-safe-area" element={<LogoSafeArea />} />
+            <Route path="/tools/favicon-preview" element={<FaviconPreview />} />
+            <Route path="/tools/button-generator" element={<ButtonGenerator />} />
+            <Route path="/tools/color-blindness-simulator" element={<ColorBlindnessSimulator />} />
+            <Route path="/tools/screen-resolution" element={<ScreenResolution />} />
             
             {/* 정보 페이지들 */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

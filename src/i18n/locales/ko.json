@@ -426,6 +426,56 @@
       "title": "IP & 포트 체커",
       "fullTitle": "공인 IP 확인 & 포트 체커 - 내 IP 주소",
       "description": "현재 공인 IP 주소와 위치 정보를 확인합니다. 포트 열림 여부 테스트 기능 제공."
+    },
+    "placeholderImage": {
+      "title": "플레이스홀더 이미지",
+      "fullTitle": "플레이스홀더 이미지 생성기 - 임시 이미지 URL",
+      "description": "특정 크기와 색상의 플레이스홀더 이미지를 URL 형태로 생성합니다."
+    },
+    "svgBlobGenerator": {
+      "title": "SVG 블롭 생성기",
+      "fullTitle": "SVG 블롭 생성기 - 유기적인 곡선 도형",
+      "description": "웹 디자인 배경에 사용할 부드러운 곡선 형태의 SVG 블롭을 생성합니다."
+    },
+    "socialMediaSizeGuide": {
+      "title": "소셜 미디어 사이즈 가이드",
+      "fullTitle": "소셜 미디어 이미지 사이즈 가이드 (2026)",
+      "description": "인스타그램, 유튜브, 틱톡 등 주요 플랫폼별 권장 이미지 사이즈를 안내합니다."
+    },
+    "cssFilterLab": {
+      "title": "CSS 필터 실험실",
+      "fullTitle": "CSS 필터 실험실 - 이미지 필터 효과",
+      "description": "이미지에 Blur, Brightness, Sepia 등 CSS 필터를 적용해보고 코드를 복사합니다."
+    },
+    "cssPatternGenerator": {
+      "title": "CSS 배경 패턴 생성기",
+      "fullTitle": "CSS 배경 패턴 생성기 - 도트, 체크, 스트라이프",
+      "description": "도트, 체크, 스트라이프 등 반복 패턴을 CSS 코드로 생성합니다."
+    },
+    "logoSafeArea": {
+      "title": "로고 안전 영역 생성기",
+      "fullTitle": "로고 안전 영역 생성기 - 브랜드 가이드라인 그리드",
+      "description": "로고 파일에 상하좌우 여백과 그리드를 그려 브랜드 가이드라인 준수를 돕습니다."
+    },
+    "faviconPreview": {
+      "title": "파비콘 미리보기",
+      "fullTitle": "파비콘 미리보기 - 브라우저 탭 & 모바일 시뮬레이션",
+      "description": "파비콘이 브라우저 탭, 즐겨찾기 바, 모바일에서 어떻게 보이는지 확인합니다."
+    },
+    "buttonGenerator": {
+      "title": "버튼 디자인 팩토리",
+      "fullTitle": "버튼 디자인 팩토리 - Tailwind CSS 버튼 생성기",
+      "description": "둥글기, 그림자, 호버 효과가 적용된 버튼을 만들고 Tailwind CSS 코드로 내보냅니다."
+    },
+    "colorBlindnessSimulator": {
+      "title": "색약 시뮬레이터",
+      "fullTitle": "색약 시뮬레이터 - 웹 접근성 색각 이상 테스트",
+      "description": "디자인이 색약 사용자에게 어떻게 보이는지 필터를 씨워 확인합니다."
+    },
+    "screenResolution": {
+      "title": "화면 해상도 확인기",
+      "fullTitle": "화면 해상도 확인기 - 내 모니터 해상도 & PPI",
+      "description": "현재 기기의 논리적/물리적 해상도, 픽셀 밀도, PPI를 확인합니다."
     }
   }
 }
