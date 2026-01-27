@@ -2,41 +2,94 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>ToolHub - 페이지 로딩 중...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToolHub - 페이지를 찾는 중...</title>
+  
+  <!-- SEO용 메타 태그 -->
+  <meta name="description" content="ToolHub의 페이지를 로딩하고 있습니다. 잠시만 기다려주세요.">
+  <meta name="robots" content="noindex, follow">
+  
+  <!-- 스타일 -->
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f8fafc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .loading-container {
+      text-align: center;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #e5e7eb;
+      border-top: 3px solid #3b82f6;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  
   <script>
     // GitHub Pages SPA 라우팅 해결을 위한 404 리다이렉트 스크립트
     // 참고: https://github.com/rafgraph/spa-github-pages
     
-    // 현재 경로를 세션 스토리지에 저장하고 루트로 리다이렉트
-    // index.html의 스크립트가 저장된 경로를 복원
     (function() {
-      // 리포지토리 이름 (GitHub Pages 서브 경로)
-      // 예: https://username.github.io/tool-hub 의 경우 '/tool-hub'
-      var pathSegmentsToKeep = 1; // 서브 경로가 없으면 0으로 설정
-      
-      var locationPath = window.location.pathname;
-      var locationSearch = window.location.search;
-      var locationHash = window.location.hash;
-      
-      // 전체 URL을 세션 스토리지에 저장
-      sessionStorage.redirect = 
-        window.location.origin + 
-        locationPath + 
-        locationSearch + 
-        locationHash;
-      
-      // 베이스 경로로 리다이렉트
-      var basePath = locationPath.split('/').slice(0, pathSegmentsToKeep + 1).join('/') + '/';
-      window.location.replace(basePath);
+      try {
+        // 리포지토리 이름에 따른 세그먼트 수
+        // https://username.github.io/tool-hub -> pathSegmentsToKeep = 1
+        var pathSegmentsToKeep = 1;
+        
+        var location = window.location;
+        var pathname = location.pathname;
+        var search = location.search;
+        var hash = location.hash;
+        
+        // 이미 루트 경로인 경우 리다이렉트하지 않음
+        if (pathname === '/tool-hub/' || pathname === '/tool-hub') {
+          return;
+        }
+        
+        // 전체 URL을 세션 스토리지에 저장
+        var redirectUrl = location.origin + pathname + search + hash;
+        sessionStorage.setItem('redirect', redirectUrl);
+        
+        // 베이스 경로 계산
+        var pathSegments = pathname.split('/');
+        var basePath = pathSegments.slice(0, pathSegmentsToKeep + 1).join('/') + '/';
+        
+        // 루트로 리다이렉트 (replace 사용으로 히스토리에 남지 않음)
+        window.location.replace(location.origin + basePath);
+        
+      } catch (error) {
+        // 오류 발생 시 홈으로 리다이렉트
+        window.location.replace('/tool-hub/');
+      }
     })();
   </script>
 </head>
 <body>
+  <!-- JavaScript 비활성화된 사용자를 위한 대체 -->
   <noscript>
-    <meta http-equiv="refresh" content="0; url=/" />
+    <meta http-equiv="refresh" content="0; url=/tool-hub/" />
   </noscript>
-  <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif;">
-    <p>페이지를 로딩 중입니다...</p>
+  
+  <div class="loading-container">
+    <div class="spinner"></div>
+    <p>페이지를 찾는 중입니다...</p>
+    <p><small>자동으로 리다이렉트되지 않는다면 <a href="/tool-hub/">홈페이지</a>를 클릭하세요.</small></p>
   </div>
 </body>
 </html>
