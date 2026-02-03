@@ -48,14 +48,44 @@
     
     (function() {
       try {
-        // 리포지토리 이름에 따른 세그먼트 수
-        // https://username.github.io/tool-hub -> pathSegmentsToKeep = 1
-        var pathSegmentsToKeep = 1;
-        
         var location = window.location;
         var pathname = location.pathname;
         var search = location.search;
         var hash = location.hash;
+        
+        // 정적 파일들은 리다이렉트하지 않음
+        var staticFiles = [
+          '/sitemap.xml',
+          '/robots.txt',
+          '/manifest.json',
+          '/favicon.ico',
+          '/favicon.svg',
+          '/favicon-16x16.png',
+          '/favicon-32x32.png',
+          '/apple-touch-icon.png',
+          '/og-image.png'
+        ];
+        
+        // 현재 경로가 정적 파일인지 확인
+        var isStaticFile = staticFiles.some(function(file) {
+          return pathname.endsWith(file) || pathname === '/tool-hub' + file;
+        });
+        
+        // 정적 파일이면 리다이렉트하지 않음
+        if (isStaticFile) {
+          return;
+        }
+        
+        // assets 폴더나 기타 리소스도 리다이렉트하지 않음
+        if (pathname.includes('/assets/') || 
+            pathname.includes('/.well-known/') ||
+            pathname.match(/\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$/)) {
+          return;
+        }
+        
+        // 리포지토리 이름에 따른 세그먼트 수
+        // https://username.github.io/tool-hub -> pathSegmentsToKeep = 1
+        var pathSegmentsToKeep = 1;
         
         // 이미 루트 경로인 경우 리다이렉트하지 않음
         if (pathname === '/tool-hub/' || pathname === '/tool-hub') {
