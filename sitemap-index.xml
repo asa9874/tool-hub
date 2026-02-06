@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+              http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd">
+  <sitemap>
+    <loc>https://asa9874.github.io/tool-hub/sitemap-home.xml</loc>
+    <lastmod>2026-02-06</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://asa9874.github.io/tool-hub/sitemap-finance.xml</loc>
+    <lastmod>2026-02-06</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://asa9874.github.io/tool-hub/sitemap-health.xml</loc>
+    <lastmod>2026-02-06</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://asa9874.github.io/tool-hub/sitemap-business.xml</loc>
+    <lastmod>2026-02-06</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://asa9874.github.io/tool-hub/sitemap-development.xml</loc>
+    <lastmod>2026-02-06</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://asa9874.github.io/tool-hub/sitemap-utility.xml</loc>
+    <lastmod>2026-02-06</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://asa9874.github.io/tool-hub/sitemap-privacy.xml</loc>
+    <lastmod>2026-02-06</lastmod>
+  </sitemap>
+</sitemapindex>
