@@ -2,111 +2,41 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>페이지를 찾을 수 없습니다 - ToolHub</title>
-  
-  <!-- SEO용 메타 태그 -->
-  <meta name="description" content="요청하신 페이지를 찾을 수 없습니다. ToolHub 홈페이지에서 원하는 도구를 찾아보세요.">
-  <meta name="robots" content="noindex, follow">
-  
-  <!-- 스타일 -->
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: #f8fafc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      color: #1f2937;
-    }
-    .error-container {
-      text-align: center;
-      padding: 3rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
-      margin: 0 1rem;
-    }
-    .error-code {
-      font-size: 6rem;
-      font-weight: bold;
-      color: #3b82f6;
-      margin: 0;
-      line-height: 1;
-    }
-    .error-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin: 1rem 0 0.5rem;
-      color: #111827;
-    }
-    .error-message {
-      color: #6b7280;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-    .home-button {
-      display: inline-block;
-      background-color: #3b82f6;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background-color 0.2s;
-      margin: 0.5rem;
-    }
-    .home-button:hover {
-      background-color: #2563eb;
-    }
-    .tools-list {
-      margin-top: 2rem;
-      padding-top: 2rem;
-      border-top: 1px solid #e5e7eb;
-    }
-    .tools-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: #111827;
-    }
-    .tool-link {
-      display: inline-block;
-      color: #3b82f6;
-      text-decoration: none;
-      margin: 0.25rem 0.5rem;
-      font-size: 0.9rem;
-    }
-    .tool-link:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <title>ToolHub - 페이지 로딩 중...</title>
+  <script>
+    // GitHub Pages SPA 라우팅 해결을 위한 404 리다이렉트 스크립트
+    // 참고: https://github.com/rafgraph/spa-github-pages
+    
+    // 현재 경로를 세션 스토리지에 저장하고 루트로 리다이렉트
+    // index.html의 스크립트가 저장된 경로를 복원
+    (function() {
+      // 리포지토리 이름 (GitHub Pages 서브 경로)
+      // 예: https://username.github.io/tool-hub 의 경우 '/tool-hub'
+      var pathSegmentsToKeep = 1; // 서브 경로가 없으면 0으로 설정
+      
+      var locationPath = window.location.pathname;
+      var locationSearch = window.location.search;
+      var locationHash = window.location.hash;
+      
+      // 전체 URL을 세션 스토리지에 저장
+      sessionStorage.redirect = 
+        window.location.origin + 
+        locationPath + 
+        locationSearch + 
+        locationHash;
+      
+      // 베이스 경로로 리다이렉트
+      var basePath = locationPath.split('/').slice(0, pathSegmentsToKeep + 1).join('/') + '/';
+      window.location.replace(basePath);
+    })();
+  </script>
 </head>
 <body>
-  <div class="error-container">
-    <div class="error-code">404</div>
-    <h1 class="error-title">페이지를 찾을 수 없습니다</h1>
-    <p class="error-message">
-      요청하신 페이지가 존재하지 않거나 이동되었을 수 있습니다.<br>
-      아래 링크를 통해 원하는 도구를 찾아보세요.
-    </p>
-    
-    <a href="/tool-hub/" class="home-button">🏠 홈으로 가기</a>
-    
-    <div class="tools-list">
-      <div class="tools-title">인기 도구</div>
-      <a href="/tool-hub/tools/age-calculator" class="tool-link">만나이 계산기</a>
-      <a href="/tool-hub/tools/bmi-calculator" class="tool-link">BMI 계산기</a>
-      <a href="/tool-hub/tools/character-counter" class="tool-link">글자수 세기</a>
-      <a href="/tool-hub/tools/loan-calculator" class="tool-link">대출 계산기</a>
-      <a href="/tool-hub/tools/unit-converter" class="tool-link">단위 변환기</a>
-      <a href="/tool-hub/tools/json-formatter" class="tool-link">JSON 포맷터</a>
-      <a href="/tool-hub/tools/percent-calculator" class="tool-link">퍼센트 계산기</a>
-      <a href="/tool-hub/tools/military-calculator" class="tool-link">군 복무 계산기</a>
-    </div>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/" />
+  </noscript>
+  <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif;">
+    <p>페이지를 로딩 중입니다...</p>
   </div>
 </body>
 </html>

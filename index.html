@@ -4,131 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- 파비콘 (절대 경로로 설정) -->
-    <link rel="icon" type="image/svg+xml" href="https://asa9874.github.io/tool-hub/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="https://asa9874.github.io/tool-hub/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="https://asa9874.github.io/tool-hub/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://asa9874.github.io/tool-hub/apple-touch-icon.png" />
-    <link rel="manifest" href="https://asa9874.github.io/tool-hub/manifest.json" />
-    <link rel="shortcut icon" href="https://asa9874.github.io/tool-hub/favicon-32x32.png" />
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/svg+xml" href="/tool-hub/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/tool-hub/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/tool-hub/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/tool-hub/apple-touch-icon.png" />
+    <link rel="manifest" href="/tool-hub/manifest.json" />
     
-    <!-- 기본 SEO 메타 태그 -->
-    <title>ToolHub - 무료 온라인 도구 모음 | 계산기, 변환기, 생성기</title>
-    <meta name="description" content="ToolHub에서 만나이 계산기, BMI 계산기, 글자수 세기, 단위 변환기, JSON 포맷터 등 70개 이상의 무료 온라인 도구를 사용해보세요. 회원가입 없이 바로 이용 가능!" />
-    <meta name="keywords" content="온라인 도구, 무료 계산기, 만나이 계산기, BMI 계산기, 글자수 세기, 단위 변환기, JSON 포맷터, 퍼센트 계산기, D-day 계산기" />
-    <meta name="author" content="ToolHub" />
+    <!-- 기본 SEO 메타 태그 (react-helmet-async로 덮어씌워짐) -->
+    <title>ToolHub - 무료 온라인 도구 모음</title>
+    <meta name="description" content="만나이 계산기, 글자수 세기, 단위 변환기 등 다양한 무료 온라인 도구를 제공합니다." />
     
     <!-- 검색 엔진 크롤링 -->
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow" />
+    <meta name="robots" content="index, follow" />
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://asa9874.github.io/tool-hub/" />
-    
-    <!-- Open Graph 태그 (Facebook, Discord 등) -->
+    <!-- Open Graph 기본 태그 -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="ToolHub" />
-    <meta property="og:title" content="ToolHub - 무료 온라인 도구 모음" />
-    <meta property="og:description" content="만나이 계산기, BMI 계산기, 글자수 세기, 단위 변환기 등 70개 이상의 무료 온라인 도구를 제공합니다." />
-    <meta property="og:url" content="https://asa9874.github.io/tool-hub/" />
     <meta property="og:locale" content="ko_KR" />
     <meta property="og:image" content="https://asa9874.github.io/tool-hub/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="ToolHub - 무료 온라인 도구 모음" />
-    
-    <!-- Twitter Card 태그 -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ToolHub - 무료 온라인 도구 모음" />
-    <meta name="twitter:description" content="만나이 계산기, BMI 계산기, 글자수 세기, 단위 변환기 등 70개 이상의 무료 온라인 도구를 제공합니다." />
-    <meta name="twitter:image" content="https://asa9874.github.io/tool-hub/og-image.png" />
     
     <!-- 테마 색상 -->
     <meta name="theme-color" content="#3b82f6" />
-    <meta name="msapplication-TileColor" content="#3b82f6" />
     
-    <!-- Google 사이트 소유권 확인 -->
-    <meta name="google-site-verification" content="google38693868dca7d7e4" />
-    
-    <!-- 성능 최적화 프리로딩 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-    
-    <!-- 리소스 힌트 -->
-    <link rel="preload" href="https://asa9874.github.io/tool-hub/favicon.svg" as="image" type="image/svg+xml" />
-    
-    <!-- 보안 헤더 -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-    
-    <!-- 추가 SEO 최적화 -->
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <!-- Google 사이트 소유권 확인 (Search Console 등록 후 실제 값으로 변경) -->
+    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
     
     <!-- 네이버 사이트 소유권 확인 (선택) -->
     <!-- <meta name="naver-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
     
-    <!-- 구조화된 데이터 (JSON-LD) - Google 검색결과 개선 -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "ToolHub",
-      "alternateName": "툴허브",
-      "url": "https://asa9874.github.io/tool-hub/",
-      "description": "만나이 계산기, BMI 계산기, 글자수 세기, 단위 변환기 등 70개 이상의 무료 온라인 도구를 제공합니다.",
-      "inLanguage": "ko-KR",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://asa9874.github.io/tool-hub/?search={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "ToolHub",
-      "url": "https://asa9874.github.io/tool-hub/",
-      "logo": "https://asa9874.github.io/tool-hub/favicon-128x128.png",
-      "description": "무료 온라인 도구 모음 서비스"
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "ToolHub - 무료 온라인 도구 모음",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "Web Browser",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "KRW"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "150"
-      }
-    }
-    </script>
-    <script type="module" crossorigin src="/tool-hub/assets/index-CCfGa0Yi.js"></script>
-    <link rel="modulepreload" crossorigin href="/tool-hub/assets/vendor-CITDBnID.js">
-    <link rel="modulepreload" crossorigin href="/tool-hub/assets/react-vendor-Bv8-fG2K.js">
-    <link rel="modulepreload" crossorigin href="/tool-hub/assets/animation-_IVGamHK.js">
-    <link rel="modulepreload" crossorigin href="/tool-hub/assets/tools-DjY5ZpSP.js">
-    <link rel="stylesheet" crossorigin href="/tool-hub/assets/index-BkEWwbPE.css">
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin="anonymous" />
+    <script type="module" crossorigin src="/tool-hub/assets/index-CsvZ_Rrl.js"></script>
+    <link rel="modulepreload" crossorigin href="/tool-hub/assets/vendor-EKyHjtqT.js">
+    <link rel="stylesheet" crossorigin href="/tool-hub/assets/index-BDkgAAP0.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
     
     <!-- GitHub Pages SPA 라우팅 지원 스크립트 -->
     <script>

@@ -4,17 +4,9 @@
 User-agent: *
 Allow: /
 
-# Sitemap Index
-Sitemap: https://asa9874.github.io/tool-hub/sitemap-index.xml
+# 사이트맵 위치
+Sitemap: https://asa9874.github.io/tool-hub/sitemap.xml
 
-# 개별 사이트맵들 (Google Search Console에서 각각 제출 가능)
-Sitemap: https://asa9874.github.io/tool-hub/sitemap-home.xml
-Sitemap: https://asa9874.github.io/tool-hub/sitemap-finance.xml
-Sitemap: https://asa9874.github.io/tool-hub/sitemap-health.xml
-Sitemap: https://asa9874.github.io/tool-hub/sitemap-business.xml
-Sitemap: https://asa9874.github.io/tool-hub/sitemap-development.xml
-Sitemap: https://asa9874.github.io/tool-hub/sitemap-utility.xml
-Sitemap: https://asa9874.github.io/tool-hub/sitemap-privacy.xml
-
-# 크롤링 제한
+# 크롤링 제한 (필요시 추가)
 # Disallow: /admin/
+# Disallow: /private/
