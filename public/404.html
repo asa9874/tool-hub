@@ -10,9 +10,15 @@
     // 현재 경로를 세션 스토리지에 저장하고 루트로 리다이렉트
     // index.html의 스크립트가 저장된 경로를 복원
     (function() {
-      // 리포지토리 이름 (GitHub Pages 서브 경로)
-      // 예: https://username.github.io/tool-hub 의 경우 '/tool-hub'
-      var pathSegmentsToKeep = 1; // 서브 경로가 없으면 0으로 설정
+      // 무한 리다이렉션 방지
+      var redirect = sessionStorage.redirect;
+      if (redirect) {
+        // 이미 한 번 리다이렉션된 상태이므로 다시 리다이렉션하지 않음
+        delete sessionStorage.redirect;
+        return;
+      }
+      
+      var pathSegmentsToKeep = 1; // 리포지토리 이름 (GitHub Pages 서브 경로)
       
       var locationPath = window.location.pathname;
       var locationSearch = window.location.search;

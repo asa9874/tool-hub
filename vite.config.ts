@@ -7,10 +7,9 @@ export default defineConfig({
     react(),
     tailwind(),  // Tailwind v4 Vite 플러그인
   ],
-  // GitHub Pages 배포 시 레포지토리 이름으로 설정
-  // 예: https://username.github.io/tool-hub -> base: '/tool-hub/'
-  // 루트 도메인 사용 시 '/'로 설정
-  base: '/tool-hub/',
+  // GitHub Pages 배포 시에만 '/tool-hub/' 사용
+  // 로컬 개발 환경에서는 '/' 사용
+  base: process.env.NODE_ENV === 'production' ? '/tool-hub/' : '/',
   define: {
     global: 'window',  // 필요 시 추가
   },
