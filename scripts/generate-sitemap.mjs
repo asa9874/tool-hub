@@ -13,9 +13,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // ============================================
-// 설정 - 실제 배포 URL로 변경 필요
+// 설정
 // ============================================
-const SITE_URL = 'https://asa9874.github.io/tool-hub';
+// Netlify의 SITE_URL 환경변수 우선 사용, 없으면 로컬 기본값
+const SITE_URL = process.env.SITE_URL || 'http://localhost:5173';
 
 // 사이트맵에 포함할 페이지 목록
 // 새 페이지 추가 시 여기에 등록

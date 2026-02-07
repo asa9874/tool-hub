@@ -5,313 +5,313 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <url>
-    <loc>https://asa9874.github.io/tool-hub/</loc>
+    <loc>http://localhost:5173/</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/loan-calculator</loc>
+    <loc>http://localhost:5173/tools/loan-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/savings-calculator</loc>
+    <loc>http://localhost:5173/tools/savings-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/brokerage-fee-calculator</loc>
+    <loc>http://localhost:5173/tools/brokerage-fee-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/severance-calculator</loc>
+    <loc>http://localhost:5173/tools/severance-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/bmi-calculator</loc>
+    <loc>http://localhost:5173/tools/bmi-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/bmr-calculator</loc>
+    <loc>http://localhost:5173/tools/bmr-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/calorie-burn-calculator</loc>
+    <loc>http://localhost:5173/tools/calorie-burn-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/age-calculator</loc>
+    <loc>http://localhost:5173/tools/age-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/military-calculator</loc>
+    <loc>http://localhost:5173/tools/military-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/gpa-calculator</loc>
+    <loc>http://localhost:5173/tools/gpa-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/salary-calculator</loc>
+    <loc>http://localhost:5173/tools/salary-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/zodiac-calculator</loc>
+    <loc>http://localhost:5173/tools/zodiac-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/d-day-calculator</loc>
+    <loc>http://localhost:5173/tools/d-day-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/character-counter</loc>
+    <loc>http://localhost:5173/tools/character-counter</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/percent-calculator</loc>
+    <loc>http://localhost:5173/tools/percent-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/unit-converter</loc>
+    <loc>http://localhost:5173/tools/unit-converter</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/json-formatter</loc>
+    <loc>http://localhost:5173/tools/json-formatter</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/base64</loc>
+    <loc>http://localhost:5173/tools/base64</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/url-encoder</loc>
+    <loc>http://localhost:5173/tools/url-encoder</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/lorem-ipsum</loc>
+    <loc>http://localhost:5173/tools/lorem-ipsum</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/unit-price-calculator</loc>
+    <loc>http://localhost:5173/tools/unit-price-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/discount-calculator</loc>
+    <loc>http://localhost:5173/tools/discount-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/size-converter</loc>
+    <loc>http://localhost:5173/tools/size-converter</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/water-intake-calculator</loc>
+    <loc>http://localhost:5173/tools/water-intake-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/html-stripper</loc>
+    <loc>http://localhost:5173/tools/html-stripper</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/morse-code</loc>
+    <loc>http://localhost:5173/tools/morse-code</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/metronome</loc>
+    <loc>http://localhost:5173/tools/metronome</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/chord-transposer</loc>
+    <loc>http://localhost:5173/tools/chord-transposer</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/palette-generator</loc>
+    <loc>http://localhost:5173/tools/palette-generator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/gradient-generator</loc>
+    <loc>http://localhost:5173/tools/gradient-generator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/box-shadow-generator</loc>
+    <loc>http://localhost:5173/tools/box-shadow-generator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/glassmorphism-generator</loc>
+    <loc>http://localhost:5173/tools/glassmorphism-generator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/neumorphism-generator</loc>
+    <loc>http://localhost:5173/tools/neumorphism-generator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/css-grid-generator</loc>
+    <loc>http://localhost:5173/tools/css-grid-generator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/caffeine-calculator</loc>
+    <loc>http://localhost:5173/tools/caffeine-calculator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/lunar-calendar</loc>
+    <loc>http://localhost:5173/tools/lunar-calendar</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/diff-checker</loc>
+    <loc>http://localhost:5173/tools/diff-checker</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/favicon-generator</loc>
+    <loc>http://localhost:5173/tools/favicon-generator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/exif-remover</loc>
+    <loc>http://localhost:5173/tools/exif-remover</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/exif-viewer</loc>
+    <loc>http://localhost:5173/tools/exif-viewer</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/placeholder-image</loc>
+    <loc>http://localhost:5173/tools/placeholder-image</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/svg-blob-generator</loc>
+    <loc>http://localhost:5173/tools/svg-blob-generator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/social-media-size-guide</loc>
+    <loc>http://localhost:5173/tools/social-media-size-guide</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/css-filter-lab</loc>
+    <loc>http://localhost:5173/tools/css-filter-lab</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/css-pattern-generator</loc>
+    <loc>http://localhost:5173/tools/css-pattern-generator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/logo-safe-area</loc>
+    <loc>http://localhost:5173/tools/logo-safe-area</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/favicon-preview</loc>
+    <loc>http://localhost:5173/tools/favicon-preview</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/button-generator</loc>
+    <loc>http://localhost:5173/tools/button-generator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/color-blindness-simulator</loc>
+    <loc>http://localhost:5173/tools/color-blindness-simulator</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/tools/screen-resolution</loc>
+    <loc>http://localhost:5173/tools/screen-resolution</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://asa9874.github.io/tool-hub/privacy-policy</loc>
+    <loc>http://localhost:5173/privacy-policy</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>

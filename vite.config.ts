@@ -7,9 +7,8 @@ export default defineConfig({
     react(),
     tailwind(),  // Tailwind v4 Vite 플러그인
   ],
-  // GitHub Pages 배포 시에만 '/tool-hub/' 사용
-  // 로컬 개발 환경에서는 '/' 사용
-  base: process.env.NODE_ENV === 'production' ? '/tool-hub/' : '/',
+  // Netlify 배포: 항상 루트에 배포
+  base: '/',
   define: {
     global: 'window',  // 필요 시 추가
   },

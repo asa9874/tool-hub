@@ -1,7 +1,15 @@
-// 사이트 전역 설정 - 배포 전 실제 도메인으로 변경 필요
+// 사이트 전역 설정
+// Netlify 환경에서는 자동으로 제공되는 SITE_URL 사용, 로컬에서는 현재 origin 사용
+const getSiteUrl = (): string => {
+  if (typeof window !== 'undefined') {
+    return window.location.origin;
+  }
+  return 'useful-toolhub.netlify.app';
+};
+
 export const siteConfig = {
-  // GitHub Pages 배포 시 사용할 기본 URL (예: https://username.github.io/tool-hub)
-  siteUrl: 'https://asa9874.github.io/tool-hub',
+  // 배포된 사이트 URL
+  siteUrl: getSiteUrl(),
   siteName: 'ToolHub - 무료 온라인 도구 모음',
   siteDescription: '만나이 계산기, 전역일 계산기, 글자수 세기, JSON 포맷터, 대출 이자 계산기, BMI 계산기 등 다양한 무료 온라인 도구를 제공합니다.',
   defaultLanguage: 'ko',

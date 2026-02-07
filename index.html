@@ -18,6 +18,9 @@
     <!-- 검색 엔진 크롤링 -->
     <meta name="robots" content="index, follow" />
     
+    <!-- Naver 사이트 인증 -->
+    <meta name="naver-site-verification" content="fe9e591f68a9846fb75b43241caf06146a5f0150" />
+    
     <!-- Open Graph 기본 태그 -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ko_KR" />
@@ -39,22 +42,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- GitHub Pages SPA 라우팅 지원 스크립트 -->
-    <script>
-      // 404.html에서 리다이렉트된 경우 URL 복원
-      // 스크립트 로드 전에 실행되므로 안전함
-      (function() {
-        var redirect = sessionStorage.redirect;
-        if (redirect) {
-          delete sessionStorage.redirect;
-          // 현재 URL과 다를 경우에만 복원
-          if (redirect !== window.location.href) {
-            // replaceState를 사용하여 히스토리에 entry 추가하지 않음
-            window.history.replaceState(null, null, redirect);
-          }
-        }
-      })();
-    </script>
   </body>
 </html>

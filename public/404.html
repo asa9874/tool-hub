@@ -2,47 +2,15 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>ToolHub - 페이지 로딩 중...</title>
-  <script>
-    // GitHub Pages SPA 라우팅 해결을 위한 404 리다이렉트 스크립트
-    // 참고: https://github.com/rafgraph/spa-github-pages
-    
-    // 현재 경로를 세션 스토리지에 저장하고 루트로 리다이렉트
-    // index.html의 스크립트가 저장된 경로를 복원
-    (function() {
-      // 무한 리다이렉션 방지
-      var redirect = sessionStorage.redirect;
-      if (redirect) {
-        // 이미 한 번 리다이렉션된 상태이므로 다시 리다이렉션하지 않음
-        delete sessionStorage.redirect;
-        return;
-      }
-      
-      var pathSegmentsToKeep = 1; // 리포지토리 이름 (GitHub Pages 서브 경로)
-      
-      var locationPath = window.location.pathname;
-      var locationSearch = window.location.search;
-      var locationHash = window.location.hash;
-      
-      // 전체 URL을 세션 스토리지에 저장
-      sessionStorage.redirect = 
-        window.location.origin + 
-        locationPath + 
-        locationSearch + 
-        locationHash;
-      
-      // 베이스 경로로 리다이렉트
-      var basePath = locationPath.split('/').slice(0, pathSegmentsToKeep + 1).join('/') + '/';
-      window.location.replace(basePath);
-    })();
-  </script>
+  <title>ToolHub - 페이지를 찾을 수 없습니다</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <noscript>
-    <meta http-equiv="refresh" content="0; url=/" />
-  </noscript>
-  <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif;">
-    <p>페이지를 로딩 중입니다...</p>
+  <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; flex-direction: column;">
+    <h1>404 - 페이지를 찾을 수 없습니다</h1>
+    <p>요청한 페이지가 존재하지 않습니다.</p>
+    <p><a href="/">홈으로 돌아가기</a></p>
   </div>
 </body>
 </html>
+
