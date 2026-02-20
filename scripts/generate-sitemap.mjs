@@ -15,8 +15,8 @@ const __dirname = path.dirname(__filename);
 // ============================================
 // 설정
 // ============================================
-// Netlify의 SITE_URL 환경변수 우선 사용, 없으면 로컬 기본값
-const SITE_URL = process.env.SITE_URL || 'http://localhost:5173';
+// Netlify의 SITE_URL 환경변수 우선 사용, 없으면 배포 도메인 기본값
+const SITE_URL = process.env.SITE_URL || 'https://useful-toolhub.netlify.app';
 
 // 사이트맵에 포함할 페이지 목록
 // 새 페이지 추가 시 여기에 등록
