@@ -18,7 +18,7 @@
     <loc>https://useful-toolhub.netlify.app/en</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/"/>
@@ -36,7 +36,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/loan-calculator</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/loan-calculator"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/loan-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/loan-calculator"/>
@@ -54,7 +54,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/savings-calculator</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/savings-calculator"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/savings-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/savings-calculator"/>
@@ -84,7 +84,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/bmi-calculator</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/bmi-calculator"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/bmi-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/bmi-calculator"/>
@@ -102,7 +102,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/bmr-calculator</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/bmr-calculator"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/bmr-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/bmr-calculator"/>
@@ -138,7 +138,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/age-calculator</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/age-calculator"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/age-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/age-calculator"/>
@@ -162,7 +162,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/gpa-calculator</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/gpa-calculator"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/gpa-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/gpa-calculator"/>
@@ -180,7 +180,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/salary-calculator</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/salary-calculator"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/salary-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/salary-calculator"/>
@@ -234,7 +234,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/character-counter</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/character-counter"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/character-counter"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/character-counter"/>
@@ -288,7 +288,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/json-formatter</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/json-formatter"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/json-formatter"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/json-formatter"/>
@@ -342,7 +342,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/lorem-ipsum</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/lorem-ipsum"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/lorem-ipsum"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/lorem-ipsum"/>
@@ -360,7 +360,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/diff-checker</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/diff-checker"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/diff-checker"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/diff-checker"/>
@@ -450,7 +450,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/unit-price-calculator</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/unit-price-calculator"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/unit-price-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/unit-price-calculator"/>
@@ -468,7 +468,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/discount-calculator</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/discount-calculator"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/discount-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/discount-calculator"/>
@@ -486,7 +486,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/size-converter</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/size-converter"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/size-converter"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/size-converter"/>
@@ -546,7 +546,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/scratch-card</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/scratch-card"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/scratch-card"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/scratch-card"/>
@@ -564,7 +564,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/team-generator</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/team-generator"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/team-generator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/team-generator"/>
@@ -582,7 +582,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/magic-conch</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/magic-conch"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/magic-conch"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/magic-conch"/>
@@ -600,7 +600,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/fortune-cookie</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/fortune-cookie"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/fortune-cookie"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/fortune-cookie"/>
@@ -636,7 +636,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/coin-flip</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/coin-flip"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/coin-flip"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/coin-flip"/>
@@ -654,7 +654,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/dice-roller</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/dice-roller"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/dice-roller"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/dice-roller"/>
@@ -690,7 +690,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/browser-info</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/browser-info"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/browser-info"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/browser-info"/>
@@ -732,7 +732,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/qr-generator</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/qr-generator"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/qr-generator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/qr-generator"/>
@@ -750,7 +750,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/mandalart</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/mandalart"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/mandalart"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/mandalart"/>
@@ -774,7 +774,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/list-shuffler</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/list-shuffler"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/list-shuffler"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/list-shuffler"/>
@@ -810,7 +810,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/sticky-note</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/sticky-note"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/sticky-note"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/sticky-note"/>
@@ -1026,7 +1026,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/placeholder-image</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/placeholder-image"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/placeholder-image"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/placeholder-image"/>
@@ -1062,7 +1062,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/social-media-size-guide</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/social-media-size-guide"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/social-media-size-guide"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/social-media-size-guide"/>
@@ -1230,7 +1230,7 @@
     <loc>https://useful-toolhub.netlify.app/en/tools/favicon-generator</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/favicon-generator"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/favicon-generator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/favicon-generator"/>
@@ -1270,24 +1270,6 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/exif-viewer"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/exif-viewer"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/exif-viewer"/>
-  </url>
-  <url>
-    <loc>https://useful-toolhub.netlify.app/tools/favicon-preview</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/favicon-preview"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/favicon-preview"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/favicon-preview"/>
-  </url>
-  <url>
-    <loc>https://useful-toolhub.netlify.app/en/tools/favicon-preview</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://useful-toolhub.netlify.app/tools/favicon-preview"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://useful-toolhub.netlify.app/en/tools/favicon-preview"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://useful-toolhub.netlify.app/tools/favicon-preview"/>
   </url>
   <url>
     <loc>https://useful-toolhub.netlify.app/privacy-policy</loc>

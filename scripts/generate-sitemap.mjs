@@ -129,8 +129,8 @@ const pages = [
   { path: '/tools/exif-remover', changefreq: 'weekly', priority: '0.8' },
   { path: '/tools/exif-viewer', changefreq: 'weekly', priority: '0.8' },
   // === UI/UX 異붽? ===
-  { path: '/tools/favicon-preview', changefreq: 'weekly', priority: '0.8' },
-  // === ?뺣낫 ?섏씠吏 ===
+  // === UI/UX 추가 (favicon-preview는 이미 디자인 섹션에 등록됨) ===
+  // === 정보 페이지 ===
   { path: '/privacy-policy', changefreq: 'monthly', priority: '0.3' },
 ];
 
@@ -181,9 +181,8 @@ function generateSitemap() {
     // ?곸뼱 URL ?뷀듃由?(湲濡쒕쾶 ?섏슂 ?꾧뎄留?
     if (hasEn) {
       const enPath = page.path === '/' ? '/en' : `/en${page.path}`;
-      // ?곸뼱 priority???쒓뎅?대낫???댁쭩 ??쾶 (ko媛 湲곕낯 ?몄뼱)
-      const enPriority = (parseFloat(page.priority) - 0.05).toFixed(1);
-      entries.push(buildUrlEntry(enPath, page.changefreq, enPriority, true));
+      // 영어판도 동일 priority 사용 (ko/en 대등하게 취급)
+      entries.push(buildUrlEntry(enPath, page.changefreq, page.priority, true));
     }
   }
 
