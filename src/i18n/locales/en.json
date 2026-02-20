@@ -476,6 +476,106 @@
       "title": "Screen Resolution Checker",
       "fullTitle": "Screen Resolution Checker - Monitor Resolution & PPI",
       "description": "Check your device's logical/physical resolution, pixel density, and PPI."
+    },
+    "discountCalculator": {
+      "title": "Discount Calculator",
+      "fullTitle": "Discount Calculator - Sale Price & Savings",
+      "description": "Calculate the final sale price after a percentage discount and see how much you save."
+    },
+    "unitPriceCalculator": {
+      "title": "Unit Price Calculator",
+      "fullTitle": "Unit Price Calculator - Best Value Comparison",
+      "description": "Compare the unit price of products by quantity or weight to find the best deal."
+    },
+    "sizeConverter": {
+      "title": "Clothing Size Converter",
+      "fullTitle": "Clothing & Shoe Size Converter - US / UK / EU",
+      "description": "Convert clothing and shoe sizes between US, UK, EU, and other international standards."
+    },
+    "waterIntakeCalculator": {
+      "title": "Water Intake Calculator",
+      "fullTitle": "Daily Water Intake Calculator - Hydration Guide",
+      "description": "Calculate your recommended daily water intake based on your weight and activity level."
+    },
+    "htmlStripper": {
+      "title": "HTML Tag Remover",
+      "fullTitle": "HTML Tag Stripper - Remove HTML Tags from Text",
+      "description": "Paste HTML and instantly strip all tags to extract clean plain text."
+    },
+    "morseCode": {
+      "title": "Morse Code Translator",
+      "fullTitle": "Morse Code Encoder & Decoder",
+      "description": "Convert text to Morse code or decode Morse code back to text. Supports audio playback."
+    },
+    "metronome": {
+      "title": "Metronome",
+      "fullTitle": "Online Metronome - BPM Tempo Keeper",
+      "description": "Free online metronome with adjustable BPM for music practice and rhythm training."
+    },
+    "chordTransposer": {
+      "title": "Chord Transposer",
+      "fullTitle": "Guitar Chord Transposer - Transpose Chords by Semitone",
+      "description": "Transpose guitar chord charts up or down by any number of semitones."
+    },
+    "paletteGenerator": {
+      "title": "Color Palette Generator",
+      "fullTitle": "Color Palette Generator - Create Harmonious Color Schemes",
+      "description": "Generate beautiful color palettes automatically from a base color using color theory."
+    },
+    "gradientGenerator": {
+      "title": "CSS Gradient Generator",
+      "fullTitle": "CSS Gradient Generator - Linear & Radial Gradients",
+      "description": "Create CSS linear and radial gradients visually and copy the ready-to-use code."
+    },
+    "boxShadowGenerator": {
+      "title": "Box Shadow Generator",
+      "fullTitle": "CSS Box Shadow Generator - Visual Shadow Builder",
+      "description": "Design CSS box-shadow effects visually and copy the generated CSS code."
+    },
+    "glassmorphismGenerator": {
+      "title": "Glassmorphism Generator",
+      "fullTitle": "Glassmorphism CSS Generator - Frosted Glass UI Effect",
+      "description": "Create trendy frosted glass UI effects using CSS backdrop-filter and export the code."
+    },
+    "neumorphismGenerator": {
+      "title": "Neumorphism Generator",
+      "fullTitle": "Neumorphism CSS Generator - Soft UI Design",
+      "description": "Generate soft-UI neumorphism components and copy the CSS code instantly."
+    },
+    "cssGridGenerator": {
+      "title": "CSS Grid Generator",
+      "fullTitle": "CSS Grid Layout Generator - Visual Grid Builder",
+      "description": "Visually create CSS grid layouts with custom rows, columns, and gaps, then copy the code."
+    },
+    "caffeineCalculator": {
+      "title": "Caffeine Calculator",
+      "fullTitle": "Caffeine Intake Calculator - Coffee, Tea & Energy Drinks",
+      "description": "Track your daily caffeine consumption and find out if you're within safe limits."
+    },
+    "lunarCalendar": {
+      "title": "Lunar Calendar",
+      "fullTitle": "Lunar Calendar Converter - Lunar to Solar Date",
+      "description": "Convert dates between the lunar and solar calendar. Find traditional lunar dates."
+    },
+    "diffChecker": {
+      "title": "Text Diff Checker",
+      "fullTitle": "Text Difference Checker - Side-by-Side Comparison",
+      "description": "Compare two text blocks and instantly highlight exactly what changed. Great for code reviews."
+    },
+    "faviconGenerator": {
+      "title": "Favicon Generator",
+      "fullTitle": "Favicon Generator - Create ICO & PNG Icons from Image",
+      "description": "Generate favicons in all required sizes (16×16, 32×32, 180×180) from any uploaded image."
+    },
+    "exifRemover": {
+      "title": "EXIF Data Remover",
+      "fullTitle": "EXIF Metadata Remover - Strip GPS & Privacy Data from Photos",
+      "description": "Remove GPS location, camera details, and all EXIF metadata from your photos before sharing."
+    },
+    "exifViewer": {
+      "title": "EXIF Viewer",
+      "fullTitle": "EXIF Data Viewer - Read Full Image Metadata",
+      "description": "View all EXIF data embedded in a photo including GPS coordinates, camera settings, and more."
     }
   }
 }

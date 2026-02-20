@@ -4,9 +4,5 @@
 User-agent: *
 Allow: /
 
-# 사이트맵 위치
-Sitemap: http://localhost:5173/sitemap.xml
-
-# 크롤링 제한 (필요시 추가)
-# Disallow: /admin/
-# Disallow: /private/
+# ?ъ씠?몃㏊ ?꾩튂
+Sitemap: https://useful-toolhub.netlify.app/sitemap.xml

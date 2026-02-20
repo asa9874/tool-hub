@@ -7,6 +7,7 @@ import { getToolIcon } from '../config/toolIcons';
 import { languageInfo, supportedLanguages } from '../i18n';
 import type { SupportedLanguage } from '../i18n';
 import AdBanner from './AdBanner';
+import useLangPath from '../hooks/useLangPath';
 
 interface LayoutProps {
   children: ReactNode;
@@ -98,6 +99,32 @@ const toolI18nKey: Record<string, string> = {
   'button-generator': 'tools.buttonGenerator.title',
   'color-blindness-simulator': 'tools.colorBlindnessSimulator.title',
   'screen-resolution': 'tools.screenResolution.title',
+  // 쇼핑/실생활 도구
+  'unit-price-calculator': 'tools.unitPriceCalculator.title',
+  'discount-calculator': 'tools.discountCalculator.title',
+  'size-converter': 'tools.sizeConverter.title',
+  'water-intake-calculator': 'tools.waterIntakeCalculator.title',
+  // 유틸리티/개발 추가
+  'html-stripper': 'tools.htmlStripper.title',
+  'morse-code': 'tools.morseCode.title',
+  // 음악/창작
+  'metronome': 'tools.metronome.title',
+  'chord-transposer': 'tools.chordTransposer.title',
+  // 디자인 도구
+  'palette-generator': 'tools.paletteGenerator.title',
+  'gradient-generator': 'tools.gradientGenerator.title',
+  'box-shadow-generator': 'tools.boxShadowGenerator.title',
+  'glassmorphism-generator': 'tools.glassmorphismGenerator.title',
+  'neumorphism-generator': 'tools.neumorphismGenerator.title',
+  'css-grid-generator': 'tools.cssGridGenerator.title',
+  // 건강/생활
+  'caffeine-calculator': 'tools.caffeineCalculator.title',
+  'lunar-calendar': 'tools.lunarCalendar.title',
+  // 개발/IT 추가
+  'diff-checker': 'tools.diffChecker.title',
+  'favicon-generator': 'tools.faviconGenerator.title',
+  'exif-remover': 'tools.exifRemover.title',
+  'exif-viewer': 'tools.exifViewer.title',
 };
 
 /**
@@ -113,10 +140,11 @@ export default function Layout({ children }: LayoutProps) {
   const currentYear = new Date().getFullYear();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const { toLangPath, navigateToLang } = useLangPath();
 
-  // 언어 변경 함수
+  // 언어 전환: URL 네비게이션 방식 (SEO 우선, localStorage 부가)
   const changeLanguage = (lng: SupportedLanguage) => {
-    i18n.changeLanguage(lng);
+    navigateToLang(lng);
     setIsLangMenuOpen(false);
   };
 
@@ -134,7 +162,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* 상단 헤더 (모바일용) */}
       <header className="bg-white shadow-sm sticky top-0 z-50 lg:hidden">
         <div className="flex items-center justify-between px-4 py-3">
-          <Link to="/" className="text-xl font-bold text-blue-600">
+          <Link to={toLangPath('/')} className="text-xl font-bold text-blue-600">
             🛠️ ToolHub
           </Link>
           <div className="flex items-center space-x-2">
@@ -234,11 +262,11 @@ export default function Layout({ children }: LayoutProps) {
           <nav className="p-2">
             {/* 홈 링크 */}
             <Link
-              to="/"
+              to={toLangPath('/')}
               onClick={() => setIsSidebarOpen(false)}
               className={`
                 flex items-center px-4 py-2.5 rounded-lg mb-1 transition-all
-                ${location.pathname === '/'
+                ${location.pathname === '/' || location.pathname === '/en'
                   ? 'bg-blue-100 text-blue-700 font-semibold'
                   : 'text-gray-700 hover:bg-gray-200'
                 }
@@ -262,11 +290,11 @@ export default function Layout({ children }: LayoutProps) {
                   {tools.map((tool) => (
                     <li key={tool.id}>
                       <Link
-                        to={tool.path}
+                        to={toLangPath(tool.path)}
                         onClick={() => setIsSidebarOpen(false)}
                         className={`
                           flex items-start px-3 py-2 rounded-lg transition-all
-                          ${location.pathname === tool.path
+                          ${location.pathname === tool.path || location.pathname === `/en${tool.path}`
                             ? `bg-white shadow-sm ${colors.text} font-semibold`
                             : `${colors.text} ${colors.hover}`
                           }
@@ -290,11 +318,11 @@ export default function Layout({ children }: LayoutProps) {
             {/* 기타 링크 */}
             <div className="space-y-1">
               <Link
-                to="/privacy-policy"
+                to={toLangPath('/privacy-policy')}
                 onClick={() => setIsSidebarOpen(false)}
                 className={`
                   flex items-center px-4 py-2 rounded-lg text-sm transition-all
-                  ${location.pathname === '/privacy-policy'
+                  ${location.pathname === '/privacy-policy' || location.pathname === '/en/privacy-policy'
                     ? 'bg-blue-50 text-blue-700 font-semibold'
                     : 'text-gray-600 hover:bg-gray-100'
                   }
@@ -357,7 +385,7 @@ export default function Layout({ children }: LayoutProps) {
                       {siteConfig.tools.slice(0, 8).map((tool) => (
                         <li key={tool.id}>
                           <Link
-                            to={tool.path}
+                            to={toLangPath(tool.path)}
                             className="hover:text-white transition-colors"
                           >
                             {t(toolI18nKey[tool.id] || tool.title.split(' - ')[0])}
@@ -372,7 +400,7 @@ export default function Layout({ children }: LayoutProps) {
                     <h3 className="text-white font-semibold text-lg mb-4">{t('common.info')}</h3>
                     <ul className="space-y-2 text-sm">
                       <li>
-                        <Link to="/privacy-policy" className="hover:text-white transition-colors">
+                        <Link to={toLangPath('/privacy-policy')} className="hover:text-white transition-colors">
                           {t('common.privacyPolicy')}
                         </Link>
                       </li>

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO';
 import { siteConfig } from '../config/siteConfig';
 import { getToolIcon } from '../config/toolIcons';
+import useLangPath from '../hooks/useLangPath';
 
 // 카테고리별 색상 매핑
 const categoryColors: Record<string, { bg: string; text: string; hover: string; border: string }> = {
@@ -39,6 +40,7 @@ export default function Home() {
   const { t, i18n } = useTranslation();
   const isKorean = i18n.language === 'ko';
   const [searchQuery, setSearchQuery] = useState('');
+  const { toLangPath } = useLangPath();
 
   // 홈페이지용 구조화된 데이터
   const structuredData = {
@@ -146,7 +148,7 @@ export default function Home() {
               {tools.map((tool) => (
                 <Link
                   key={tool.id}
-                  to={tool.path}
+                  to={toLangPath(tool.path)}
                   className={`group flex flex-col items-center p-4 rounded-xl border ${colors.border} ${colors.bg} ${colors.hover} transition-all duration-200 hover:shadow-md hover:-translate-y-0.5`}
                 >
                   <div className={`${colors.text} mb-2 group-hover:scale-110 transition-transform`}>

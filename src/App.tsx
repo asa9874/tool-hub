@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import type { JSX } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
+import LangProvider from './components/LangProvider';
 import { AdSenseScript } from './components/AdBanner';
 
 // 페이지 컴포넌트
@@ -118,8 +120,122 @@ import ScreenResolution from './pages/tools/ScreenResolution';
  * 메인 App 컴포넌트
  * - HelmetProvider: SEO 메타 태그 관리
  * - BrowserRouter: 클라이언트 사이드 라우팅
+ * - LangProvider: URL 경로 기반 언어 자동 동기화 (/en/* → 영어)
  * - basename: GitHub Pages 배포 시 서브 경로 설정
  */
+
+/** 홈/정책 및 도구 라우트 설정 (중복 없이 /en/* 자동 생성) */
+const toolRoutes: Array<{ path: string; element: JSX.Element }> = [
+  // 금융/부동산 도구
+  { path: '/tools/loan-calculator', element: <LoanCalculator /> },
+  { path: '/tools/savings-calculator', element: <SavingsCalculator /> },
+  { path: '/tools/brokerage-fee-calculator', element: <BrokerageFeeCalculator /> },
+  { path: '/tools/severance-calculator', element: <SeveranceCalculator /> },
+
+  // 건강/라이프스타일 도구
+  { path: '/tools/bmi-calculator', element: <BmiCalculator /> },
+  { path: '/tools/bmr-calculator', element: <BmrCalculator /> },
+  { path: '/tools/calorie-burn-calculator', element: <CalorieBurnCalculator /> },
+
+  // 생활/사회 도구
+  { path: '/tools/age-calculator', element: <AgeCalculator /> },
+  { path: '/tools/military-calculator', element: <MilitaryCalculator /> },
+  { path: '/tools/gpa-calculator', element: <GpaCalculator /> },
+  { path: '/tools/salary-calculator', element: <SalaryCalculator /> },
+  { path: '/tools/zodiac-calculator', element: <ZodiacCalculator /> },
+  { path: '/tools/d-day-calculator', element: <DdayCalculator /> },
+
+  // 업무/생산성 도구
+  { path: '/tools/character-counter', element: <CharacterCounter /> },
+  { path: '/tools/percent-calculator', element: <PercentCalculator /> },
+  { path: '/tools/unit-converter', element: <UnitConverter /> },
+
+  // 개발/IT 도구
+  { path: '/tools/json-formatter', element: <JsonFormatter /> },
+  { path: '/tools/base64', element: <Base64Tool /> },
+  { path: '/tools/url-encoder', element: <UrlEncoder /> },
+  { path: '/tools/lorem-ipsum', element: <LoremIpsum /> },
+
+  // 게임/재미 도구
+  { path: '/tools/spin-wheel', element: <SpinWheel /> },
+  { path: '/tools/food-slot-machine', element: <FoodSlotMachine /> },
+  { path: '/tools/scratch-card', element: <ScratchCard /> },
+  { path: '/tools/team-generator', element: <TeamGenerator /> },
+  { path: '/tools/magic-conch', element: <MagicConch /> },
+  { path: '/tools/fortune-cookie', element: <FortuneCookie /> },
+  { path: '/tools/reaction-test', element: <ReactionTest /> },
+
+  // 유틸리티 도구
+  { path: '/tools/word-frequency', element: <WordFrequency /> },
+  { path: '/tools/browser-info', element: <BrowserInfo /> },
+  { path: '/tools/reserve-calculator', element: <ReserveCalculator /> },
+  { path: '/tools/sleep-calculator', element: <SleepCalculator /> },
+
+  // 추가 도구
+  { path: '/tools/qr-generator', element: <QrGenerator /> },
+  { path: '/tools/case-converter', element: <CaseConverter /> },
+  { path: '/tools/coin-flip', element: <CoinFlip /> },
+  { path: '/tools/dice-roller', element: <DiceRoller /> },
+  { path: '/tools/mandalart', element: <MandalartChart /> },
+  { path: '/tools/korean-romanizer', element: <KoreanRomanizer /> },
+  { path: '/tools/number-base-converter', element: <NumberBaseConverter /> },
+  { path: '/tools/list-shuffler', element: <ListShuffler /> },
+  { path: '/tools/timer', element: <WebTimer /> },
+  { path: '/tools/color-converter', element: <ColorConverter /> },
+  { path: '/tools/sticky-note', element: <StickyNote /> },
+  { path: '/tools/webp-converter', element: <WebpConverter /> },
+  { path: '/tools/ip-port-checker', element: <IpPortChecker /> },
+
+  // 쇼핑/실생활 도구
+  { path: '/tools/unit-price-calculator', element: <UnitPriceCalculator /> },
+  { path: '/tools/discount-calculator', element: <DiscountCalculator /> },
+  { path: '/tools/size-converter', element: <SizeConverter /> },
+  { path: '/tools/water-intake-calculator', element: <WaterIntakeCalculator /> },
+
+  // 유틸리티/개발 도구
+  { path: '/tools/html-stripper', element: <HtmlStripper /> },
+  { path: '/tools/morse-code', element: <MorseCode /> },
+
+  // 음악/창작 도구
+  { path: '/tools/metronome', element: <Metronome /> },
+  { path: '/tools/chord-transposer', element: <ChordTransposer /> },
+
+  // 디자인 도구
+  { path: '/tools/palette-generator', element: <PaletteGenerator /> },
+  { path: '/tools/gradient-generator', element: <GradientGenerator /> },
+  { path: '/tools/box-shadow-generator', element: <BoxShadowGenerator /> },
+  { path: '/tools/glassmorphism-generator', element: <GlassmorphismGenerator /> },
+  { path: '/tools/neumorphism-generator', element: <NeumorphismGenerator /> },
+  { path: '/tools/css-grid-generator', element: <CssGridGenerator /> },
+
+  // 건강/생활 추가
+  { path: '/tools/caffeine-calculator', element: <CaffeineCalculator /> },
+  { path: '/tools/lunar-calendar', element: <LunarCalendar /> },
+
+  // 개발/IT 추가
+  { path: '/tools/diff-checker', element: <DiffChecker /> },
+  { path: '/tools/favicon-generator', element: <FaviconGenerator /> },
+  { path: '/tools/exif-remover', element: <ExifRemover /> },
+  { path: '/tools/exif-viewer', element: <ExifViewer /> },
+
+  // 디자인 추가
+  { path: '/tools/placeholder-image', element: <PlaceholderImage /> },
+  { path: '/tools/svg-blob-generator', element: <SvgBlobGenerator /> },
+  { path: '/tools/social-media-size-guide', element: <SocialMediaSizeGuide /> },
+  { path: '/tools/css-filter-lab', element: <CssFilterLab /> },
+  { path: '/tools/css-pattern-generator', element: <CssPatternGenerator /> },
+
+  // UI/UX 및 편의 도구
+  { path: '/tools/logo-safe-area', element: <LogoSafeArea /> },
+  { path: '/tools/favicon-preview', element: <FaviconPreview /> },
+  { path: '/tools/button-generator', element: <ButtonGenerator /> },
+  { path: '/tools/color-blindness-simulator', element: <ColorBlindnessSimulator /> },
+  { path: '/tools/screen-resolution', element: <ScreenResolution /> },
+
+  // 정보 페이지
+  { path: '/privacy-policy', element: <PrivacyPolicy /> },
+];
+
 function App() {
   // GitHub Pages 배포 시 레포지토리 이름을 basename으로 설정
   // 예: https://username.github.io/tool-hub -> basename="/tool-hub"
@@ -129,126 +245,29 @@ function App() {
     <HelmetProvider>
       {/* AdSense 스크립트 로드 */}
       <AdSenseScript />
-      
+
       <BrowserRouter basename={basename}>
-        <Layout>
-          <Routes>
-            {/* 홈 페이지 */}
-            <Route path="/" element={<Home />} />
-            
-            {/* 금융/부동산 도구 */}
-            <Route path="/tools/loan-calculator" element={<LoanCalculator />} />
-            <Route path="/tools/savings-calculator" element={<SavingsCalculator />} />
-            <Route path="/tools/brokerage-fee-calculator" element={<BrokerageFeeCalculator />} />
-            <Route path="/tools/severance-calculator" element={<SeveranceCalculator />} />
-            
-            {/* 건강/라이프스타일 도구 */}
-            <Route path="/tools/bmi-calculator" element={<BmiCalculator />} />
-            <Route path="/tools/bmr-calculator" element={<BmrCalculator />} />
-            <Route path="/tools/calorie-burn-calculator" element={<CalorieBurnCalculator />} />
-            
-            {/* 생활/사회 도구 */}
-            <Route path="/tools/age-calculator" element={<AgeCalculator />} />
-            <Route path="/tools/military-calculator" element={<MilitaryCalculator />} />
-            <Route path="/tools/gpa-calculator" element={<GpaCalculator />} />
-            <Route path="/tools/salary-calculator" element={<SalaryCalculator />} />
-            <Route path="/tools/zodiac-calculator" element={<ZodiacCalculator />} />
-            <Route path="/tools/d-day-calculator" element={<DdayCalculator />} />
-            
-            {/* 업무/생산성 도구 */}
-            <Route path="/tools/character-counter" element={<CharacterCounter />} />
-            <Route path="/tools/percent-calculator" element={<PercentCalculator />} />
-            <Route path="/tools/unit-converter" element={<UnitConverter />} />
-            
-            {/* 개발/IT 도구 */}
-            <Route path="/tools/json-formatter" element={<JsonFormatter />} />
-            <Route path="/tools/base64" element={<Base64Tool />} />
-            <Route path="/tools/url-encoder" element={<UrlEncoder />} />
-            <Route path="/tools/lorem-ipsum" element={<LoremIpsum />} />
-            
-            {/* 게임/재미 도구 */}
-            <Route path="/tools/spin-wheel" element={<SpinWheel />} />
-            <Route path="/tools/food-slot-machine" element={<FoodSlotMachine />} />
-            <Route path="/tools/scratch-card" element={<ScratchCard />} />
-            <Route path="/tools/team-generator" element={<TeamGenerator />} />
-            <Route path="/tools/magic-conch" element={<MagicConch />} />
-            <Route path="/tools/fortune-cookie" element={<FortuneCookie />} />
-            <Route path="/tools/reaction-test" element={<ReactionTest />} />
-            
-            {/* 유틸리티 도구 */}
-            <Route path="/tools/word-frequency" element={<WordFrequency />} />
-            <Route path="/tools/browser-info" element={<BrowserInfo />} />
-            <Route path="/tools/reserve-calculator" element={<ReserveCalculator />} />
-            <Route path="/tools/sleep-calculator" element={<SleepCalculator />} />
-            
-            {/* 새로 추가된 도구 */}
-            <Route path="/tools/qr-generator" element={<QrGenerator />} />
-            <Route path="/tools/case-converter" element={<CaseConverter />} />
-            <Route path="/tools/coin-flip" element={<CoinFlip />} />
-            <Route path="/tools/dice-roller" element={<DiceRoller />} />
-            <Route path="/tools/mandalart" element={<MandalartChart />} />
-            <Route path="/tools/korean-romanizer" element={<KoreanRomanizer />} />
-            <Route path="/tools/number-base-converter" element={<NumberBaseConverter />} />
-            <Route path="/tools/list-shuffler" element={<ListShuffler />} />
-            <Route path="/tools/timer" element={<WebTimer />} />
-            <Route path="/tools/color-converter" element={<ColorConverter />} />
-            <Route path="/tools/sticky-note" element={<StickyNote />} />
-            <Route path="/tools/webp-converter" element={<WebpConverter />} />
-            <Route path="/tools/ip-port-checker" element={<IpPortChecker />} />
-            
-            {/* 쇼핑/실생활 도구 */}
-            <Route path="/tools/unit-price-calculator" element={<UnitPriceCalculator />} />
-            <Route path="/tools/discount-calculator" element={<DiscountCalculator />} />
-            <Route path="/tools/size-converter" element={<SizeConverter />} />
-            <Route path="/tools/water-intake-calculator" element={<WaterIntakeCalculator />} />
-            
-            {/* 유틸리티/개발 도구 추가 */}
-            <Route path="/tools/html-stripper" element={<HtmlStripper />} />
-            <Route path="/tools/morse-code" element={<MorseCode />} />
-            
-            {/* 음악/창작 도구 */}
-            <Route path="/tools/metronome" element={<Metronome />} />
-            <Route path="/tools/chord-transposer" element={<ChordTransposer />} />
-            
-            {/* 디자인 도구 */}
-            <Route path="/tools/palette-generator" element={<PaletteGenerator />} />
-            <Route path="/tools/gradient-generator" element={<GradientGenerator />} />
-            <Route path="/tools/box-shadow-generator" element={<BoxShadowGenerator />} />
-            <Route path="/tools/glassmorphism-generator" element={<GlassmorphismGenerator />} />
-            <Route path="/tools/neumorphism-generator" element={<NeumorphismGenerator />} />
-            <Route path="/tools/css-grid-generator" element={<CssGridGenerator />} />
-            
-            {/* 건강/생활 도구 추가 */}
-            <Route path="/tools/caffeine-calculator" element={<CaffeineCalculator />} />
-            <Route path="/tools/lunar-calendar" element={<LunarCalendar />} />
-            
-            {/* 개발/IT 도구 추가 */}
-            <Route path="/tools/diff-checker" element={<DiffChecker />} />
-            <Route path="/tools/favicon-generator" element={<FaviconGenerator />} />
-            <Route path="/tools/exif-remover" element={<ExifRemover />} />
-            <Route path="/tools/exif-viewer" element={<ExifViewer />} />
-            
-            {/* 디자인 도구 추가 */}
-            <Route path="/tools/placeholder-image" element={<PlaceholderImage />} />
-            <Route path="/tools/svg-blob-generator" element={<SvgBlobGenerator />} />
-            <Route path="/tools/social-media-size-guide" element={<SocialMediaSizeGuide />} />
-            <Route path="/tools/css-filter-lab" element={<CssFilterLab />} />
-            <Route path="/tools/css-pattern-generator" element={<CssPatternGenerator />} />
-            
-            {/* UI/UX 및 편의 도구 추가 */}
-            <Route path="/tools/logo-safe-area" element={<LogoSafeArea />} />
-            <Route path="/tools/favicon-preview" element={<FaviconPreview />} />
-            <Route path="/tools/button-generator" element={<ButtonGenerator />} />
-            <Route path="/tools/color-blindness-simulator" element={<ColorBlindnessSimulator />} />
-            <Route path="/tools/screen-resolution" element={<ScreenResolution />} />
-            
-            {/* 정보 페이지들 */}
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            
-            {/* 404 페이지 */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
+        {/* URL 경로 기반 언어 자동 동기화 */}
+        <LangProvider>
+          <Layout>
+            <Routes>
+              {/* 홈 페이지 (한국어 / 영어) */}
+              <Route path="/" element={<Home />} />
+              <Route path="/en" element={<Home />} />
+
+              {/* 모든 도구·정보 페이지: 한국어 경로 + 영어(/en/*) 경로 자동 생성 */}
+              {toolRoutes.map(({ path, element }) => (
+                <Route key={path} path={path} element={element} />
+              ))}
+              {toolRoutes.map(({ path, element }) => (
+                <Route key={`/en${path}`} path={`/en${path}`} element={element} />
+              ))}
+
+              {/* 404 페이지 */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </LangProvider>
       </BrowserRouter>
     </HelmetProvider>
   );

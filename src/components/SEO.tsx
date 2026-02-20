@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 import { siteConfig } from '../config/siteConfig';
 
 interface SEOProps {
@@ -32,10 +33,32 @@ export default function SEO({
   noindex = false,
   structuredData,
 }: SEOProps) {
+  const location = useLocation();
   const siteUrl = siteConfig.siteUrl;
+
+  // 현재 URL 기반으로 언어 감지 (LangProvider와 동일 로직)
+  const currentPath = location.pathname;
+  const isEnglish = currentPath.startsWith('/en');
+  const lang = isEnglish ? 'en' : 'ko';
+  const ogLocale = isEnglish ? 'en_US' : 'ko_KR';
+
+  // canonical: 전달된 prop이 있으면 사용, 없으면 현재 URL 경로 사용
+  const canonicalPath = canonical ?? currentPath;
   const fullTitle = `${title} | ${siteConfig.siteName}`;
-  const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+  const canonicalUrl = `${siteUrl}${canonicalPath}`;
   const defaultOgImage = `${siteUrl}/og-image.png`;
+
+  // hreflang 대체 URL 계산
+  const koPath = canonicalPath.startsWith('/en')
+    ? canonicalPath.replace(/^\/en/, '') || '/'
+    : canonicalPath;
+  const enPath = canonicalPath.startsWith('/en')
+    ? canonicalPath
+    : canonicalPath === '/'
+    ? '/en'
+    : `/en${canonicalPath}`;
+  const koUrl = `${siteUrl}${koPath}`;
+  const enUrl = `${siteUrl}${enPath}`;
 
   // 기본 구조화된 데이터 (Organization)
   const defaultStructuredData = {
@@ -54,13 +77,18 @@ export default function SEO({
   return (
     <Helmet>
       {/* 기본 메타 태그 */}
-      <html lang={siteConfig.defaultLanguage} />
+      <html lang={lang} />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywords.length > 0 && (
         <meta name="keywords" content={keywords.join(', ')} />
       )}
       <link rel="canonical" href={canonicalUrl} />
+
+      {/* hreflang - 구글에게 언어별 페이지를 알려줌 (SEO 핵심) */}
+      <link rel="alternate" hrefLang="ko" href={koUrl} />
+      <link rel="alternate" hrefLang="en" href={enUrl} />
+      <link rel="alternate" hrefLang="x-default" href={koUrl} />
 
       {/* 검색 엔진 크롤링 제어 */}
       {noindex ? (
@@ -76,7 +104,7 @@ export default function SEO({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage || defaultOgImage} />
       <meta property="og:site_name" content={siteConfig.siteName} />
-      <meta property="og:locale" content="ko_KR" />
+      <meta property="og:locale" content={ogLocale} />
 
       {/* Twitter Card 메타 태그 */}
       <meta name="twitter:card" content="summary_large_image" />
